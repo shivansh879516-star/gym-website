@@ -1,9 +1,9 @@
 /**
- * SHIVANSH FITNESS | LUXURY BESPOKE JAVASCRIPT ENGINE
- * Indian Context, Strict Form Validation, AI Chat Assistant (English & Hinglish),
- * Interactive Programs Syllabus Modal, 1-Rep Max Calculator, Desi Meal Planner,
- * BMI & TDEE Engine, Daily Workout Routines & Rest Interval Timer with Audio Chime,
- * UPI 9555514847@ptyes QR Code & Interactive Transformation Slider
+ * SHIVANSH FITNESS | PRODUCTION JAVASCRIPT ENGINE
+ * Strict Form Validation, Secure Payment Architecture, Transparent Coaching Syllabus,
+ * 1-Rep Max Calculator, Desi Meal Planner, BMI & TDEE Estimator,
+ * Workout Split Routines & Rest Interval Timer with Audio Chime,
+ * Automated FAQ Assistant (English & Hinglish) & Verified Contact Channels
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,11 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initClearButtons();
   initBMICalculator();
   initMembershipPricingToggle();
-  initSearchFilter();
-  initStrictIndianFormValidation();
+  initConsultationAndContactForms();
   initBackToTop();
   
-  // Luxury Features & Interactive Systems
+  // Visual & Interactive Systems
   initTransformationSlider();
   initStatCounters();
   init3DCardTilt();
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollPopAnimations();
   initAIFitnessChatAssistant();
   
-  // Advanced Cool Features
+  // Fitness Tools & Reviews
   initProgramFilterAndModal();
   initOneRepMaxCalculator();
   initIndianMealPlanner();
@@ -34,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. SCROLL REVEAL "POP" ANIMATIONS (Guaranteed 100% visible)
+   1. SCROLL REVEAL (100% VISIBLE & ACCESSIBLE)
    ========================================================================== */
 function initScrollPopAnimations() {
   const popElements = document.querySelectorAll('.scroll-pop, .scroll-pop-image, .scroll-stagger');
@@ -50,7 +49,7 @@ function initScrollPopAnimations() {
   }, { threshold: 0.1 });
 
   popElements.forEach(el => {
-    el.classList.add('revealed'); // Fallback ensure visible
+    el.classList.add('revealed');
     observer.observe(el);
   });
 }
@@ -60,95 +59,94 @@ function initScrollPopAnimations() {
    ========================================================================== */
 const PROGRAM_DATABASE = {
   'recomp': {
-    title: '1-on-1 Bespoke Body Recomposition & Hypertrophy',
+    title: '1-on-1 Bespoke Body Recomposition',
     badge: '1-on-1 Coaching',
-    coach: 'Coach Shivansh (CSCS)',
+    coach: 'Coach Shivansh',
     duration: '16 Weeks',
     frequency: '4-5 Days / Week',
     inr: 8700,
     usd: 105,
-    overview: 'Complete physiological overhaul designed to burn stubborn visceral belly fat while packing on dense contractile muscle tissue. Zero starvation, 100% sustainable Indian lifestyle integration.',
+    overview: 'Personalized physical coaching designed to encourage lean muscle retention and gradual fat reduction. Integrated with Indian meal preferences (roti, paneer, soya, dal).',
     phases: [
-      { name: 'Phase 1 (Weeks 1-4): Metabolic Baseline & Form Fix', details: 'Establish baseline caloric maintenance, decompress thoracic/lumbar spine, master intra-abdominal bracing on squats and deadlifts.' },
-      { name: 'Phase 2 (Weeks 5-8): Progressive Overload & Deficit', details: 'Introduce 350 kcal deficit with high protein (2.2g/kg). Wave periodization with 4-day Upper/Lower split.' },
-      { name: 'Phase 3 (Weeks 9-12): Hypertrophy Density & Peak', details: 'Incorporate mechanical tension dropsets, Romanian deadlifts for posterior chain, and targeted delt/arm cap volume.' },
-      { name: 'Phase 4 (Weeks 13-16): Metabolic Finish & Photoshoot Conditioning', details: 'Taper deficit, peak glycogen stores, achieve sub-12% body fat with visible ab vascularity.' }
+      { name: 'Phase 1 (Weeks 1-4): Baseline & Technique Audit', details: 'Determine baseline caloric maintenance, evaluate lifting biomechanics on squat, bench, and deadlift, establish daily 8,000-step routine.' },
+      { name: 'Phase 2 (Weeks 5-8): Progressive Loading & Moderate Deficit', details: 'Introduce a sustainable ~350 kcal deficit with high protein targets (2.0g/kg). 4-day Upper/Lower resistance split.' },
+      { name: 'Phase 3 (Weeks 9-12): Hypertrophy Density & Volume', details: 'Focus on compound movements, Romanian deadlifts for posterior chain, and targeted shoulder and core stability.' },
+      { name: 'Phase 4 (Weeks 13-16): Consolidation & Sustainable Routine', details: 'Transition into long-term maintenance calories and sustainable workout split habits.' }
     ],
     sampleWorkout: [
-      'Barbell Squat (Warmup to 3 sets x 6-8 reps @ RPE 8)',
-      'Incline Dumbbell Bench Press (3 sets x 8-10 reps)',
-      'Chest-Supported T-Bar Row (3 sets x 10-12 reps)',
+      'Barbell Squat (Warmup to 3 working sets x 6-8 reps)',
+      'Incline Dumbbell Press (3 sets x 8-10 reps)',
+      'Chest-Supported Row (3 sets x 10-12 reps)',
       'Romanian Deadlift (3 sets x 8-10 reps)',
-      'Cable Lateral Raises (4 sets x 15 reps + 1 dropset)'
+      'Lateral Cable Raises (4 sets x 12-15 reps)'
     ],
-    dietCues: '200g Low-fat Paneer / Tofu, 4 Boiled Eggs, 1 Scoop Whey, 2 Phulka Rotis with Dal & Green veggies per meal.'
+    dietCues: 'Low-fat paneer, boiled eggs / tofu, dal, dahi, and 2-3 multigrain rotis with green vegetables per meal.'
   },
   'shred': {
-    title: 'Desi Shred & Fat Loss Protocol (Belly Fat Special)',
+    title: 'Sustainable Fat Loss & Conditioning Protocol',
     badge: 'Fat Loss & Conditioning',
-    coach: 'Coach Shivansh & Team',
+    coach: 'Coach Shivansh',
     duration: '12 Weeks',
     frequency: '4 Days / Week',
     inr: 5700,
     usd: 69,
-    overview: 'Engineered specifically for Indian body compositions that easily store stubborn abdominal fat. Alternates heavy compound lifting with non-taxing low-impact cardio.',
+    overview: 'Structured resistance training combined with daily step goals to support fat reduction while retaining functional muscle mass.',
     phases: [
-      { name: 'Phase 1: Calorie Audit & NEAT Boost', details: 'Fix daily non-exercise physical activity to 10,000 steps. Eliminate hidden cooking oil calories.' },
-      { name: 'Phase 2: High Density Sled & Complex Intervals', details: 'Full body barbell complexes paired with 60-yard turf sled pushes to elevate VO2 max and EPOC.' },
-      { name: 'Phase 3: Deep Fat Oxidation & Abdominal Definition', details: 'Strategic carb cycling around heavy leg days to deplete and refill glycogen without muscle breakdown.' }
+      { name: 'Phase 1: Activity Audit & Caloric Awareness', details: 'Establish 8,000 to 10,000 daily steps. Audit hidden cooking oils and liquid sugars.' },
+      { name: 'Phase 2: Full-Body Resistance & Interval Conditioning', details: 'Compound barbell movements paired with low-impact sled pushes or incline treadmill walks.' },
+      { name: 'Phase 3: Habit Maintenance', details: 'Solidify sustainable meal preparation habits and regular resistance exercise.' }
     ],
     sampleWorkout: [
       'Trap Bar Deadlift (4 sets x 6 reps)',
-      'Overhead Dumbbell Push Press (3 sets x 8 reps)',
-      '60-Yard Rogue Sled Push (5 rounds x 45s rest)',
-      'Hanging Leg Raises & Ab Wheel Rollouts (4 sets to fatigue)',
-      'Zone 2 Incline Treadmill Walk (15 minutes)'
+      'Overhead Dumbbell Press (3 sets x 8 reps)',
+      'Incline Treadmill Walk (15-20 minutes Zone 2)',
+      'Hanging Knee Raises & Plank (3 sets to fatigue)'
     ],
-    dietCues: 'High Protein Soya Pulao, Egg White Bhurji, Dahi + Roasted Makhana for evening snacks. High fiber cucumber/tomato salads.'
+    dietCues: 'Soya chunks pulao, egg white scramble, roasted makhana, high fiber salads, and adequate hydration.'
   },
   'power': {
-    title: 'Heavy Iron Powerlifting & Strength Mastery',
+    title: 'Strength & Powerlifting Fundamentals',
     badge: 'Strength & Power',
-    coach: 'Coach Shivansh (CSCS)',
+    coach: 'Coach Shivansh',
     duration: '12-24 Weeks',
     frequency: '4 Days / Week',
     inr: 5700,
     usd: 69,
-    overview: 'Scientifically periodized strength system using RPE (Rate of Perceived Exertion) and percentage velocity. Build a 200+ kg deadlift and competition-standard squat.',
+    overview: 'Periodized strength system focused on barbell technique, rate of perceived exertion (RPE), and progressive overload on the Big 3 lifts.',
     phases: [
-      { name: 'Phase 1: Hypertrophy & Work Capacity', details: 'Higher volume (8-10 reps) on competition lift variations (pause squats, spoto press, deficit pulls).' },
-      { name: 'Phase 2: Strength Accumulation', details: 'Transition into heavy working sets (3-5 reps @ 80-88% 1RM). Heavy CNS adaptation.' },
-      { name: 'Phase 3: Peaking & PR Test Day', details: 'Taper volume, heavy singles @ 92-98% 1RM, prepare for PR celebration night.' }
+      { name: 'Phase 1: Technique & Work Capacity', details: 'Higher volume (8-10 reps) on lift variations (pause squats, spoto press, deficit deadlifts).' },
+      { name: 'Phase 2: Strength Accumulation', details: 'Transition into working sets (3-5 reps @ 80-85% 1RM) focusing on central nervous system adaptation.' },
+      { name: 'Phase 3: Peaking & PR Testing', details: 'Volume taper and heavy singles testing under proper safety spotters.' }
     ],
     sampleWorkout: [
-      'Competition Back Squat (4 sets x 3 reps @ 85% 1RM)',
-      'Pause Bench Press (2-second count) (4 sets x 4 reps)',
-      'Deficit Deadlift (3 sets x 5 reps)',
+      'Competition Back Squat (4 sets x 3-5 reps)',
+      'Pause Bench Press (4 sets x 4 reps)',
+      'Conventional Deadlift (3 sets x 5 reps)',
       'Weighted Dips & Pull-ups (3 sets x 8 reps)'
     ],
-    dietCues: 'High complex carbs (Brown rice, sweet potatoes, oats) to sustain heavy CNS recovery.'
+    dietCues: 'Complex carbohydrates (brown rice, oats, rotis, potatoes) to support heavy resistance training recovery.'
   },
   'mobility': {
-    title: 'Desk Worker Mobility, Posture & Lumbar Rehab',
-    badge: 'Joint Health & Rehab',
-    coach: 'Coach Shivansh & Physio Team',
+    title: 'Desk Worker Posture & Mobility Protocol',
+    badge: 'Posture & Mobility',
+    coach: 'Coach Shivansh',
     duration: 'Ongoing',
     frequency: '3 Days / Week',
     inr: 2900,
     usd: 35,
-    overview: 'Designed for IT software professionals, founders, and office executives experiencing chronic lower back pain, forward head posture, and tight hip flexors.',
+    overview: 'Designed for desk workers and software engineers to support hip flexor flexibility, spinal decompression, and shoulder mobility.',
     phases: [
-      { name: 'Phase 1: Spinal Decompression & Glute Activation', details: 'Decompress lumbar discs with dead hangs, cat-cow flow, and band-resisted glute bridges.' },
-      { name: 'Phase 2: Thoracic Extension & Rotator Cuff Health', details: 'Face pulls, prone Y-T-W raises, and deep diaphragmatic intra-abdominal pressure training.' },
-      { name: 'Phase 3: Functional Strength & Movement Literacy', details: 'Goblet squats, suitcase carries, and single-leg Romanian deadlifts.' }
+      { name: 'Phase 1: Spinal Decompression & Glute Activation', details: 'Dead hangs, cat-cow stretches, and band-resisted glute bridges.' },
+      { name: 'Phase 2: Thoracic Extension & Rotator Health', details: 'Face pulls, prone Y-T-W raises, and diaphragmatic breathing.' },
+      { name: 'Phase 3: Functional Strength', details: 'Goblet squats, suitcase carries, and single-leg Romanian deadlifts.' }
     ],
     sampleWorkout: [
-      'Dead Hang on Pull-up Bar (3 rounds x 45 seconds)',
-      'Couch Stretch for Hip Flexors (2 minutes each side)',
-      'Kettlebell Goblet Squat (3 sets x 12 reps with 3-sec pause)',
-      'Heavy Dumbbell Suitcase Carry (4 laps x 30 yards)'
+      'Dead Hang on Pull-up Bar (3 sets x 45-60s)',
+      'Couch Stretch for Hip Flexors (2 min/side)',
+      'Kettlebell Goblet Squat (3 sets x 12 reps with 3s pause)',
+      'Dumbbell Suitcase Carry (4 laps x 30 yards)'
     ],
-    dietCues: 'Anti-inflammatory focus: Turmeric golden milk, omega-3 seeds (flax/chia), lots of water hydration.'
+    dietCues: 'Balanced anti-inflammatory whole foods, golden turmeric milk, chia seeds, and ample water.'
   }
 };
 
@@ -172,7 +170,6 @@ function initProgramFilterAndModal() {
     });
   });
 
-  // Modal view buttons
   const viewBtns = document.querySelectorAll('.btn-view-program');
   const modalEl = document.getElementById('programDetailsModal');
 
@@ -230,7 +227,7 @@ function initProgramFilterAndModal() {
 }
 
 /* ==========================================================================
-   3. INTERACTIVE 1-REP MAX (1RM) STRENGTH CALCULATOR
+   3. 1-REP MAX (1RM) STRENGTH CALCULATOR
    ========================================================================== */
 function initOneRepMaxCalculator() {
   const form = document.getElementById('ormCalcForm');
@@ -259,7 +256,7 @@ function initOneRepMaxCalculator() {
       return;
     }
 
-    // Average of Brzycki and Epley formulas
+    // Mathematical average of Brzycki and Epley equations
     const brzycki = w * (36 / (37 - r));
     const epley = w * (1 + (r / 30));
     const oneRepMax = Math.round((brzycki + epley) / 2);
@@ -272,23 +269,23 @@ function initOneRepMaxCalculator() {
 
     let cue = '';
     if (lift === 'squat') {
-      cue = `For Barbell Squat: Maintain intra-abdominal pressure, spread the floor with your feet, and train at ${Math.round(oneRepMax * 0.80)} kg for sets of 5 reps to build explosive legs.`;
+      cue = `For Barbell Squat: Maintain intra-abdominal pressure, spread the floor with your feet, and train at ${Math.round(oneRepMax * 0.80)} kg for sets of 5 reps to build leg strength safely.`;
     } else if (lift === 'bench') {
-      cue = `For Bench Press: Tuck your shoulder blades back into the bench, maintain leg drive, and use ${Math.round(oneRepMax * 0.75)} kg for 8-rep hypertrophy sets.`;
+      cue = `For Bench Press: Retract your shoulder blades, maintain leg drive, and use ${Math.round(oneRepMax * 0.75)} kg for 8-rep hypertrophy sets.`;
     } else if (lift === 'deadlift') {
-      cue = `For Deadlift: Engage your lats by bending the bar around your shins, push through the floor, and avoid hitching at lockout. 85% load (${Math.round(oneRepMax * 0.85)} kg) is optimal for back thickness.`;
+      cue = `For Deadlift: Engage your lats by bending the bar around your shins, push through the floor, and avoid hitching at lockout. 85% load (${Math.round(oneRepMax * 0.85)} kg) is optimal for back strength.`;
     } else {
-      cue = `For Overhead Press: Squeeze your glutes and quads tight to form a solid base, press straight over the ears.`;
+      cue = `For Overhead Press: Squeeze your glutes and core tight to form a solid base, press straight overhead.`;
     }
 
     if (coachCue) {
-      coachCue.innerHTML = `<strong class="text-warning"><i class="fas fa-lightbulb me-1"></i> Coach Shivansh's Cue:</strong> ${cue}`;
+      coachCue.innerHTML = `<strong class="text-warning"><i class="fas fa-lightbulb me-1"></i> Technique Cue:</strong> ${cue}`;
     }
   });
 }
 
 /* ==========================================================================
-   4. INTERACTIVE INDIAN MACRO & MEAL PLANNER
+   4. INDIAN MACRO & DESI MEAL PLANNER
    ========================================================================== */
 function initIndianMealPlanner() {
   const form = document.getElementById('indianMealPlannerForm');
@@ -317,7 +314,7 @@ function initIndianMealPlanner() {
         { time: '01:30 PM (Lunch)', item: '60g Soya Chunks Curry + 1 Cup Dal Tadka + 1 Bowl Brown Rice + Salad', macro: '38g Protein • 65g Carbs' },
         { time: '05:00 PM (Pre-Workout)', item: '1 Banana + Black Coffee / Green Tea + 5 Almonds', macro: '2g Protein • 28g Carbs' },
         { time: '07:30 PM (Post-Workout)', item: '1 Scoop Whey Protein Isolate in cold water', macro: '25g Protein • 2g Carbs' },
-        { time: '09:00 PM (Dinner)', item: 'Tofu/Paneer Stir-fry with Broccoli & Capsicum + 1 Phulka Roti', macro: '26g Protein • 25g Carbs' }
+        { time: '09:00 PM (Dinner)', item: 'Tofu/Paneer Stir-fry with Mixed Veggies + 1 Phulka Roti', macro: '26g Protein • 25g Carbs' }
       ];
     } else if (dietType === 'eggetarian') {
       protein = Math.round(calorieTarget * 0.32 / 4);
@@ -325,23 +322,22 @@ function initIndianMealPlanner() {
       fats = Math.round(calorieTarget * 0.25 / 9);
 
       meals = [
-        { time: '08:00 AM (Breakfast)', item: '4 Whole Boiled Eggs (or 2 whole + 4 whites bhurji) + 2 Brown Bread Slices', macro: '32g Protein • 30g Carbs' },
-        { time: '11:30 AM (Mid-Morning)', item: '1 Bowl Dahi + 1 Apple or Papaya slices', macro: '10g Protein • 26g Carbs' },
-        { time: '01:30 PM (Lunch)', item: 'Paneer Curry (150g) + Yellow Moong Dal + 2 Multigrain Rotis + Cucumber', macro: '35g Protein • 55g Carbs' },
-        { time: '05:00 PM (Pre-Workout)', item: '1 Banana + 1 Spoon Peanut Butter + Black Coffee', macro: '6g Protein • 32g Carbs' },
+        { time: '08:00 AM (Breakfast)', item: '4 Whole Boiled Eggs (or 2 whole + 4 whites scramble) + 2 Toast', macro: '32g Protein • 30g Carbs' },
+        { time: '11:30 AM (Mid-Morning)', item: '1 Bowl Dahi + Papaya/Apple slices', macro: '10g Protein • 26g Carbs' },
+        { time: '01:30 PM (Lunch)', item: 'Paneer Curry (150g) + Yellow Moong Dal + 2 Rotis + Cucumber', macro: '35g Protein • 55g Carbs' },
+        { time: '05:00 PM (Pre-Workout)', item: '1 Banana + 1 Spoon Peanut Butter + Coffee', macro: '6g Protein • 32g Carbs' },
         { time: '07:30 PM (Post-Workout)', item: '1 Scoop Whey Isolate + 2 Egg Whites', macro: '32g Protein • 1g Carbs' },
-        { time: '09:00 PM (Dinner)', item: 'Egg Curry (3 eggs) + 1 Phulka Roti + Mixed Green Sabzi', macro: '22g Protein • 22g Carbs' }
+        { time: '09:00 PM (Dinner)', item: 'Egg Curry (3 eggs) + 1 Phulka Roti + Mixed Sabzi', macro: '22g Protein • 22g Carbs' }
       ];
     } else {
-      // Non-Veg
       protein = Math.round(calorieTarget * 0.35 / 4);
       carbs = Math.round(calorieTarget * 0.40 / 4);
       fats = Math.round(calorieTarget * 0.25 / 9);
 
       meals = [
-        { time: '08:00 AM (Breakfast)', item: '4 Egg Whites + 2 Whole Eggs Scramble + 2 Toast / 1 Paratha (light ghee)', macro: '34g Protein • 32g Carbs' },
-        { time: '11:30 AM (Mid-Morning)', item: '1 Glass Chhaas (Buttermilk) + 30g Roasted Chana', macro: '12g Protein • 20g Carbs' },
-        { time: '01:30 PM (Lunch)', item: '180g Grilled Chicken Breast / Fish Curry + 1 Bowl Rice + Dal + Salad', macro: '46g Protein • 50g Carbs' },
+        { time: '08:00 AM (Breakfast)', item: '4 Egg Whites + 2 Whole Eggs Scramble + 2 Toast / 1 Light Paratha', macro: '34g Protein • 32g Carbs' },
+        { time: '11:30 AM (Mid-Morning)', item: '1 Glass Buttermilk (Chhaas) + 30g Roasted Chana', macro: '12g Protein • 20g Carbs' },
+        { time: '01:30 PM (Lunch)', item: '180g Chicken Breast / Fish Curry + 1 Bowl Rice + Dal + Salad', macro: '46g Protein • 50g Carbs' },
         { time: '05:00 PM (Pre-Workout)', item: '1 Banana + Black Coffee', macro: '2g Protein • 27g Carbs' },
         { time: '07:30 PM (Post-Workout)', item: '1 Scoop Whey Protein Isolate in water', macro: '25g Protein • 2g Carbs' },
         { time: '09:00 PM (Dinner)', item: '150g Chicken Keema / Fish Tikka + Green Salad + 1 Roti', macro: '36g Protein • 18g Carbs' }
@@ -400,7 +396,7 @@ function initIndianMealPlanner() {
 }
 
 /* ==========================================================================
-   5. INTERACTIVE BMI & TDEE CALORIC ENGINE
+   5. BMI & CALORIC TDEE ESTIMATOR
    ========================================================================== */
 function initBMICalculator() {
   const form = document.getElementById('bmiCalcForm');
@@ -439,19 +435,19 @@ function initBMICalculator() {
     if (bmi < 18.5) {
       cat = 'Underweight';
       col = 'bg-info text-dark';
-      roadmapText = `For lean bulking, aim for a surplus of <strong>~${tdee + 350} kcal/day</strong> with <strong>${Math.round(w * 2.2)}g protein</strong>. Focus on progressive overload on Squats and Deadlifts.`;
+      roadmapText = `For lean mass gain, aim for a surplus of <strong>~${tdee + 300} kcal/day</strong> with <strong>${Math.round(w * 2.0)}g protein</strong> and progressive resistance training.`;
     } else if (bmi >= 18.5 && bmi < 25) {
-      cat = 'Optimal Athletic Range';
+      cat = 'Optimal Health Range';
       col = 'bg-success';
-      roadmapText = `You are in the optimal health zone! To build dense muscle and drop visceral fat, maintain <strong>~${tdee - 200} kcal/day</strong> with <strong>${Math.round(w * 2.0)}g protein</strong>.`;
+      roadmapText = `You are in a healthy weight zone! For body recomposition, maintain <strong>~${tdee - 200} kcal/day</strong> with <strong>${Math.round(w * 2.0)}g protein</strong>.`;
     } else if (bmi >= 25 && bmi < 30) {
-      cat = 'Overweight / Central Fat';
+      cat = 'Overweight Range';
       col = 'bg-warning text-dark';
-      roadmapText = `Target a moderate caloric deficit of <strong>~${tdee - 450} kcal/day</strong> with <strong>${Math.round(w * 2.2)}g protein</strong>. Add 10,000 daily steps and 4 resistance sessions weekly.`;
+      roadmapText = `Target a moderate caloric deficit of <strong>~${tdee - 400} kcal/day</strong> with <strong>${Math.round(w * 2.2)}g protein</strong>, 8,000-10,000 steps, and 4 resistance sessions.`;
     } else {
-      cat = 'Obese Range';
+      cat = 'High Adiposity Range';
       col = 'bg-danger';
-      roadmapText = `Focus on structured fat loss with a <strong>~${tdee - 600} kcal/day</strong> deficit under Coach Shivansh's supervision. Low-impact cardio and joint-friendly lifting.`;
+      roadmapText = `Focus on structured fat loss with a <strong>~${tdee - 500} kcal/day</strong> deficit under coaching supervision. Prioritize low-impact activity and joint-friendly training.`;
     }
 
     if (catDisplay) {
@@ -465,50 +461,50 @@ function initBMICalculator() {
 }
 
 /* ==========================================================================
-   6. DAILY WORKOUT ROUTINES & REST INTERVAL TIMER WITH AUDIO CHIME
+   6. WORKOUT ROUTINES & REST TIMER WITH AUDIO CHIME
    ========================================================================== */
 const WORKOUT_ROUTINES_DATA = {
   'push': {
-    title: 'Push Day: Chest, Anterior Delts & Triceps',
+    title: 'Push Day: Chest, Shoulders & Triceps',
     focus: 'Hypertrophy & Lockout Power',
     exercises: [
       { name: 'Barbell Flat Bench Press', sets: '4 sets x 6-8 reps', rest: '90s', cue: 'Retract scapulae, maintain 45-degree elbow tuck.' },
       { name: 'Incline Dumbbell Press (30° Angle)', sets: '3 sets x 8-10 reps', rest: '60s', cue: 'Deep stretch at the bottom, squeeze upper chest at top.' },
       { name: 'Standing Dumbbell Overhead Press', sets: '3 sets x 8-10 reps', rest: '60s', cue: 'Lock glutes and core, avoid excessive lumbar arch.' },
       { name: 'Cable Lateral Raises', sets: '4 sets x 12-15 reps', rest: '45s', cue: 'Lead with elbows, pause for 1 second at shoulder height.' },
-      { name: 'Rope Tricep Pushdowns', sets: '3 sets x 12 reps + 1 dropset', rest: '45s', cue: 'Flare rope outward at full elbow extension.' }
+      { name: 'Rope Tricep Pushdowns', sets: '3 sets x 12 reps', rest: '45s', cue: 'Flare rope outward at full elbow extension.' }
     ]
   },
   'pull': {
-    title: 'Pull Day: Back Thickness, Lats & Biceps',
-    focus: 'V-Taper & Posterior Chain Integrity',
+    title: 'Pull Day: Back, Lats & Biceps',
+    focus: 'Upper Back & Posterior Chain Strength',
     exercises: [
       { name: 'Conventional / Sumo Deadlift', sets: '4 sets x 5 reps', rest: '120s', cue: 'Pull slack out of barbell, drive through heels.' },
-      { name: 'Weighted Pull-ups / Neutral Lat Pulldown', sets: '4 sets x 8 reps', rest: '75s', cue: 'Drive elbows down into back pockets.' },
+      { name: 'Lat Pulldown / Pull-ups', sets: '4 sets x 8 reps', rest: '75s', cue: 'Drive elbows down into back pockets.' },
       { name: 'Chest-Supported T-Bar Row', sets: '3 sets x 10 reps', rest: '60s', cue: 'Hold peak contraction for 1 second to build upper back.' },
       { name: 'Face Pulls with External Rotation', sets: '4 sets x 15 reps', rest: '45s', cue: 'Pull towards forehead, rotate thumbs backward.' },
-      { name: 'Incline Dumbbell Bicep Curls', sets: '3 sets x 10-12 reps', rest: '45s', cue: 'Full biceps long-head stretch on 45° incline bench.' }
+      { name: 'Incline Dumbbell Bicep Curls', sets: '3 sets x 10-12 reps', rest: '45s', cue: 'Full biceps stretch on 45° incline bench.' }
     ]
   },
   'legs': {
     title: 'Legs & Core: Quads, Hamstrings & Abdominals',
-    focus: 'Lower Body Athletic Power & Knee Health',
+    focus: 'Lower Body Strength & Knee Integrity',
     exercises: [
-      { name: 'Barbell Back Squat', sets: '4 sets x 6 reps', rest: '120s', cue: 'Screw feet into ground, hit parallel depth with tight core.' },
-      { name: 'Romanian Deadlift (Dumbbell or Barbell)', sets: '3 sets x 8-10 reps', rest: '90s', cue: 'Hinge back with hips until hamstrings are fully loaded.' },
+      { name: 'Barbell Back Squat', sets: '4 sets x 6 reps', rest: '120s', cue: 'Screw feet into ground, hit parallel depth with braced core.' },
+      { name: 'Romanian Deadlift', sets: '3 sets x 8-10 reps', rest: '90s', cue: 'Hinge back with hips until hamstrings are loaded.' },
       { name: 'Bulgarian Split Squats', sets: '3 sets x 10 reps/leg', rest: '60s', cue: 'Torso slightly forward to bias glutes and quads.' },
-      { name: 'Seated / Lying Hamstring Curls', sets: '3 sets x 12 reps', rest: '45s', cue: 'Slow 3-second eccentric lower on every rep.' },
-      { name: 'Hanging Leg Raises & Ab Wheel', sets: '4 sets x 12-15 reps', rest: '45s', cue: 'Curl pelvis upward, do not use swinging momentum.' }
+      { name: 'Hamstring Curls', sets: '3 sets x 12 reps', rest: '45s', cue: 'Slow 3-second eccentric lower on every rep.' },
+      { name: 'Hanging Leg Raises', sets: '4 sets x 12-15 reps', rest: '45s', cue: 'Curl pelvis upward without swinging momentum.' }
     ]
   },
   'mobility': {
-    title: 'Desk Worker Posture & Lumbar Flow',
-    focus: 'Spinal Decompression & Rotator Cuff Health',
+    title: 'Desk Worker Posture & Mobility Flow',
+    focus: 'Spinal Decompression & Hip Mobility',
     exercises: [
-      { name: 'Dead Hang on Pull-up Bar', sets: '3 sets x 45-60 seconds', rest: '45s', cue: 'Relax lats and breathe deeply into lower abdomen.' },
-      { name: 'Couch Stretch for Tight Hip Flexors', sets: '2 sets x 90 sec/side', rest: '30s', cue: 'Squeeze glute on back leg to release hip flexor.' },
-      { name: 'Thoracic Extension on Foam Roller', sets: '3 sets x 10 extensions', rest: '30s', cue: 'Keep ribs tucked, extend upper thoracic vertebrae.' },
-      { name: 'Band-Resisted Glute Bridges', sets: '3 sets x 15 reps', rest: '30s', cue: 'Hold 2-sec lockout to wake up dormant desk glutes.' }
+      { name: 'Dead Hang on Pull-up Bar', sets: '3 sets x 45-60s', rest: '45s', cue: 'Relax lats and breathe deeply into lower abdomen.' },
+      { name: 'Couch Stretch for Hip Flexors', sets: '2 sets x 90s/side', rest: '30s', cue: 'Squeeze glute on back leg to release tight hips.' },
+      { name: 'Thoracic Extension on Foam Roller', sets: '3 sets x 10 reps', rest: '30s', cue: 'Keep ribs tucked, extend upper thoracic spine.' },
+      { name: 'Band-Resisted Glute Bridges', sets: '3 sets x 15 reps', rest: '30s', cue: 'Hold 2-second lockout to activate desk glutes.' }
     ]
   }
 };
@@ -527,7 +523,7 @@ function initWorkoutSplitAndTimer() {
           <h4 class="text-white mb-0">${escapeHtml(data.title)}</h4>
           <span class="text-danger small fw-bold">${escapeHtml(data.focus)}</span>
         </div>
-        <span class="badge bg-danger px-3 py-1">Coach Curated</span>
+        <span class="badge bg-danger px-3 py-1">Coach Protocol</span>
       </div>
 
       <div class="d-flex flex-column gap-2 mb-3">
@@ -545,8 +541,8 @@ function initWorkoutSplitAndTimer() {
         `).join('')}
       </div>
 
-      <a href="https://wa.me/919555514847?text=${encodeURIComponent('Hi Shivansh! I want form check feedback for the ' + data.title + ' routine.')}" target="_blank" class="btn btn-sm btn-outline-success text-white border-success w-100">
-        <i class="fab fa-whatsapp text-success me-1"></i> Get Form Check Review on WhatsApp (+91 9555514847)
+      <a href="https://wa.me/919555514847?text=${encodeURIComponent('Hi Shivansh! I would like form check feedback for the ' + data.title + ' routine.')}" target="_blank" class="btn btn-sm btn-outline-success text-white border-success w-100">
+        <i class="fab fa-whatsapp text-success me-1"></i> Get Form Feedback on WhatsApp (+91 9555514847)
       </a>
     `;
   }
@@ -561,7 +557,7 @@ function initWorkoutSplitAndTimer() {
 
   renderRoutine('push');
 
-  // Rest Timer Engine
+  // Rest Timer
   let timerInterval = null;
   let totalTime = 60;
   let timeLeft = 60;
@@ -591,8 +587,8 @@ function initWorkoutSplitAndTimer() {
       const gain = audioCtx.createGain();
 
       osc.type = 'triangle';
-      osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
-      osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.15); // A5
+      osc.frequency.setValueAtTime(587.33, audioCtx.currentTime);
+      osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.15);
 
       gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.8);
@@ -623,7 +619,7 @@ function initWorkoutSplitAndTimer() {
             clearInterval(timerInterval);
             isRunning = false;
             playChime();
-            showToastNotification('Rest complete! Time for your next working set!');
+            showToastNotification('Rest interval complete! Time for your next set.');
             startBtn.innerHTML = '<i class="fas fa-play me-1"></i> Start Rest';
             timeLeft = totalTime;
             updateTimerCircle();
@@ -718,9 +714,7 @@ function initWebAudioClickSound() {
 
       osc.start();
       osc.stop(audioCtx.currentTime + 0.05);
-    } catch (e) {
-      // Audio not permitted
-    }
+    } catch (e) {}
   }
 
   document.querySelectorAll('.btn-primary-custom, .btn-secondary-custom, .trigger-checkout-btn, .quick-chip, .ai-assistant-toggle-btn').forEach(btn => {
@@ -731,13 +725,13 @@ function initWebAudioClickSound() {
     soundToggleBtn.addEventListener('click', () => {
       soundEnabled = !soundEnabled;
       soundToggleBtn.innerHTML = soundEnabled ? '<i class="fas fa-volume-up"></i> Sound: ON' : '<i class="fas fa-volume-mute"></i> Sound: OFF';
-      showToastNotification(soundEnabled ? 'Tactile sound effects enabled.' : 'Sound effects muted.');
+      showToastNotification(soundEnabled ? 'Sound effects enabled.' : 'Sound effects muted.');
     });
   }
 }
 
 /* ==========================================================================
-   9. AI FITNESS CHAT ASSISTANT (ENGLISH & HINGLISH)
+   9. AI FITNESS FAQ ASSISTANT (ENGLISH & HINGLISH)
    ========================================================================== */
 function initAIFitnessChatAssistant() {
   const toggleBtn = document.getElementById('aiAssistantToggleBtn');
@@ -811,7 +805,7 @@ function initAIFitnessChatAssistant() {
     const indicator = document.createElement('div');
     indicator.id = id;
     indicator.className = 'chat-bubble chat-bubble-bot text-white-50';
-    indicator.innerHTML = '<i class="fas fa-circle-notch fa-spin me-1"></i> Shivansh AI is typing...';
+    indicator.innerHTML = '<i class="fas fa-circle-notch fa-spin me-1"></i> Bot is typing...';
     chatBody.appendChild(indicator);
     chatBody.scrollTop = chatBody.scrollHeight;
     return id;
@@ -827,246 +821,195 @@ function generateAIResponse(input) {
   const lower = input.toLowerCase();
 
   if (lower.includes('diet') || lower.includes('khana') || lower.includes('protein') || lower.includes('paneer') || lower.includes('eggs')) {
-    return "Bhai, desi Indian diet me protein aur clean calories balance karna easy hai! \n\n" +
-           "**Best Sources:**\n" +
+    return "Desi Indian diet me protein manage karna simple hai! \n\n" +
+           "**Main Sources:**\n" +
            "• 200g Low-fat Paneer / Tofu (35g protein)\n" +
            "• 50g Soya Chunks (26g protein)\n" +
            "• 4-5 Boiled Eggs (agar eggetarian hain)\n" +
            "• 1 Scoop Whey Protein in water (24g protein)\n" +
            "• Dal, Dahi, aur 2-3 Roti normal ghar ka khana!\n\n" +
-           "Aap hamara 'Desi Meal Planner' tool try karein directly page par!";
+           "Aap hamara 'Desi Meal Planner' tool try karein!";
   }
 
   if (lower.includes('fat') || lower.includes('pet') || lower.includes('weight loss') || lower.includes('motapa') || lower.includes('lose')) {
-    return "Pet ka fat (belly fat) kam karne ke liye spot reduction possible nahi hoti. Simple aur proven rule:\n\n" +
-           "1. **Caloric Deficit:** Maintenance se 350-400 calories kam khayein.\n" +
-           "2. **Daily Steps:** 8,000 to 10,000 steps roz chaliye.\n" +
-           "3. **Heavy Strength Training:** 4 din gym me lifting karein taaki muscle retain ho.\n\n" +
-           "Aap 'Programs' section me 'Desi Shred' protocol dekhiye!";
+    return "Fat loss ke liye spot reduction possible nahi hoti. Core principles:\n\n" +
+           "1. **Moderate Caloric Deficit:** Maintenance se 350-400 calories kam khayein.\n" +
+           "2. **Daily Steps:** 8,000 to 10,000 steps daily.\n" +
+           "3. **Progressive Strength Training:** 4 din gym me lifting karein muscle retain karne ke liye.\n\n" +
+           "Aap 'Programs' section me 'Fat Loss Protocol' dekh sakte hain!";
   }
 
   if (lower.includes('fee') || lower.includes('price') || lower.includes('paisa') || lower.includes('kitna') || lower.includes('upi') || lower.includes('cost')) {
-    return "Hamare 3 standard plans hain with 14-day Money-back guarantee:\n\n" +
+    return "Hamare 3 standard coaching tiers hain with 14-day Money-back guarantee:\n\n" +
            "• **Standard Iron:** ₹2,900 / month ($35)\n" +
-           "• **All-Access Pro:** ₹5,700 / month ($69) [Most Popular]\n" +
+           "• **All-Access Pro:** ₹5,700 / month ($69)\n" +
            "• **Shivansh Elite 1-on-1:** ₹8,700 / month ($105)\n\n" +
            "Official UPI ID: **9555514847@ptyes**! Payment section me QR code scan kar sakte hain.";
   }
 
-  if (lower.includes('free') || lower.includes('session') || lower.includes('trial') || lower.includes('book') || lower.includes('slot')) {
-    return "Haan bilkul! Aap 1-Day VIP Trial Pass free me claim kar sakte hain. Page par **'Book a Free Session'** button dabayein, apna valid Indian mobile number aur Date of Birth bhariye. Pass seedha WhatsApp aur email par confirm ho jayega!";
+  if (lower.includes('free') || lower.includes('session') || lower.includes('consult') || lower.includes('book') || lower.includes('slot')) {
+    return "Aap 1-on-1 Free Consultation book kar sakte hain. Page par **'Book Free Consultation'** button dabayein aur apna name & WhatsApp number fill karein!";
   }
 
-  if (lower.includes('program') || lower.includes('routine') || lower.includes('syllabus') || lower.includes('course')) {
-    return "Hamare 4 comprehensive programs hain:\n" +
+  if (lower.includes('program') || lower.includes('routine') || lower.includes('syllabus')) {
+    return "Hamare 4 comprehensive coaching programs hain:\n" +
            "1. 1-on-1 Bespoke Body Recomposition (16 Weeks)\n" +
-           "2. Desi Shred & Fat Loss Protocol (12 Weeks)\n" +
-           "3. Heavy Iron Powerlifting (Squat, Bench, Deadlift)\n" +
-           "4. Desk Worker Mobility & Posture Rehab\n\n" +
-           "Page par 'Programs' tab me jakar 'View Routine & Syllabus' button dabayein!";
+           "2. Sustainable Fat Loss & Conditioning (12 Weeks)\n" +
+           "3. Strength & Powerlifting Fundamentals\n" +
+           "4. Desk Worker Posture & Mobility Protocol\n\n" +
+           "'Programs' section me 'View Routine & Syllabus' par click karke poora syllabus inspect kar sakte hain!";
   }
 
-  if (lower.includes('shivansh') || lower.includes('coach') || lower.includes('contact') || lower.includes('number') || lower.includes('phone') || lower.includes('whatsapp')) {
-    return "Aap Coach Shivansh se directly WhatsApp ya phone par connect kar sakte hain:\n\n" +
+  if (lower.includes('shivansh') || lower.includes('coach') || lower.includes('contact') || lower.includes('phone') || lower.includes('whatsapp')) {
+    return "Coach Shivansh contact channels:\n\n" +
            "📞 **Direct Phone:** +91 9555514847\n" +
-           "💬 **WhatsApp:** Click the WhatsApp link or message on +91 9555514847\n" +
+           "💬 **WhatsApp:** Click the WhatsApp button or message on +91 9555514847\n" +
            "📧 **Email:** shivansh983965@gmail.com";
   }
 
-  return "Namaste! Main Coach Shivansh ka AI Fitness Assistant hoon. Aap mujhse diet tips, workout schedule, membership fees, ya personal training ke baare me kuch bhi pooch sakte hain (in English or Hinglish)!";
+  return "Namaste! Main Shivansh Fitness ka automated FAQ assistant hoon. Aap mujhse training programs, Indian diet outlines, pricing, ya free consultation booking ke baare me pooch sakte hain!";
 }
 
 /* ==========================================================================
-   10. STRICT INDIAN FORM VALIDATION
+   10. SECURE FORM HANDLING & CONSULTATION SUBMISSIONS
    ========================================================================== */
-function initStrictIndianFormValidation() {
-  const trialForm = document.getElementById('freeTrialForm');
-  if (!trialForm) return;
+function initConsultationAndContactForms() {
+  const consultForm = document.getElementById('freeConsultationForm');
+  const contactForm = document.getElementById('contactForm');
 
-  const nameInput = document.getElementById('trialName');
-  const emailInput = document.getElementById('trialEmail');
-  const phoneInput = document.getElementById('trialPhone');
-  const dobInput = document.getElementById('trialDOB');
-  const visitDateInput = document.getElementById('trialDate');
-  const termsCheckbox = document.getElementById('termsConsent');
-  const healthCheckbox = document.getElementById('healthConsent');
-
-  if (dobInput) {
-    const today = new Date();
-    const maxDate = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate()).toISOString().split('T')[0];
-    const minDate = new Date(today.getFullYear() - 75, today.getMonth(), today.getDate()).toISOString().split('T')[0];
-    dobInput.setAttribute('max', maxDate);
-    dobInput.setAttribute('min', minDate);
-  }
-
-  if (visitDateInput) {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const maxVisit = new Date();
-    maxVisit.setDate(maxVisit.getDate() + 30);
-    visitDateInput.setAttribute('min', tomorrow.toISOString().split('T')[0]);
-    visitDateInput.setAttribute('max', maxVisit.toISOString().split('T')[0]);
-  }
-
-  function validateName() {
-    const val = nameInput.value.trim();
-    const regex = /^[A-Za-z]{2,}(\s+[A-Za-z]{2,})+$/;
-    const errEl = document.getElementById('nameError');
-    if (!regex.test(val)) {
-      nameInput.classList.add('is-invalid');
-      nameInput.classList.remove('is-valid');
-      if (errEl) errEl.textContent = 'Please enter your real full name (first & last name, letters only).';
-      return false;
-    } else {
-      nameInput.classList.remove('is-invalid');
-      nameInput.classList.add('is-valid');
-      return true;
-    }
-  }
-
-  function validateEmail() {
-    const val = emailInput.value.trim().toLowerCase();
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const errEl = document.getElementById('emailError');
-    const dummyDomains = ['test.com', 'example.com', 'fake.com', 'asdf.com', 'sample.com'];
-    const domain = val.split('@')[1] || '';
-
-    if (!regex.test(val) || dummyDomains.includes(domain) || val.length < 6) {
-      emailInput.classList.add('is-invalid');
-      emailInput.classList.remove('is-valid');
-      if (errEl) errEl.textContent = 'Please enter a genuine email address (e.g. name@gmail.com).';
-      return false;
-    } else {
-      emailInput.classList.remove('is-invalid');
-      emailInput.classList.add('is-valid');
-      return true;
-    }
-  }
-
-  function validateIndianPhone() {
-    let val = phoneInput.value.trim().replace(/[\s\-\(\)]/g, '');
+  function validateIndianMobile(raw) {
+    let val = raw.trim().replace(/[\s\-\(\)]/g, '');
     if (val.startsWith('+91')) val = val.substring(3);
     else if (val.startsWith('91') && val.length === 12) val = val.substring(2);
     else if (val.startsWith('0') && val.length === 11) val = val.substring(1);
-
-    const regex = /^[6789]\d{9}$/;
-    const errEl = document.getElementById('phoneError');
-
-    if (!regex.test(val)) {
-      phoneInput.classList.add('is-invalid');
-      phoneInput.classList.remove('is-valid');
-      if (errEl) errEl.textContent = 'Enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9 (e.g. 9555514847).';
-      return false;
-    } else {
-      phoneInput.classList.remove('is-invalid');
-      phoneInput.classList.add('is-valid');
-      phoneInput.value = '+91 ' + val;
-      return true;
-    }
+    return /^[6789]\d{9}$/.test(val) ? '+91 ' + val : false;
   }
 
-  function validateDOB() {
-    const val = dobInput.value;
-    const errEl = document.getElementById('dobError');
-    if (!val) {
-      dobInput.classList.add('is-invalid');
-      dobInput.classList.remove('is-valid');
-      if (errEl) errEl.textContent = 'Date of birth is required for PAR-Q safety.';
-      return false;
-    }
-
-    const birthDate = new Date(val);
-    const today = new Date();
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-
-    if (age < 16) {
-      dobInput.classList.add('is-invalid');
-      dobInput.classList.remove('is-valid');
-      if (errEl) errEl.textContent = 'Athletes must be at least 16 years of age to enroll in resistance training.';
-      return false;
-    } else if (age > 75) {
-      dobInput.classList.add('is-invalid');
-      dobInput.classList.remove('is-valid');
-      if (errEl) errEl.textContent = 'Please enter a valid date of birth (maximum 75 years).';
-      return false;
-    } else {
-      dobInput.classList.remove('is-invalid');
-      dobInput.classList.add('is-valid');
-      return true;
-    }
+  function validateEmailFormat(raw) {
+    const val = raw.trim().toLowerCase();
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const dummyDomains = ['test.com', 'example.com', 'fake.com', 'asdf.com'];
+    const domain = val.split('@')[1] || '';
+    return regex.test(val) && !dummyDomains.includes(domain) && val.length >= 6;
   }
 
-  function validateVisitDate() {
-    const val = visitDateInput.value;
-    const errEl = document.getElementById('visitDateError');
-    if (!val) {
-      visitDateInput.classList.add('is-invalid');
-      visitDateInput.classList.remove('is-valid');
-      if (errEl) errEl.textContent = 'Please select a visit date.';
-      return false;
-    }
+  if (consultForm) {
+    consultForm.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    const selected = new Date(val);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+      const name = document.getElementById('consultName')?.value.trim();
+      const email = document.getElementById('consultEmail')?.value.trim();
+      const rawPhone = document.getElementById('consultPhone')?.value.trim();
+      const goal = document.getElementById('consultGoal')?.value || 'Fitness';
+      const consent = document.getElementById('consultConsent')?.checked;
 
-    if (selected <= today) {
-      visitDateInput.classList.add('is-invalid');
-      visitDateInput.classList.remove('is-valid');
-      if (errEl) errEl.textContent = 'Visit date must be from tomorrow onward.';
-      return false;
-    } else {
-      visitDateInput.classList.remove('is-invalid');
-      visitDateInput.classList.add('is-valid');
-      return true;
-    }
+      const nameErr = document.getElementById('consultNameError');
+      const emailErr = document.getElementById('consultEmailError');
+      const phoneErr = document.getElementById('consultPhoneError');
+      const submitBtn = document.getElementById('btnSubmitConsultation');
+
+      let isValid = true;
+
+      if (!name || name.length < 2) {
+        if (nameErr) nameErr.style.display = 'block';
+        isValid = false;
+      } else if (nameErr) nameErr.style.display = 'none';
+
+      if (!validateEmailFormat(email)) {
+        if (emailErr) emailErr.style.display = 'block';
+        isValid = false;
+      } else if (emailErr) emailErr.style.display = 'none';
+
+      const validPhone = validateIndianMobile(rawPhone);
+      if (!validPhone) {
+        if (phoneErr) phoneErr.style.display = 'block';
+        isValid = false;
+      } else if (phoneErr) phoneErr.style.display = 'none';
+
+      if (!consent) {
+        alert('Please accept the Physical Readiness & Privacy Policy consent.');
+        return;
+      }
+
+      if (!isValid) return;
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i> Submitting...';
+      }
+
+      setTimeout(() => {
+        const modal = bootstrap.Modal.getInstance(document.getElementById('consultationModal'));
+        if (modal) modal.hide();
+
+        const waText = encodeURIComponent(`Hi Shivansh! I would like to book a Free Fitness Consultation.\n\nName: ${name}\nEmail: ${email}\nPhone: ${validPhone}\nGoal: ${goal}`);
+        
+        showToastNotification(`Thank you, ${name}! Your consultation request is prepared.`);
+
+        // Direct WhatsApp redirection for immediate consultation confirmation
+        window.open(`https://wa.me/919555514847?text=${waText}`, '_blank');
+
+        consultForm.reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Submit Consultation Request';
+        }
+      }, 700);
+    });
   }
 
-  if (nameInput) nameInput.addEventListener('blur', validateName);
-  if (emailInput) emailInput.addEventListener('blur', validateEmail);
-  if (phoneInput) phoneInput.addEventListener('blur', validateIndianPhone);
-  if (dobInput) dobInput.addEventListener('change', validateDOB);
-  if (visitDateInput) visitDateInput.addEventListener('change', validateVisitDate);
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-  trialForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+      const name = document.getElementById('contactFullName')?.value.trim();
+      const email = document.getElementById('contactEmail')?.value.trim();
+      const rawPhone = document.getElementById('contactPhone')?.value.trim();
+      const topic = document.getElementById('contactTopic')?.value || 'Coaching';
+      const message = document.getElementById('contactMessage')?.value.trim();
+      const consent = document.getElementById('contactConsent')?.checked;
+      const submitBtn = document.getElementById('btnSubmitContact');
 
-    const isNameValid = validateName();
-    const isEmailValid = validateEmail();
-    const isPhoneValid = validateIndianPhone();
-    const isDobValid = validateDOB();
-    const isDateValid = validateVisitDate();
+      if (!name || !email || !message) {
+        alert('Please fill out all required fields.');
+        return;
+      }
 
-    if (!termsCheckbox.checked || !healthCheckbox.checked) {
-      alert('Please check both the PAR-Q Health Clearance and Terms & Conditions checkboxes to proceed.');
-      return;
-    }
+      if (!validateEmailFormat(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
 
-    if (!isNameValid || !isEmailValid || !isPhoneValid || !isDobValid || !isDateValid) {
-      showToastNotification('Please correct the highlighted fields with genuine Indian details before submitting.');
-      return;
-    }
+      const validPhone = validateIndianMobile(rawPhone) || rawPhone;
 
-    const name = nameInput.value.trim();
-    const passCode = 'SHIV-PASS-' + Math.floor(100000 + Math.random() * 900000);
+      if (!consent) {
+        alert('Please agree to the privacy consent.');
+        return;
+      }
 
-    const modal = bootstrap.Modal.getInstance(document.getElementById('trialPassModal'));
-    if (modal) modal.hide();
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i> Sending...';
+      }
 
-    showToastNotification(`Namaste ${name}! VIP Pass (${passCode}) issued. Confirmation sent to your WhatsApp (+91 9555514847).`);
+      setTimeout(() => {
+        const waText = encodeURIComponent(`Hi Shivansh! Inquiry from website:\n\nName: ${name}\nEmail: ${email}\nPhone: ${validPhone}\nTopic: ${topic}\nMessage: ${message}`);
+        
+        showToastNotification(`Inquiry sent! Opening WhatsApp to connect directly.`);
+        window.open(`https://wa.me/919555514847?text=${waText}`, '_blank');
 
-    trialForm.reset();
-    trialForm.querySelectorAll('.is-valid').forEach(el => el.classList.remove('is-valid'));
-    initClearButtons();
-  });
+        contactForm.reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-paper-plane me-1"></i> Send Inquiry';
+        }
+      }, 700);
+    });
+  }
 }
 
 /* ==========================================================================
-   11. REAL BODY RECOMPOSITION SLIDER (INDIAN TRANSFORMATION)
+   11. REAL TRANSFORMATION SLIDER
    ========================================================================== */
 function initTransformationSlider() {
   const container = document.getElementById('transformationSlider');
@@ -1194,7 +1137,7 @@ function init3DCardTilt() {
 }
 
 /* ==========================================================================
-   14. PAYMENT GATEWAY (UPI: 9555514847@ptyes & QR CODE)
+   14. PAYMENT GATEWAY (UPI: 9555514847@ptyes & SECURE ARCHITECTURE)
    ========================================================================== */
 let activePlanData = {
   name: 'All-Access Pro Tier',
@@ -1226,71 +1169,6 @@ function initPaymentGateway() {
     });
   });
 
-  const tabs = document.querySelectorAll('.payment-tab-btn');
-  const contents = document.querySelectorAll('.payment-tab-content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      contents.forEach(c => c.classList.add('d-none'));
-
-      tab.classList.add('active');
-      const targetId = tab.getAttribute('data-target');
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) targetContent.classList.remove('d-none');
-    });
-  });
-
-  const cardInput = document.getElementById('payCardNumber');
-  const previewNumber = document.getElementById('previewCardNumber');
-  if (cardInput && previewNumber) {
-    cardInput.addEventListener('input', (e) => {
-      let v = e.target.value.replace(/\D/g, '').substring(0, 16);
-      let formatted = v.match(/.{1,4}/g)?.join(' ') || '';
-      e.target.value = formatted;
-      previewNumber.textContent = formatted || '•••• •••• •••• ••••';
-    });
-  }
-
-  const expInput = document.getElementById('payCardExpiry');
-  const previewExpiry = document.getElementById('previewCardExpiry');
-  if (expInput && previewExpiry) {
-    expInput.addEventListener('input', (e) => {
-      let v = e.target.value.replace(/\D/g, '').substring(0, 4);
-      if (v.length >= 2) v = v.substring(0, 2) + '/' + v.substring(2);
-      e.target.value = v;
-      previewExpiry.textContent = v || 'MM/YY';
-    });
-  }
-
-  const nameInput = document.getElementById('payCardName');
-  const previewName = document.getElementById('previewCardName');
-  if (nameInput && previewName) {
-    nameInput.addEventListener('input', (e) => {
-      previewName.textContent = e.target.value.toUpperCase() || 'YOUR NAME';
-    });
-  }
-
-  const cardForm = document.getElementById('simulatedCardPaymentForm');
-  if (cardForm) {
-    cardForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      processSimulatedTransaction('Card Payment (Stripe / Razorpay)');
-    });
-  }
-
-  const upiVerifyBtn = document.getElementById('btnVerifyUpiPayment');
-  if (upiVerifyBtn) {
-    upiVerifyBtn.addEventListener('click', () => {
-      const utr = document.getElementById('upiTransactionId')?.value;
-      if (!utr || utr.trim().length < 6) {
-        alert('Please enter your 12-digit UPI / UTR Reference number to verify payment.');
-        return;
-      }
-      processSimulatedTransaction(`UPI Transfer (Ref: ${utr})`);
-    });
-  }
-
   const copyUpiBtn = document.getElementById('btnCopyUpiId');
   if (copyUpiBtn) {
     copyUpiBtn.addEventListener('click', () => {
@@ -1306,6 +1184,7 @@ function updateCheckoutPriceDisplay() {
   const planAmountDisplay = document.getElementById('checkoutPlanAmount');
   const qrAmountDisplay = document.getElementById('upiQRAmount');
   const upiLinkDisplay = document.getElementById('directUpiPayLink');
+  const waEnrollLink = document.getElementById('btnWhatsAppEnrollment');
 
   const isINR = window.currentCurrency === 'INR';
   const priceString = isINR ? `₹${activePlanData.inrPrice.toLocaleString()}` : `$${activePlanData.usdPrice}`;
@@ -1317,26 +1196,10 @@ function updateCheckoutPriceDisplay() {
   if (upiLinkDisplay) {
     upiLinkDisplay.href = `upi://pay?pa=9555514847@ptyes&pn=Shivansh%20Fitness&am=${activePlanData.inrPrice}&cu=INR&tn=${encodeURIComponent(activePlanData.name)}`;
   }
-}
 
-function processSimulatedTransaction(method) {
-  const modalEl = document.getElementById('paymentCheckoutModal');
-  const bModal = bootstrap.Modal.getInstance(modalEl);
-  if (bModal) bModal.hide();
-
-  const receiptId = 'SHIV-TXN-' + Math.floor(100000 + Math.random() * 900000);
-  const dateStr = new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
-
-  document.getElementById('receiptTxnId').textContent = receiptId;
-  document.getElementById('receiptPlanName').textContent = activePlanData.name;
-  document.getElementById('receiptMethod').textContent = method;
-  document.getElementById('receiptDate').textContent = dateStr;
-  document.getElementById('receiptTotal').textContent = window.currentCurrency === 'INR' ? `₹${activePlanData.inrPrice.toLocaleString()}` : `$${activePlanData.usdPrice}`;
-
-  const receiptModal = bootstrap.Modal.getOrCreateInstance(document.getElementById('paymentReceiptModal'));
-  receiptModal.show();
-
-  showToastNotification('Payment confirmed! Digital pass and tax receipt generated.');
+  if (waEnrollLink) {
+    waEnrollLink.href = `https://wa.me/919555514847?text=${encodeURIComponent('Hi Shivansh! I am enrolling in the ' + activePlanData.name + ' (' + priceString + ') coaching program via UPI (9555514847@ptyes).')}`;
+  }
 }
 
 /* ==========================================================================
@@ -1411,10 +1274,8 @@ function initMembershipPricingToggle() {
    ========================================================================== */
 function initCookieConsent() {
   const banner = document.getElementById('cookieConsentBanner');
-  const modal = document.getElementById('cookieModal');
   const acceptAllBtn = document.getElementById('acceptAllCookies');
   const rejectOptionalBtn = document.getElementById('rejectOptionalCookies');
-  const savePreferencesBtn = document.getElementById('saveCookiePreferences');
   const openPrefBtns = document.querySelectorAll('.open-cookie-preferences');
 
   const STORAGE_KEY = 'shivansh_fitness_cookie_consent_v3';
@@ -1432,34 +1293,20 @@ function initCookieConsent() {
 
   if (acceptAllBtn) {
     acceptAllBtn.addEventListener('click', () => {
-      setConsent({ necessary: true, functional: true, analytics: true, marketing: true });
+      setConsent({ necessary: true, functional: true, analytics: true });
     });
   }
 
   if (rejectOptionalBtn) {
     rejectOptionalBtn.addEventListener('click', () => {
-      setConsent({ necessary: true, functional: false, analytics: false, marketing: false });
-    });
-  }
-
-  if (savePreferencesBtn) {
-    savePreferencesBtn.addEventListener('click', () => {
-      const functional = document.getElementById('cookieFunctional')?.checked || false;
-      const analytics = document.getElementById('cookieAnalytics')?.checked || false;
-      const marketing = document.getElementById('cookieMarketing')?.checked || false;
-      setConsent({ necessary: true, functional, analytics, marketing });
-      const bootstrapModal = bootstrap.Modal.getInstance(modal);
-      if (bootstrapModal) bootstrapModal.hide();
+      setConsent({ necessary: true, functional: false, analytics: false });
     });
   }
 
   openPrefBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      if (modal) {
-        const bModal = bootstrap.Modal.getOrCreateInstance(modal);
-        bModal.show();
-      }
+      if (banner) banner.style.display = 'block';
     });
   });
 }
@@ -1496,43 +1343,6 @@ function initClearButtons() {
   });
 }
 
-function initSearchFilter() {
-  const searchInput = document.getElementById('globalSearchInput');
-  const searchResults = document.getElementById('searchResultsContainer');
-  if (!searchInput || !searchResults) return;
-
-  const items = [
-    { title: 'Training Programs & Routines', desc: 'Inspect full 12-16 week syllabus for Fat Loss, Hypertrophy, & Powerlifting.', link: '#programs' },
-    { title: '1-Rep Max (1RM) Calculator', desc: 'Compute your Squat, Bench, and Deadlift training percentages.', link: '#one-rep-max' },
-    { title: 'Desi Indian Meal Planner', desc: 'Personalized meal schedule with paneer, dal, eggs, and soya.', link: '#meal-planner' },
-    { title: 'BMI & Caloric TDEE Engine', desc: 'Metabolic assessment tool with daily macronutrient breakdown.', link: '#bmi-calculator' },
-    { title: 'Workout Routines & Rest Timer', desc: 'Push, Pull, Legs splits with interactive rest interval timer.', link: '#workout-split' },
-    { title: 'Real Body Recomposition Results', desc: 'Before/after transformation records with authentic metric logs.', link: '#transformation' },
-    { title: 'UPI Payment & QR Code', desc: 'Instant UPI ID: 9555514847@ptyes with scan & pay QR.', link: '#pricing' },
-    { title: 'Hinglish & English AI Assistant', desc: 'Chat with our AI bot for quick diet & workout answers.', link: '#' }
-  ];
-
-  searchInput.addEventListener('input', (e) => {
-    const q = e.target.value.toLowerCase().trim();
-    if (!q) {
-      searchResults.innerHTML = '<p class="text-white-50 text-center py-4">Type a keyword to search.</p>';
-      return;
-    }
-    const matches = items.filter(it => it.title.toLowerCase().includes(q) || it.desc.toLowerCase().includes(q));
-    if (matches.length === 0) {
-      searchResults.innerHTML = `<div class="p-3 text-center text-white-50">No results found for "${escapeHtml(q)}".</div>`;
-    } else {
-      searchResults.innerHTML = matches.map(it => `
-        <div class="p-3 mb-2 bg-dark rounded border border-secondary">
-          <h6 class="text-white mb-1">${escapeHtml(it.title)}</h6>
-          <p class="text-white-50 small mb-1">${escapeHtml(it.desc)}</p>
-          <a href="${it.link}" class="btn btn-sm btn-outline-danger" data-bs-dismiss="modal">Open Section</a>
-        </div>
-      `).join('');
-    }
-  });
-}
-
 function initBackToTop() {
   const btn = document.getElementById('backToTopBtn');
   if (!btn) return;
@@ -1553,7 +1363,7 @@ function showToastNotification(message) {
     toast.style.position = 'fixed';
     toast.style.bottom = '30px';
     toast.style.right = '30px';
-    toast.style.backgroundColor = '#121620';
+    toast.style.backgroundColor = '#10141e';
     toast.style.color = '#ffffff';
     toast.style.border = '2px solid #e61e2a';
     toast.style.padding = '14px 24px';

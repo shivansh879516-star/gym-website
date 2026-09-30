@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+
+Sitemap: https://shivansh879516-star.github.io/gym-website/sitemap.xml
