@@ -1433,8 +1433,145 @@ h1, h2, h3, h4, h5, h6, .brand-font {
   box-shadow: 0 4px 15px var(--primary-glow);
 }
 
+/* ==========================================================================
+   MOBILE APP DOCK & DAILY FITNESS DASHBOARD STYLES
+   ========================================================================== */
+
+/* Native Mobile Bottom Navigation Dock */
+.mobile-app-bottom-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+  background: rgba(8, 11, 17, 0.96);
+  border-top: 1px solid var(--primary-border);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.95), 0 0 15px rgba(230, 30, 42, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1040;
+  padding: 4px 6px calc(4px + env(safe-area-inset-bottom, 0px));
+}
+
+.app-dock-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 4px 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 8px;
+}
+
+.app-dock-tab .dock-icon-wrapper {
+  font-size: 1.15rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 2px;
+  transition: all 0.2s ease;
+}
+
+.app-dock-tab:hover,
+.app-dock-tab.active {
+  color: #ffffff;
+}
+
+.app-dock-tab.active .dock-icon-wrapper {
+  color: #ffffff;
+  background: var(--primary);
+  box-shadow: 0 0 14px var(--primary-glow);
+  transform: translateY(-2px);
+}
+
+.app-dock-tab.active span {
+  color: var(--primary-hover);
+  font-weight: 700;
+}
+
+.app-dock-tab-coach .dock-icon-wrapper {
+  background: var(--whatsapp-green) !important;
+  box-shadow: 0 0 12px var(--whatsapp-glow);
+}
+
+/* In-App Daily Dashboard */
+.app-dashboard-section {
+  position: relative;
+  z-index: 2;
+}
+
+.app-dashboard-card {
+  background: linear-gradient(135deg, rgba(16, 22, 32, 0.98) 0%, rgba(10, 14, 22, 0.98) 100%);
+  border: 1px solid var(--primary-border);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(230, 30, 42, 0.2);
+}
+
+.app-user-avatar {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #141b27;
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.app-online-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #25d366;
+  border: 2px solid #080b11;
+}
+
+.habit-widget-card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.habit-widget-card:hover {
+  border-color: var(--primary-border) !important;
+  transform: translateY(-2px);
+}
+
+.habit-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.timer-quick-preset.active {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+
 /* Responsive */
 @media (max-width: 991.98px) {
+  body {
+    padding-bottom: 74px; /* Space for the native bottom dock */
+  }
   .hero-mockup-section { padding: 40px 0 60px; text-align: center; }
   .hero-content-col { margin-bottom: 50px; }
   .hero-lead-text { margin-left: auto; margin-right: auto; }
@@ -1442,6 +1579,15 @@ h1, h2, h3, h4, h5, h6, .brand-font {
   .stat-card-two { right: 0; bottom: -50px; }
   .transformation-slider-container { height: 350px; }
   .slider-img-after { width: 100%; }
+  
+  .back-to-top-btn {
+    bottom: 84px !important;
+    right: 16px !important;
+  }
+  .ai-assistant-toggle-btn {
+    bottom: 84px !important;
+    left: 16px !important;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1456,12 +1602,12 @@ h1, h2, h3, h4, h5, h6, .brand-font {
   .ai-chat-drawer {
     left: 10px;
     right: 10px;
-    bottom: 80px;
+    bottom: 90px;
     width: auto;
-    height: 490px;
+    height: 480px;
   }
   .pwa-floating-banner {
-    bottom: 12px;
+    bottom: 78px;
     left: 12px;
     right: 12px;
   }

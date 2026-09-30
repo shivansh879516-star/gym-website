@@ -31,8 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initReviewFilters();
   initWebAudioClickSound();
   
-  // Progressive Web App (PWA) Engine
+  // Progressive Web App (PWA) & Mobile App Shell
   initPWAInstallation();
+  initDailyAppDashboard();
+  initMobileAppDock();
 });
 
 /* ==========================================================================
@@ -1475,4 +1477,233 @@ function initPWAInstallation() {
     showToastNotification('🚀 Shivansh Fitness App installed to your device!');
   });
 }
+
+/* ==========================================================================
+   DAILY IN-APP FITNESS HABITS & WIDGET DASHBOARD
+   ========================================================================== */
+function initDailyAppDashboard() {
+  const todayStr = new Date().toISOString().slice(0, 10);
+  const savedDate = localStorage.getItem('sf_tracker_date');
+
+  if (savedDate !== todayStr) {
+    // New day: reset counters and save current date
+    localStorage.setItem('sf_tracker_date', todayStr);
+    localStorage.setItem('sf_daily_water', '0');
+    localStorage.setItem('sf_daily_steps', '0');
+  }
+
+  // --- 1. Water Tracker ---
+  let water = parseInt(localStorage.getItem('sf_daily_water') || '0', 10);
+  const waterMax = 3500;
+  const waterDisplay = document.getElementById('waterTrackerValue');
+  const waterBar = document.getElementById('waterProgressBar');
+  const btnWater250 = document.getElementById('btnAddWater250');
+  const btnWater500 = document.getElementById('btnAddWater500');
+
+  function updateWaterUI() {
+    if (waterDisplay) waterDisplay.textContent = `${water.toLocaleString()} / 3,500 ml`;
+    if (waterBar) {
+      const pct = Math.min(100, Math.round((water / waterMax) * 100));
+      waterBar.style.width = `${pct}%`;
+      waterBar.setAttribute('aria-valuenow', water);
+    }
+  }
+  updateWaterUI();
+
+  function addWater(amount) {
+    water = Math.min(waterMax + 1000, water + amount);
+    localStorage.setItem('sf_daily_water', water.toString());
+    updateWaterUI();
+    if (typeof playChimeSound === 'function') playChimeSound();
+    if (water >= waterMax && water - amount < waterMax) {
+      showToastNotification('💧 Outstanding! 3.5L Daily Hydration Target Achieved!');
+    }
+  }
+
+  if (btnWater250) btnWater250.addEventListener('click', () => addWater(250));
+  if (btnWater500) btnWater500.addEventListener('click', () => addWater(500));
+
+  // --- 2. Steps Tracker ---
+  let steps = parseInt(localStorage.getItem('sf_daily_steps') || '0', 10);
+  const stepsMax = 10000;
+  const stepsDisplay = document.getElementById('stepsTrackerValue');
+  const stepsBar = document.getElementById('stepsProgressBar');
+  const btnSteps1k = document.getElementById('btnAddSteps1k');
+  const btnSteps2k = document.getElementById('btnAddSteps2k');
+
+  function updateStepsUI() {
+    if (stepsDisplay) stepsDisplay.textContent = `${steps.toLocaleString()} / 10k Steps`;
+    if (stepsBar) {
+      const pct = Math.min(100, Math.round((steps / stepsMax) * 100));
+      stepsBar.style.width = `${pct}%`;
+      stepsBar.setAttribute('aria-valuenow', steps);
+    }
+  }
+  updateStepsUI();
+
+  function addSteps(amount) {
+    steps = Math.min(stepsMax + 10000, steps + amount);
+    localStorage.setItem('sf_daily_steps', steps.toString());
+    updateStepsUI();
+    if (typeof playChimeSound === 'function') playChimeSound();
+    if (steps >= stepsMax && steps - amount < stepsMax) {
+      showToastNotification('👟 10,000 Steps Reached! Fantastic Daily Energy Expenditure!');
+    }
+  }
+
+  if (btnSteps1k) btnSteps1k.addEventListener('click', () => addSteps(1000));
+  if (btnSteps2k) btnSteps2k.addEventListener('click', () => addSteps(2500));
+
+  // --- 3. Reset Habits ---
+  const btnReset = document.getElementById('btnResetDailyHabits');
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      water = 0;
+      steps = 0;
+      localStorage.setItem('sf_daily_water', '0');
+      localStorage.setItem('sf_daily_steps', '0');
+      updateWaterUI();
+      updateStepsUI();
+      showToastNotification('🔄 Daily fitness tracker counters have been reset.');
+    });
+  }
+
+  // --- 4. Gym Rest Interval Quick Timer ---
+  let timerDuration = 30;
+  let timerRemaining = 30;
+  let timerInterval = null;
+  let timerIsRunning = false;
+
+  const timerDisplay = document.getElementById('appWidgetTimerDisplay');
+  const timerStartBtn = document.getElementById('btnAppWidgetTimerStart');
+  const timerResetBtn = document.getElementById('btnAppWidgetTimerReset');
+  const timerPills = document.querySelectorAll('.timer-quick-preset');
+
+  function renderTimer() {
+    const mins = Math.floor(timerRemaining / 60);
+    const secs = timerRemaining % 60;
+    if (timerDisplay) {
+      timerDisplay.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+  }
+
+  timerPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      timerPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      timerDuration = parseInt(pill.getAttribute('data-sec'), 10);
+      clearInterval(timerInterval);
+      timerIsRunning = false;
+      timerRemaining = timerDuration;
+      if (timerStartBtn) timerStartBtn.innerHTML = '<i class="fas fa-play fa-xs"></i> Start Rest';
+      renderTimer();
+    });
+  });
+
+  if (timerStartBtn) {
+    timerStartBtn.addEventListener('click', () => {
+      if (timerIsRunning) {
+        // Pause
+        clearInterval(timerInterval);
+        timerIsRunning = false;
+        timerStartBtn.innerHTML = '<i class="fas fa-play fa-xs"></i> Resume Rest';
+      } else {
+        // Start
+        if (timerRemaining <= 0) timerRemaining = timerDuration;
+        timerIsRunning = true;
+        timerStartBtn.innerHTML = '<i class="fas fa-pause fa-xs"></i> Pause';
+
+        timerInterval = setInterval(() => {
+          timerRemaining--;
+          renderTimer();
+          if (timerRemaining <= 0) {
+            clearInterval(timerInterval);
+            timerIsRunning = false;
+            timerStartBtn.innerHTML = '<i class="fas fa-redo fa-xs"></i> Restart Rest';
+            if (typeof playChimeSound === 'function') playChimeSound();
+            if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
+            showToastNotification('🔔 Rest Interval Complete! Get ready for your next set!');
+          }
+        }, 1000);
+      }
+    });
+  }
+
+  if (timerResetBtn) {
+    timerResetBtn.addEventListener('click', () => {
+      clearInterval(timerInterval);
+      timerIsRunning = false;
+      timerRemaining = timerDuration;
+      if (timerStartBtn) timerStartBtn.innerHTML = '<i class="fas fa-play fa-xs"></i> Start Rest';
+      renderTimer();
+    });
+  }
+
+  // --- 5. Coach Motivation Quotes ---
+  const quotes = [
+    "\"Discipline is doing what needs to be done, even when you don't feel like doing it.\"",
+    "\"Ghar ka khana aur progressive overload: the real Indian muscle building secret!\"",
+    "\"Consistency beats intensity every single time. Show up today!\"",
+    "\"Muscles are forged in the gym, fed in the kitchen, and built while sleeping.\"",
+    "\"Don't count the days, make the daily workouts count!\"",
+    "\"Drink your water, hit your protein, and keep your form locked in!\""
+  ];
+  let quoteIndex = 0;
+  const quoteDisplay = document.getElementById('coachDailyQuote');
+  const btnNextQuote = document.getElementById('btnNextCoachQuote');
+
+  if (btnNextQuote && quoteDisplay) {
+    btnNextQuote.addEventListener('click', () => {
+      quoteIndex = (quoteIndex + 1) % quotes.length;
+      quoteDisplay.textContent = quotes[quoteIndex];
+      quoteDisplay.style.animation = 'fadeIn 0.3s ease';
+    });
+  }
+}
+
+/* ==========================================================================
+   MOBILE APP BOTTOM NAVIGATION DOCK ENGINE
+   ========================================================================== */
+function initMobileAppDock() {
+  const tabs = document.querySelectorAll('.mobile-app-bottom-dock .app-dock-tab');
+  if (!tabs.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      const targetHref = tab.getAttribute('href');
+      if (targetHref && targetHref.startsWith('#')) {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        if (typeof playChimeSound === 'function') playChimeSound();
+      }
+    });
+  });
+
+  // Highlight tab on scroll based on viewport
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY + 200;
+    const sections = [
+      { id: 'hero', tab: 'home' },
+      { id: 'daily-dashboard', tab: 'tracker' },
+      { id: 'workout-routines', tab: 'workouts' },
+      { id: 'nutrition-plans', tab: 'diet' },
+      { id: 'tools', tab: 'tools' }
+    ];
+
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const sec = document.getElementById(sections[i].id);
+      if (sec && sec.offsetTop <= scrollPos) {
+        tabs.forEach(t => {
+          if (t.getAttribute('data-app-nav') === sections[i].tab) {
+            t.classList.add('active');
+          } else if (t.getAttribute('data-app-nav') !== 'coach') {
+            t.classList.remove('active');
+          }
+        });
+        break;
+      }
+    }
+  }, { passive: true });
+}
+
 

@@ -210,15 +210,151 @@
       </div>
     </section>
 
-    <!-- Health Advisory Banner (PAR-Q) -->
-    <section class="py-3 bg-dark border-top border-bottom border-secondary">
+    <!-- ==========================================================================
+         DAILY IN-APP FITNESS & HABIT TRACKING DASHBOARD (APP EXCLUSIVE)
+         ========================================================================== -->
+    <section id="daily-dashboard" class="py-4 app-dashboard-section">
       <div class="container">
-        <div class="disclaimer-banner mb-0">
-          <div class="d-flex align-items-center gap-3">
-            <i class="fas fa-triangle-exclamation fa-2x text-warning flex-shrink-0" aria-hidden="true"></i>
-            <div>
-              <strong>Physical Readiness (PAR-Q) Notice:</strong> Strenuous resistance exercise involves physical exertion. Please ensure you are medically fit before starting. Consult a physician if you have pre-existing medical conditions.
+        <div class="app-dashboard-card p-3 p-md-4 rounded-4 border-danger-subtle shadow-luxury">
+          <!-- App Dashboard Header -->
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4 pb-3 border-bottom border-secondary">
+            <div class="d-flex align-items-center gap-3">
+              <div class="app-user-avatar">
+                <i class="fas fa-user-ninja text-danger"></i>
+                <span class="app-online-dot"></span>
+              </div>
+              <div>
+                <div class="d-flex align-items-center gap-2">
+                  <h3 class="h5 text-white mb-0 font-heading" style="font-size: 1.4rem; letter-spacing: 0.5px;">DAILY FITNESS DASHBOARD</h3>
+                  <span class="badge bg-danger rounded-pill" style="font-size: 0.68rem;">PRO APP</span>
+                </div>
+                <p class="text-white-50 small mb-0" id="appDailyGreeting">Welcome Athlete! Track your daily hydration, steps & workout rest intervals in real-time.</p>
+              </div>
             </div>
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge bg-dark border border-secondary text-warning py-2 px-3 d-inline-flex align-items-center gap-1">
+                <i class="fas fa-fire text-danger"></i> <span id="appDailyStreakText">Day 1 Streak</span>
+              </span>
+              <button type="button" id="btnResetDailyHabits" class="btn btn-sm btn-outline-secondary text-white-50 py-1 px-2" title="Reset Today's Counters">
+                <i class="fas fa-redo-alt"></i> Reset
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive Trackers Grid -->
+          <div class="row g-3 g-md-4">
+            <!-- 1. Smart Water / Hydration Tracker -->
+            <div class="col-lg-4 col-md-6">
+              <div class="habit-widget-card p-3 rounded-3 bg-darkest border border-secondary h-100 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="habit-icon-circle bg-info-subtle text-info">
+                        <i class="fas fa-tint"></i>
+                      </div>
+                      <div>
+                        <h4 class="h6 text-white mb-0">Daily Water Tracker</h4>
+                        <span class="text-white-50" style="font-size: 0.72rem;">Goal: 3,500 ml (8 Glasses)</span>
+                      </div>
+                    </div>
+                    <span class="fw-bold text-info" id="waterTrackerValue">0 / 3,500 ml</span>
+                  </div>
+                  <!-- Progress Bar -->
+                  <div class="progress bg-dark my-3" style="height: 10px; border-radius: 5px;">
+                    <div id="waterProgressBar" class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3500"></div>
+                  </div>
+                </div>
+                <!-- Action Buttons -->
+                <div class="d-flex gap-2 mt-2">
+                  <button type="button" class="btn btn-sm btn-outline-info flex-grow-1 py-1" id="btnAddWater250">
+                    <i class="fas fa-plus fa-xs"></i> 250ml Glass
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-info flex-grow-1 py-1" id="btnAddWater500">
+                    <i class="fas fa-plus fa-xs"></i> 500ml Bottle
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Daily Steps & Active Calories Tracker -->
+            <div class="col-lg-4 col-md-6">
+              <div class="habit-widget-card p-3 rounded-3 bg-darkest border border-secondary h-100 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="habit-icon-circle bg-success-subtle text-success">
+                        <i class="fas fa-shoe-prints"></i>
+                      </div>
+                      <div>
+                        <h4 class="h6 text-white mb-0">Daily Step Goal</h4>
+                        <span class="text-white-50" style="font-size: 0.72rem;">Goal: 10,000 Steps / Day</span>
+                      </div>
+                    </div>
+                    <span class="fw-bold text-success" id="stepsTrackerValue">0 / 10k Steps</span>
+                  </div>
+                  <!-- Progress Bar -->
+                  <div class="progress bg-dark my-3" style="height: 10px; border-radius: 5px;">
+                    <div id="stepsProgressBar" class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10000"></div>
+                  </div>
+                </div>
+                <!-- Action Buttons -->
+                <div class="d-flex gap-2 mt-2">
+                  <button type="button" class="btn btn-sm btn-outline-success flex-grow-1 py-1" id="btnAddSteps1k">
+                    <i class="fas fa-walking"></i> +1,000 Steps
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-success flex-grow-1 py-1" id="btnAddSteps2k">
+                    <i class="fas fa-running"></i> +2,500 Steps
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Gym Rest Interval Audio Timer Quick-Widget -->
+            <div class="col-lg-4 col-md-12">
+              <div class="habit-widget-card p-3 rounded-3 bg-darkest border border-secondary h-100 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="habit-icon-circle bg-danger-subtle text-danger">
+                        <i class="fas fa-stopwatch"></i>
+                      </div>
+                      <div>
+                        <h4 class="h6 text-white mb-0">Workout Rest Timer</h4>
+                        <span class="text-white-50" style="font-size: 0.72rem;">Audio chime on rest completion</span>
+                      </div>
+                    </div>
+                    <span class="fw-bold font-heading text-danger" id="appWidgetTimerDisplay" style="font-size: 1.5rem; letter-spacing: 1px;">01:00</span>
+                  </div>
+                  <!-- Timer Preset Selector Pills -->
+                  <div class="d-flex gap-1 justify-content-between my-2">
+                    <button type="button" class="btn btn-sm btn-dark border-secondary timer-quick-preset active py-0 px-2" data-sec="30">30s</button>
+                    <button type="button" class="btn btn-sm btn-dark border-secondary timer-quick-preset py-0 px-2" data-sec="60">60s</button>
+                    <button type="button" class="btn btn-sm btn-dark border-secondary timer-quick-preset py-0 px-2" data-sec="90">90s</button>
+                    <button type="button" class="btn btn-sm btn-dark border-secondary timer-quick-preset py-0 px-2" data-sec="120">120s</button>
+                  </div>
+                </div>
+                <!-- Timer Action Controls -->
+                <div class="d-flex gap-2 mt-2">
+                  <button type="button" class="btn btn-sm btn-primary-custom flex-grow-1 py-1" id="btnAppWidgetTimerStart">
+                    <i class="fas fa-play fa-xs"></i> Start Rest
+                  </button>
+                  <button type="button" class="btn btn-sm btn-secondary-custom py-1 px-3" id="btnAppWidgetTimerReset">
+                    <i class="fas fa-redo-alt fa-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coach Daily Motivation Banner -->
+          <div class="mt-3 p-2 px-3 rounded-3 bg-dark border border-secondary d-flex flex-wrap align-items-center justify-content-between gap-2">
+            <div class="d-flex align-items-center gap-2">
+              <i class="fas fa-quote-left text-danger"></i>
+              <span class="small text-white-50" id="coachDailyQuote">"Discipline is doing what needs to be done, even if you don't feel like doing it."</span>
+            </div>
+            <button type="button" id="btnNextCoachQuote" class="btn btn-sm text-danger p-0 fw-bold" style="font-size: 0.75rem;">
+              <i class="fas fa-sync-alt me-1"></i> New Tip
+            </button>
           </div>
         </div>
       </div>
@@ -1719,6 +1855,48 @@
       </div>
     </div>
   </div>
+
+  <!-- ==========================================================================
+       NATIVE MOBILE APP BOTTOM NAVIGATION DOCK (5-TAB PRO APP DOCK)
+       ========================================================================== -->
+  <nav class="mobile-app-bottom-dock d-lg-none" aria-label="Mobile App Navigation Dock">
+    <a href="#hero" class="app-dock-tab active" data-app-nav="home" aria-label="Home Dashboard">
+      <div class="dock-icon-wrapper">
+        <i class="fas fa-home"></i>
+      </div>
+      <span>Home</span>
+    </a>
+    <a href="#daily-dashboard" class="app-dock-tab" data-app-nav="tracker" aria-label="Daily Trackers">
+      <div class="dock-icon-wrapper">
+        <i class="fas fa-heartbeat"></i>
+      </div>
+      <span>Tracker</span>
+    </a>
+    <a href="#workout-routines" class="app-dock-tab" data-app-nav="workouts" aria-label="Workout Splits and Rest Timer">
+      <div class="dock-icon-wrapper">
+        <i class="fas fa-dumbbell"></i>
+      </div>
+      <span>Workouts</span>
+    </a>
+    <a href="#nutrition-plans" class="app-dock-tab" data-app-nav="diet" aria-label="Desi Diet Plans">
+      <div class="dock-icon-wrapper">
+        <i class="fas fa-utensils"></i>
+      </div>
+      <span>Diet</span>
+    </a>
+    <a href="#tools" class="app-dock-tab" data-app-nav="tools" aria-label="Fitness Calculators">
+      <div class="dock-icon-wrapper">
+        <i class="fas fa-calculator"></i>
+      </div>
+      <span>Tools</span>
+    </a>
+    <a href="https://wa.me/919555514847?text=Hi%20Coach%20Shivansh!%20I%20am%20using%20the%20Shivansh%20Fitness%20App%20and%20want%20to%20connect." target="_blank" rel="noopener noreferrer" class="app-dock-tab app-dock-tab-coach" data-app-nav="coach" aria-label="WhatsApp Coach Shivansh">
+      <div class="dock-icon-wrapper bg-success text-white">
+        <i class="fab fa-whatsapp"></i>
+      </div>
+      <span class="text-success">Coach</span>
+    </a>
+  </nav>
 
   <!-- Back to Top Button -->
   <button type="button" id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll to top">
