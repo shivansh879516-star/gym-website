@@ -391,24 +391,33 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 function initInstallAppModal() {
   const modal = document.getElementById('modalAppInstall');
-  const headerBtn = document.getElementById('btnHeaderInstall');
   const closeBtn = document.getElementById('btnCloseInstallModal');
   const directInstallBtn = document.getElementById('btnPwaDirectInstall');
+  const allInstallTriggers = document.querySelectorAll('.btn-trigger-install-modal, #btnHeaderInstall');
 
-  const openModal = () => {
+  const openModal = (e) => {
+    if (e) e.preventDefault();
     if (modal) modal.style.display = 'flex';
   };
 
-  const closeModal = () => {
+  const closeModal = (e) => {
+    if (e) e.preventDefault();
     if (modal) modal.style.display = 'none';
   };
 
-  if (headerBtn) headerBtn.addEventListener('click', openModal);
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  allInstallTriggers.forEach(btn => {
+    btn.addEventListener('click', openModal);
+    btn.addEventListener('touchend', openModal, { passive: false });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+    closeBtn.addEventListener('touchend', closeModal, { passive: false });
+  }
 
   if (modal) {
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
+      if (e.target === modal) closeModal(e);
     });
   }
 
@@ -424,14 +433,17 @@ function initInstallAppModal() {
           appDeferredPrompt = null;
         });
       } else {
-        showAppToast('📱 Use browser menu (⋮ / ⬆️) -> Add to Home Screen!');
+        showAppToast('📱 Browser menu (⋮ / ⬆️) -> "Install app" / "Add to Home Screen"');
       }
     });
   }
 
   window.addEventListener('appinstalled', () => {
     showAppToast('🚀 Shivansh Fitness App installed successfully!');
-    if (headerBtn) headerBtn.style.display = 'none';
+    allInstallTriggers.forEach(btn => {
+      btn.innerHTML = '<i class="fas fa-check"></i> Installed';
+      btn.style.opacity = '0.7';
+    });
     closeModal();
   });
 }
