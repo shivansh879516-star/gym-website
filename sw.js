@@ -1,4 +1,4 @@
-const CACHE_NAME = 'shivansh-fitness-v2';
+const CACHE_NAME = 'shivansh-fitness-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -12,11 +12,9 @@ const ASSETS_TO_CACHE = [
   './img/icon-192.png',
   './img/icon-512.png',
   './img/apple-touch-icon.png',
-  './img/trainer-shivansh.jpg',
-  './img/transformation-before.jpg',
-  './img/transformation-after.jpg',
-  './img/client-priya.jpg',
-  './img/client-rohit.jpg'
+  './img/app-3d-dumbbell.jpg',
+  './img/app-promo-dumbbells.jpg',
+  './img/trainer-shivansh.jpg'
 ];
 
 // Install Event

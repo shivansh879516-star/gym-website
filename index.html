@@ -2,1909 +2,528 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Shivansh Fitness | Personal Training, Body Recomposition & Nutrition Coaching</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal training and fitness coaching by Coach Shivansh. Science-backed body recomposition, 1RM strength calculator, and customized Indian meal planning with zero starvation.">
-  <meta name="keywords" content="Shivansh Fitness, personal trainer, online fitness coach, body recomposition, Indian diet planner, 1RM calculator, strength training, fat loss coaching">
-  <meta name="author" content="Shivansh Fitness">
-  <link rel="canonical" href="https://shivansh879516-star.github.io/gym-website/">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://shivansh879516-star.github.io/gym-website/">
-  <meta property="og:title" content="Shivansh Fitness | Personal Training & Nutrition Coaching">
-  <meta property="og:description" content="Science-backed 1-on-1 personal training, body recomposition, and sustainable Indian nutrition planning.">
-  <meta property="og:image" content="https://shivansh879516-star.github.io/gym-website/img/hero-trainer.jpg">
-
-  <!-- Twitter / X -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://shivansh879516-star.github.io/gym-website/">
-  <meta property="twitter:title" content="Shivansh Fitness | Personal Training & Nutrition Coaching">
-  <meta property="twitter:description" content="Science-backed 1-on-1 personal training, body recomposition, and sustainable Indian nutrition planning.">
-  <meta property="twitter:image" content="https://shivansh879516-star.github.io/gym-website/img/hero-trainer.jpg">
-
-  <!-- Google Web Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Icons & Bootstrap 5 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Progressive Web App (PWA) Manifest & App Icons -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#e61e2a">
-  <meta name="mobile-web-app-capable" content="yes">
+  <title>Shivansh Fitness | Official Mobile App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="Official Shivansh Fitness Mobile App. Best workouts for you, activity tracking, Indian nutrition plans, and 1-on-1 personal coaching.">
+  <meta name="theme-color" content="#fca311">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Shivansh Gym">
+  <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
 
-  <!-- Custom Stylesheet -->
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- App Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Ambient Breathing Red Glow Mesh -->
-  <div class="ambient-glow-mesh" aria-hidden="true"></div>
-
-  <!-- Accessible Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- Top Bar with Verified Contact & Sound Toggle -->
-  <header class="topbar-wrapper py-2">
-    <div class="container">
-      <div class="row align-items-center gy-2">
-        <div class="col-lg-8 col-md-7 text-center text-md-start">
-          <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 align-items-center">
-            <a href="tel:+919555514847" class="text-white fw-bold" aria-label="Direct Phone +91 9555514847">
-              <i class="fas fa-phone-alt text-danger me-1" aria-hidden="true"></i>+91 9555514847
-            </a>
-            <a href="mailto:shivansh983965@gmail.com" class="text-white" aria-label="Official Email shivansh983965@gmail.com">
-              <i class="fas fa-envelope text-danger me-1" aria-hidden="true"></i>shivansh983965@gmail.com
-            </a>
-            <span class="text-white"><i class="fas fa-qrcode text-danger me-1"></i>UPI ID: <strong class="text-warning">9555514847@ptyes</strong></span>
-          </div>
+  <!-- Centered Smartphone Device Shell (Responsive Fullscreen on Mobile) -->
+  <div class="app-device-wrapper">
+    <div class="app-mobile-frame" id="appMobileFrame">
+      
+      <!-- iOS / Android Style Status Bar -->
+      <header class="app-status-bar" aria-label="Status Bar">
+        <span id="appClockTime">9:41</span>
+        <div class="status-bar-icons">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="fas fa-battery-full"></i>
         </div>
-        <div class="col-lg-4 col-md-5 text-center text-md-end">
-          <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-2">
-            <!-- Install App Button (Top Bar) -->
-            <button type="button" id="pwaInstallTopBtn" class="btn btn-sm btn-outline-danger text-white py-1 px-2 border-danger d-inline-flex align-items-center gap-1 pwa-install-trigger" aria-label="Install Shivansh Fitness App on your mobile device">
-              <i class="fas fa-mobile-alt text-danger"></i> <span>Install App</span>
+      </header>
+
+      <!-- App Screens Viewport -->
+      <main class="app-screens-viewport" id="appScreensViewport">
+        
+        <!-- ==========================================================================
+             SCREEN 0: WELCOME / ONBOARDING (MATCHING SCREEN 3 OF MOCKUP)
+             ========================================================================== -->
+        <section id="screenOnboarding" class="app-screen active" aria-label="Welcome Screen">
+          <div class="w-100 text-end">
+            <button type="button" class="btn btn-sm text-muted border-0 bg-transparent" id="btnSkipOnboarding" style="font-size: 0.85rem; cursor: pointer; color: #8e95a5;">
+              Skip <i class="fas fa-arrow-right fa-xs"></i>
             </button>
-            <!-- Audio Sound Toggle -->
-            <button type="button" id="soundToggleBtn" class="sound-toggle-btn" aria-label="Toggle UI Sound Effects">
-              <i class="fas fa-volume-up"></i> Sound: ON
-            </button>
-            <!-- Currency Switcher -->
-            <div class="d-inline-flex gap-1 align-items-center">
-              <button type="button" id="currINR" class="currency-pill-btn active" aria-label="Switch to Indian Rupees">₹ INR</button>
-              <button type="button" id="currUSD" class="currency-pill-btn" aria-label="Switch to US Dollars">$ USD</button>
-            </div>
-            <a href="https://wa.me/919555514847?text=Hi%20Shivansh!%20I%20am%20interested%20in%20your%20Personal%20Training%20programs." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-success text-white py-1 px-2 border-success d-inline-flex align-items-center gap-1" aria-label="Message Coach Shivansh on WhatsApp">
-              <i class="fab fa-whatsapp text-success"></i> WhatsApp
-            </a>
           </div>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <!-- Sticky Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-custom" aria-label="Primary Navigation">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <i class="fas fa-dumbbell text-danger fa-2x me-2" aria-hidden="true"></i>
-        <span class="brand-logo-text">SHIVANSH<span>FITNESS</span></span>
-      </a>
+          <div class="onboarding-hero-wrapper">
+            <div class="onboarding-circle-glow"></div>
+            <img src="img/app-3d-dumbbell.jpg" alt="3D Dumbbell" class="onboarding-3d-img">
+          </div>
 
-      <!-- Quick Action CTA -->
-      <div class="d-flex align-items-center gap-2 order-lg-3">
-        <button type="button" id="pwaInstallNavBtn" class="btn btn-sm btn-outline-danger text-white border-danger d-inline-flex align-items-center gap-1 pwa-install-trigger" aria-label="Install App">
-          <i class="fas fa-download text-danger"></i> <span class="d-none d-md-inline">App</span>
-        </button>
-        <button type="button" class="btn btn-primary-custom d-none d-sm-inline-flex" data-bs-toggle="modal" data-bs-target="#consultationModal">
-          <span>Book Free Consultation</span>
-        </button>
-        <button class="navbar-toggler border-0 text-white p-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation menu">
-          <i class="fas fa-bars fa-lg text-danger"></i>
-        </button>
-      </div>
-
-      <div class="collapse navbar-collapse order-lg-2 justify-content-center" id="mainNavbar">
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#offerings">What We Offer</a></li>
-          <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
-          <li class="nav-item"><a class="nav-link" href="#transformation">Case Studies</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tools">Fitness Tools</a></li>
-          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-          <li class="nav-item"><a class="nav-link" href="#philosophy">Why Choose Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#results">Reviews</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="policyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Legal
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="policyDropdown">
-              <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
-              <li><a class="dropdown-item" href="terms-conditions.html">Terms & Conditions</a></li>
-              <li><a class="dropdown-item" href="refund-policy.html">Refund Policy</a></li>
-              <li><a class="dropdown-item" href="cookie-policy.html">Cookie Policy</a></li>
-              <li><hr class="dropdown-divider border-secondary"></li>
-              <li><a class="dropdown-item open-cookie-preferences" href="#">Cookie Preferences</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <main id="main-content">
-    <!-- ==========================================================================
-         1. HERO SECTION - CUSTOMER GOAL FOCUSED
-         ========================================================================== -->
-    <section id="hero" class="hero-mockup-section">
-      <div class="hero-watermark-text" aria-hidden="true">SHIVANSH FITNESS</div>
-      <div class="hero-red-spotlight" aria-hidden="true"></div>
-
-      <div class="container position-relative" style="z-index: 3;">
-        <div class="row align-items-center gy-5">
-          <!-- Left Column: Value Proposition & Clear CTAs -->
-          <div class="col-lg-6 hero-content-col scroll-pop">
-            <div class="d-inline-flex align-items-center gap-2 mb-3">
-              <span class="badge bg-danger rounded-pill px-3 py-1 text-uppercase fw-bold letter-spacing-1">1-on-1 Personal Training</span>
-              <span class="text-white-50 small">• Science-Backed Coaching</span>
-            </div>
-
-            <h1 class="hero-main-title">
-              <span>FORGE YOUR</span>
-              <span class="text-white">BEST PHYSIQUE</span>
+          <div class="onboarding-content">
+            <h1 class="onboarding-title">
+              Best Workouts<br><span>for you</span>
             </h1>
-
-            <p class="hero-lead-text">
-              Coaching tailored to your daily schedule, lifting mechanics, and Indian food preferences. Build lean muscle, improve metabolic health, and establish sustainable habits with zero crash starvation.
+            <p class="onboarding-subtitle">
+              You can find everything you need to reach your personal fitness goals... Do now
             </p>
 
-            <div class="d-flex flex-wrap gap-3 align-items-center mb-4">
-              <button type="button" class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#consultationModal">
-                <span>Book Free Consultation</span> <i class="fas fa-arrow-right ms-1"></i>
-              </button>
-              <a href="#programs" class="btn btn-secondary-custom">
-                View Programs <i class="fas fa-arrow-down ms-1"></i>
-              </a>
-            </div>
-
-            <div class="pt-2">
-              <a href="https://wa.me/919555514847?text=Hi%20Shivansh!%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20chat%20about%20personal%20training." target="_blank" rel="noopener noreferrer" class="btn btn-outline-success text-white border-success p-2 px-3 rounded d-inline-flex align-items-center gap-2">
-                <i class="fab fa-whatsapp text-success fa-lg"></i> Direct WhatsApp (+91 9555514847)
-              </a>
-            </div>
-          </div>
-
-          <!-- Right Column: Indian Athletic Trainer & Feature Callouts -->
-          <div class="col-lg-6">
-            <div class="hero-trainer-stage scroll-pop-image">
-              <div class="hero-trainer-img-wrapper tilt-card-luxury">
-                <img src="img/hero-trainer.jpg" class="hero-trainer-img" alt="Coach Shivansh personal trainer in red athletic tank top">
-                
-                <!-- Floating Glass Card 1 -->
-                <div class="hero-floating-stat-card stat-card-one">
-                  <div class="hero-stat-title text-danger mb-1"><i class="fas fa-user-shield me-1"></i> Direct Accountability</div>
-                  <p class="hero-stat-desc">Direct 1-on-1 WhatsApp video check-ins, lifting form reviews, and routine adjustments.</p>
-                </div>
-
-                <!-- Floating Glass Card 2 -->
-                <div class="hero-floating-stat-card stat-card-two">
-                  <div class="hero-stat-title text-warning mb-1"><i class="fas fa-utensils me-1"></i> Ghar Ka Khana Friendly</div>
-                  <p class="hero-stat-desc">Nutrition outlines designed around roti, dal, paneer, eggs, and everyday Indian meals.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         DAILY IN-APP FITNESS & HABIT TRACKING DASHBOARD (APP EXCLUSIVE)
-         ========================================================================== -->
-    <section id="daily-dashboard" class="py-4 app-dashboard-section">
-      <div class="container">
-        <div class="app-dashboard-card p-3 p-md-4 rounded-4 border-danger-subtle shadow-luxury">
-          <!-- App Dashboard Header -->
-          <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4 pb-3 border-bottom border-secondary">
-            <div class="d-flex align-items-center gap-3">
-              <div class="app-user-avatar">
-                <i class="fas fa-user-ninja text-danger"></i>
-                <span class="app-online-dot"></span>
-              </div>
-              <div>
-                <div class="d-flex align-items-center gap-2">
-                  <h3 class="h5 text-white mb-0 font-heading" style="font-size: 1.4rem; letter-spacing: 0.5px;">DAILY FITNESS DASHBOARD</h3>
-                  <span class="badge bg-danger rounded-pill" style="font-size: 0.68rem;">PRO APP</span>
-                </div>
-                <p class="text-white-50 small mb-0" id="appDailyGreeting">Welcome Athlete! Track your daily hydration, steps & workout rest intervals in real-time.</p>
-              </div>
-            </div>
-            <div class="d-flex align-items-center gap-2">
-              <span class="badge bg-dark border border-secondary text-warning py-2 px-3 d-inline-flex align-items-center gap-1">
-                <i class="fas fa-fire text-danger"></i> <span id="appDailyStreakText">Day 1 Streak</span>
-              </span>
-              <button type="button" id="btnResetDailyHabits" class="btn btn-sm btn-outline-secondary text-white-50 py-1 px-2" title="Reset Today's Counters">
-                <i class="fas fa-redo-alt"></i> Reset
-              </button>
-            </div>
-          </div>
-
-          <!-- Interactive Trackers Grid -->
-          <div class="row g-3 g-md-4">
-            <!-- 1. Smart Water / Hydration Tracker -->
-            <div class="col-lg-4 col-md-6">
-              <div class="habit-widget-card p-3 rounded-3 bg-darkest border border-secondary h-100 d-flex flex-column justify-content-between">
-                <div>
-                  <div class="d-flex justify-content-between align-items-center mb-2">
-                    <div class="d-flex align-items-center gap-2">
-                      <div class="habit-icon-circle bg-info-subtle text-info">
-                        <i class="fas fa-tint"></i>
-                      </div>
-                      <div>
-                        <h4 class="h6 text-white mb-0">Daily Water Tracker</h4>
-                        <span class="text-white-50" style="font-size: 0.72rem;">Goal: 3,500 ml (8 Glasses)</span>
-                      </div>
-                    </div>
-                    <span class="fw-bold text-info" id="waterTrackerValue">0 / 3,500 ml</span>
-                  </div>
-                  <!-- Progress Bar -->
-                  <div class="progress bg-dark my-3" style="height: 10px; border-radius: 5px;">
-                    <div id="waterProgressBar" class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3500"></div>
-                  </div>
-                </div>
-                <!-- Action Buttons -->
-                <div class="d-flex gap-2 mt-2">
-                  <button type="button" class="btn btn-sm btn-outline-info flex-grow-1 py-1" id="btnAddWater250">
-                    <i class="fas fa-plus fa-xs"></i> 250ml Glass
-                  </button>
-                  <button type="button" class="btn btn-sm btn-outline-info flex-grow-1 py-1" id="btnAddWater500">
-                    <i class="fas fa-plus fa-xs"></i> 500ml Bottle
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- 2. Daily Steps & Active Calories Tracker -->
-            <div class="col-lg-4 col-md-6">
-              <div class="habit-widget-card p-3 rounded-3 bg-darkest border border-secondary h-100 d-flex flex-column justify-content-between">
-                <div>
-                  <div class="d-flex justify-content-between align-items-center mb-2">
-                    <div class="d-flex align-items-center gap-2">
-                      <div class="habit-icon-circle bg-success-subtle text-success">
-                        <i class="fas fa-shoe-prints"></i>
-                      </div>
-                      <div>
-                        <h4 class="h6 text-white mb-0">Daily Step Goal</h4>
-                        <span class="text-white-50" style="font-size: 0.72rem;">Goal: 10,000 Steps / Day</span>
-                      </div>
-                    </div>
-                    <span class="fw-bold text-success" id="stepsTrackerValue">0 / 10k Steps</span>
-                  </div>
-                  <!-- Progress Bar -->
-                  <div class="progress bg-dark my-3" style="height: 10px; border-radius: 5px;">
-                    <div id="stepsProgressBar" class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10000"></div>
-                  </div>
-                </div>
-                <!-- Action Buttons -->
-                <div class="d-flex gap-2 mt-2">
-                  <button type="button" class="btn btn-sm btn-outline-success flex-grow-1 py-1" id="btnAddSteps1k">
-                    <i class="fas fa-walking"></i> +1,000 Steps
-                  </button>
-                  <button type="button" class="btn btn-sm btn-outline-success flex-grow-1 py-1" id="btnAddSteps2k">
-                    <i class="fas fa-running"></i> +2,500 Steps
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- 3. Gym Rest Interval Audio Timer Quick-Widget -->
-            <div class="col-lg-4 col-md-12">
-              <div class="habit-widget-card p-3 rounded-3 bg-darkest border border-secondary h-100 d-flex flex-column justify-content-between">
-                <div>
-                  <div class="d-flex justify-content-between align-items-center mb-2">
-                    <div class="d-flex align-items-center gap-2">
-                      <div class="habit-icon-circle bg-danger-subtle text-danger">
-                        <i class="fas fa-stopwatch"></i>
-                      </div>
-                      <div>
-                        <h4 class="h6 text-white mb-0">Workout Rest Timer</h4>
-                        <span class="text-white-50" style="font-size: 0.72rem;">Audio chime on rest completion</span>
-                      </div>
-                    </div>
-                    <span class="fw-bold font-heading text-danger" id="appWidgetTimerDisplay" style="font-size: 1.5rem; letter-spacing: 1px;">01:00</span>
-                  </div>
-                  <!-- Timer Preset Selector Pills -->
-                  <div class="d-flex gap-1 justify-content-between my-2">
-                    <button type="button" class="btn btn-sm btn-dark border-secondary timer-quick-preset active py-0 px-2" data-sec="30">30s</button>
-                    <button type="button" class="btn btn-sm btn-dark border-secondary timer-quick-preset py-0 px-2" data-sec="60">60s</button>
-                    <button type="button" class="btn btn-sm btn-dark border-secondary timer-quick-preset py-0 px-2" data-sec="90">90s</button>
-                    <button type="button" class="btn btn-sm btn-dark border-secondary timer-quick-preset py-0 px-2" data-sec="120">120s</button>
-                  </div>
-                </div>
-                <!-- Timer Action Controls -->
-                <div class="d-flex gap-2 mt-2">
-                  <button type="button" class="btn btn-sm btn-primary-custom flex-grow-1 py-1" id="btnAppWidgetTimerStart">
-                    <i class="fas fa-play fa-xs"></i> Start Rest
-                  </button>
-                  <button type="button" class="btn btn-sm btn-secondary-custom py-1 px-3" id="btnAppWidgetTimerReset">
-                    <i class="fas fa-redo-alt fa-xs"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Coach Daily Motivation Banner -->
-          <div class="mt-3 p-2 px-3 rounded-3 bg-dark border border-secondary d-flex flex-wrap align-items-center justify-content-between gap-2">
-            <div class="d-flex align-items-center gap-2">
-              <i class="fas fa-quote-left text-danger"></i>
-              <span class="small text-white-50" id="coachDailyQuote">"Discipline is doing what needs to be done, even if you don't feel like doing it."</span>
-            </div>
-            <button type="button" id="btnNextCoachQuote" class="btn btn-sm text-danger p-0 fw-bold" style="font-size: 0.75rem;">
-              <i class="fas fa-sync-alt me-1"></i> New Tip
+            <button type="button" class="btn-app-primary" id="btnGetStarted">
+              <span>Get Started</span> <i class="fas fa-arrow-right"></i>
             </button>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         2. WHAT WE OFFER (CORE PILLARS)
-         ========================================================================== -->
-    <section id="offerings" class="py-5">
-      <div class="container py-4">
-        <div class="text-center max-w-700 mx-auto mb-5 scroll-pop">
-          <span class="section-badge"><i class="fas fa-check-double me-1"></i> OUR METHODOLOGY</span>
-          <h2 class="section-title">WHAT WE OFFER</h2>
-          <p class="text-white-50">Four foundational pillars to guide your fitness progression safely and sustainably.</p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-lg-3 col-md-6 scroll-stagger">
-            <div class="program-card-luxury p-4">
-              <div class="text-danger fs-1 mb-3"><i class="fas fa-dumbbell"></i></div>
-              <h3 class="h5 text-white mb-2">1-on-1 Personal Coaching</h3>
-              <p class="text-white-50 small mb-0">Structured resistance workouts tailored to your current strength, equipment availability, and weekly schedule.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 scroll-stagger">
-            <div class="program-card-luxury p-4">
-              <div class="text-warning fs-1 mb-3"><i class="fas fa-bowl-rice"></i></div>
-              <h3 class="h5 text-white mb-2">Desi Macro Planning</h3>
-              <p class="text-white-50 small mb-0">Caloric and protein targets engineered around real Indian foods (paneer, soya, dal, dahi, eggs, roti) with zero starving.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 scroll-stagger">
-            <div class="program-card-luxury p-4">
-              <div class="text-info fs-1 mb-3"><i class="fas fa-video"></i></div>
-              <h3 class="h5 text-white mb-2">Form Video Audits</h3>
-              <p class="text-white-50 small mb-0">Send your squat, bench, and deadlift lifting videos via WhatsApp for detailed biomechanical cueing and joint safety.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 scroll-stagger">
-            <div class="program-card-luxury p-4">
-              <div class="text-success fs-1 mb-3"><i class="fas fa-chart-line"></i></div>
-              <h3 class="h5 text-white mb-2">Progressive Tracking</h3>
-              <p class="text-white-50 small mb-0">Weekly body measurements, lifting strength progressions, and energy reviews to ensure steady, measurable results.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         3. CURATED TRAINING PROGRAMS (#programs)
-         ========================================================================== -->
-    <section id="programs" class="py-5 bg-dark">
-      <div class="container py-4">
-        <div class="text-center max-w-700 mx-auto mb-4 scroll-pop">
-          <span class="section-badge"><i class="fas fa-graduation-cap me-1"></i> STRUCTURED PROTOCOLS</span>
-          <h2 class="section-title">CURATED TRAINING PROGRAMS</h2>
-          <p class="text-white-50">Click "View Routine & Syllabus" below to inspect the week-by-week curriculum, exercises, and nutrition syllabus.</p>
-
-          <!-- Interactive Category Filter -->
-          <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
-            <button type="button" class="program-filter-btn active" data-filter="all">All Programs</button>
-            <button type="button" class="program-filter-btn" data-filter="recomp">1-on-1 Recomp</button>
-            <button type="button" class="program-filter-btn" data-filter="shred">Fat Loss Protocol</button>
-            <button type="button" class="program-filter-btn" data-filter="power">Powerlifting</button>
-            <button type="button" class="program-filter-btn" data-filter="mobility">Posture & Mobility</button>
-          </div>
-        </div>
-
-        <div class="row g-4 mt-2">
-          <!-- Program 1: Recomp -->
-          <div class="col-lg-6 program-col-item scroll-stagger" data-category="recomp">
-            <div class="program-card-luxury p-4">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="badge bg-danger px-3 py-1">1-ON-1 COACHING</span>
-                <span class="text-white-50 small"><i class="fas fa-calendar-alt text-danger me-1"></i>16 Weeks</span>
-              </div>
-              <h3 class="h4 text-white mb-2">1-on-1 Bespoke Body Recomposition</h3>
-              <p class="text-white-50 small mb-3">
-                Personalized physical transformation designed to support lean muscle building and fat loss. 100% tailored to Indian home cooking (roti, paneer, soya, dal).
-              </p>
-              <div class="d-flex flex-wrap gap-2 mb-4">
-                <span class="badge bg-dark border border-secondary text-white small">WhatsApp Form Audits</span>
-                <span class="badge bg-dark border border-secondary text-white small">4-5 Days/Wk</span>
-                <span class="badge bg-dark border border-secondary text-white small">Custom Macros</span>
-              </div>
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-outline-primary-custom w-50 btn-view-program" data-program-key="recomp">
-                  <i class="fas fa-eye me-1"></i> View Routine & Syllabus
-                </button>
-                <button type="button" class="btn btn-primary-custom w-50 trigger-checkout-btn" data-plan="Shivansh Elite 1-on-1" data-usd="105" data-inr="8700">
-                  Enroll / Consult
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Program 2: Fat Loss -->
-          <div class="col-lg-6 program-col-item scroll-stagger" data-category="shred">
-            <div class="program-card-luxury p-4">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="badge bg-warning text-dark px-3 py-1">FAT LOSS & CONDITIONING</span>
-                <span class="text-white-50 small"><i class="fas fa-calendar-alt text-danger me-1"></i>12 Weeks</span>
-              </div>
-              <h3 class="h4 text-white mb-2">Sustainable Fat Loss & Conditioning Protocol</h3>
-              <p class="text-white-50 small mb-3">
-                Structured resistance training paired with manageable daily step goals and moderate caloric deficits to encourage steady fat loss without fatigue.
-              </p>
-              <div class="d-flex flex-wrap gap-2 mb-4">
-                <span class="badge bg-dark border border-secondary text-white small">Zero Starvation</span>
-                <span class="badge bg-dark border border-secondary text-white small">4 Days/Wk</span>
-                <span class="badge bg-dark border border-secondary text-white small">Weekly Check-in</span>
-              </div>
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-outline-primary-custom w-50 btn-view-program" data-program-key="shred">
-                  <i class="fas fa-eye me-1"></i> View Routine & Syllabus
-                </button>
-                <button type="button" class="btn btn-primary-custom w-50 trigger-checkout-btn" data-plan="All-Access Pro Tier" data-usd="69" data-inr="5700">
-                  Enroll / Consult
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Program 3: Powerlifting -->
-          <div class="col-lg-6 program-col-item scroll-stagger" data-category="power">
-            <div class="program-card-luxury p-4">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="badge bg-info text-dark px-3 py-1">STRENGTH & POWER</span>
-                <span class="text-white-50 small"><i class="fas fa-calendar-alt text-danger me-1"></i>12-24 Weeks</span>
-              </div>
-              <h3 class="h4 text-white mb-2">Strength & Powerlifting Fundamentals</h3>
-              <p class="text-white-50 small mb-3">
-                Master the Squat, Bench Press, and Deadlift. Build tendon resilience, lifting mechanics, and progressive overload under structured coaching.
-              </p>
-              <div class="d-flex flex-wrap gap-2 mb-4">
-                <span class="badge bg-dark border border-secondary text-white small">RPE Velocity Loading</span>
-                <span class="badge bg-dark border border-secondary text-white small">Barbell Technique</span>
-                <span class="badge bg-dark border border-secondary text-white small">PR Periodization</span>
-              </div>
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-outline-primary-custom w-50 btn-view-program" data-program-key="power">
-                  <i class="fas fa-eye me-1"></i> View Routine & Syllabus
-                </button>
-                <button type="button" class="btn btn-primary-custom w-50 trigger-checkout-btn" data-plan="All-Access Pro Tier" data-usd="69" data-inr="5700">
-                  Enroll / Consult
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Program 4: Mobility & Rehab -->
-          <div class="col-lg-6 program-col-item scroll-stagger" data-category="mobility">
-            <div class="program-card-luxury p-4">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="badge bg-success px-3 py-1">POSTURE & MOBILITY</span>
-                <span class="text-white-50 small"><i class="fas fa-calendar-alt text-danger me-1"></i>Ongoing</span>
-              </div>
-              <h3 class="h4 text-white mb-2">Desk Worker Posture & Mobility Protocol</h3>
-              <p class="text-white-50 small mb-3">
-                Designed for desk workers and software professionals to support hip flexor flexibility, spinal decompression, and shoulder mobility.
-              </p>
-              <div class="d-flex flex-wrap gap-2 mb-4">
-                <span class="badge bg-dark border border-secondary text-white small">Spinal Decompression</span>
-                <span class="badge bg-dark border border-secondary text-white small">Glute Activation</span>
-                <span class="badge bg-dark border border-secondary text-white small">Thoracic Flow</span>
-              </div>
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-outline-primary-custom w-50 btn-view-program" data-program-key="mobility">
-                  <i class="fas fa-eye me-1"></i> View Routine & Syllabus
-                </button>
-                <button type="button" class="btn btn-primary-custom w-50 trigger-checkout-btn" data-plan="Standard Iron Tier" data-usd="35" data-inr="2900">
-                  Enroll / Consult
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         4. SAMPLE CASE STUDIES / DEMONSTRATION (#transformation)
-         ========================================================================== -->
-    <section id="transformation" class="py-5">
-      <div class="container py-4">
-        <div class="text-center max-w-700 mx-auto mb-5 scroll-pop">
-          <span class="section-badge"><i class="fas fa-sliders-h me-1"></i> CASE STUDY DEMONSTRATION</span>
-          <h2 class="section-title">SAMPLE 16-WEEK RECOMPOSITION</h2>
-          <p class="text-white-50">Drag the slider below to inspect a 16-week demonstration case study showcasing fat loss and strength progression.</p>
-        </div>
-
-        <div class="transformation-slider-container scroll-pop-image" id="transformationSlider">
-          <img src="img/transformation-before.jpg" class="slider-img slider-img-before" alt="Sample case study before starting 16-week training">
-          <span class="slider-badge-label slider-badge-before">SAMPLE: WEEK 0</span>
-
-          <div class="slider-img-after-wrapper" id="sliderAfterWrapper">
-            <img src="img/transformation-after.jpg" class="slider-img slider-img-after" id="sliderAfterImg" alt="Sample case study after 16 weeks of resistance training">
-          </div>
-          <span class="slider-badge-label slider-badge-after">SAMPLE: WEEK 16</span>
-
-          <div class="slider-handle" id="sliderHandle">
-            <div class="slider-handle-circle">
-              <i class="fas fa-arrows-alt-h"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- Metric Dashboard -->
-        <div class="row g-3 max-w-820 mx-auto mt-4 scroll-stagger">
-          <div class="col-sm-6 col-md-3">
-            <div class="transformation-metric-card">
-              <span class="text-white-50 small d-block">Body Weight</span>
-              <div class="transformation-metric-val">84.5 → 71.8<span class="fs-6 text-white"> kg</span></div>
-              <span class="badge bg-success mt-1">-12.7 kg Fat Loss</span>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <div class="transformation-metric-card">
-              <span class="text-white-50 small d-block">Body Fat Est.</span>
-              <div class="transformation-metric-val">26% → 12%</div>
-              <span class="badge bg-danger mt-1">Lean Definition</span>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <div class="transformation-metric-card">
-              <span class="text-white-50 small d-block">Waist Size</span>
-              <div class="transformation-metric-val">36.5" → 30.5"</div>
-              <span class="badge bg-warning text-dark mt-1">-6 Inches</span>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <div class="transformation-metric-card">
-              <span class="text-white-50 small d-block">Deadlift Lift</span>
-              <div class="transformation-metric-val">60 → 145<span class="fs-6 text-white"> kg</span></div>
-              <span class="badge bg-info text-dark mt-1">+85 kg Strength</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center mt-3 text-white-50 small">
-          <i class="fas fa-info-circle text-info me-1"></i> <em>Note: Sample case study for illustrative training demonstration. Individual results vary based on baseline fitness, genetics, and dietary adherence.</em>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         5. INTERACTIVE FITNESS TOOLS (#tools)
-         ========================================================================== -->
-    <section id="tools" class="py-5 bg-dark">
-      <div class="container py-4">
-        <div class="text-center max-w-700 mx-auto mb-5 scroll-pop">
-          <span class="section-badge"><i class="fas fa-calculator me-1"></i> INTERACTIVE TOOLS</span>
-          <h2 class="section-title">FITNESS & NUTRITION TOOLS</h2>
-          <p class="text-white-50">Accurate mathematical tools to estimate strength loads, caloric energy needs, and daily workout routines.</p>
-        </div>
-
-        <!-- Tool 1: 1RM Calculator -->
-        <div class="row align-items-center gy-4 mb-5" id="one-rep-max">
-          <div class="col-lg-6 scroll-pop">
-            <span class="badge bg-danger mb-2">STRENGTH TOOL</span>
-            <h3 class="h3 text-white">1-Rep Max (1RM) Estimator</h3>
-            <p class="text-white-50 small">
-              Computes estimated 1-Rep Maximum using validated Brzycki and Epley load equations.
-            </p>
-
-            <form id="ormCalcForm" class="calc-tool-card" novalidate>
-              <div class="mb-3">
-                <label for="ormLiftSelect" class="form-label text-white small fw-bold">Select Barbell Lift</label>
-                <select id="ormLiftSelect" class="form-select bg-dark text-white border-secondary">
-                  <option value="squat">Barbell Back Squat</option>
-                  <option value="bench" selected>Barbell Bench Press</option>
-                  <option value="deadlift">Conventional / Sumo Deadlift</option>
-                  <option value="ohp">Standing Overhead Barbell Press</option>
-                </select>
-              </div>
-
-              <div class="row g-3 mb-3">
-                <div class="col-sm-6">
-                  <label for="ormWeightInput" class="form-label text-white small fw-bold">Weight Lifted (kg)</label>
-                  <div class="input-group-clearable">
-                    <input type="number" id="ormWeightInput" class="form-control" placeholder="e.g. 80" min="10" max="400" value="80" required>
-                    <button type="button" class="input-clear-btn" aria-label="Clear weight"><i class="fas fa-times"></i></button>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <label for="ormRepsInput" class="form-label text-white small fw-bold">Reps Performed (1-12)</label>
-                  <div class="input-group-clearable">
-                    <input type="number" id="ormRepsInput" class="form-control" placeholder="e.g. 6" min="1" max="15" value="6" required>
-                    <button type="button" class="input-clear-btn" aria-label="Clear reps"><i class="fas fa-times"></i></button>
-                  </div>
-                </div>
-              </div>
-
-              <button type="submit" class="btn btn-primary-custom w-100">
-                <i class="fas fa-bolt me-1"></i> Compute 1RM & Training Loads
-              </button>
-            </form>
-          </div>
-
-          <div class="col-lg-6 scroll-pop">
-            <div class="calc-tool-card">
-              <span class="text-white-50 small text-uppercase fw-bold">Estimated 1-Rep Maximum</span>
-              <div class="display-3 text-danger fw-bold my-1" id="ormResult1RM">96 kg</div>
-              <p class="text-white-50 small mb-3">Calculated training percentages for working sets:</p>
-
-              <div class="d-flex flex-column gap-2 mb-3">
-                <div class="orm-percentage-badge">
-                  <span class="text-white"><strong>95%</strong> (Heavy Single / Peak Test)</span>
-                  <strong class="text-danger" id="ormResult95">91 kg</strong>
-                </div>
-                <div class="orm-percentage-badge">
-                  <span class="text-white"><strong>85%</strong> (Strength Sets: 3-5 Reps)</span>
-                  <strong class="text-warning" id="ormResult85">82 kg</strong>
-                </div>
-                <div class="orm-percentage-badge">
-                  <span class="text-white"><strong>75%</strong> (Hypertrophy Sets: 8-10 Reps)</span>
-                  <strong class="text-info" id="ormResult75">72 kg</strong>
-                </div>
-                <div class="orm-percentage-badge">
-                  <span class="text-white"><strong>65%</strong> (Technique Deload: 12-15 Reps)</span>
-                  <strong class="text-success" id="ormResult65">62 kg</strong>
-                </div>
-              </div>
-
-              <div id="ormCoachCue" class="p-3 rounded bg-darkest text-white small border border-secondary">
-                <strong class="text-warning"><i class="fas fa-lightbulb me-1"></i> Technique Cue:</strong> For Bench Press: Retract your scapulae into the bench, maintain leg drive, and control the bar descent.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tool 2: BMI & TDEE Calculator -->
-        <div class="row align-items-center gy-4 mb-5" id="bmi-calculator">
-          <div class="col-lg-6 scroll-pop">
-            <span class="badge bg-info text-dark mb-2">METABOLIC ESTIMATOR</span>
-            <h3 class="h3 text-white">BMI & Caloric TDEE Estimator</h3>
-            <p class="text-white-50 small">
-              Estimates your Body Mass Index (BMI) and Total Daily Energy Expenditure (TDEE) based on activity level.
-            </p>
-
-            <form id="bmiCalcForm" class="calc-tool-card" novalidate>
-              <div class="row g-3 mb-3">
-                <div class="col-sm-6">
-                  <label for="calcHeight" class="form-label text-white small fw-bold">Height (cm)</label>
-                  <div class="input-group-clearable">
-                    <input type="number" id="calcHeight" class="form-control" placeholder="e.g. 175" min="80" max="250" value="175" required>
-                    <button type="button" class="input-clear-btn" aria-label="Clear height"><i class="fas fa-times"></i></button>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <label for="calcWeight" class="form-label text-white small fw-bold">Weight (kg)</label>
-                  <div class="input-group-clearable">
-                    <input type="number" id="calcWeight" class="form-control" placeholder="e.g. 75" min="30" max="250" value="75" required>
-                    <button type="button" class="input-clear-btn" aria-label="Clear weight"><i class="fas fa-times"></i></button>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <label for="calcAge" class="form-label text-white small fw-bold">Age (Years)</label>
-                  <div class="input-group-clearable">
-                    <input type="number" id="calcAge" class="form-control" placeholder="e.g. 26" min="16" max="90" value="26" required>
-                    <button type="button" class="input-clear-btn" aria-label="Clear age"><i class="fas fa-times"></i></button>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <label for="calcGender" class="form-label text-white small fw-bold">Gender</label>
-                  <select id="calcGender" class="form-select bg-dark text-white border-secondary">
-                    <option value="male" selected>Male</option>
-                    <option value="female">Female</option>
-                  </select>
-                </div>
-                <div class="col-12">
-                  <label for="calcActivity" class="form-label text-white small fw-bold">Daily Activity Level</label>
-                  <select id="calcActivity" class="form-select bg-dark text-white border-secondary">
-                    <option value="1.2">Sedentary (Desk Job, Minimal Exercise)</option>
-                    <option value="1.375">Light Activity (Exercise 1-3 Days/Week)</option>
-                    <option value="1.55" selected>Moderate Activity (Exercise 3-5 Days/Week)</option>
-                    <option value="1.725">Heavy Activity (Hard Exercise 6-7 Days/Week)</option>
-                  </select>
-                </div>
-              </div>
-
-              <button type="submit" class="btn btn-primary-custom w-100">
-                <i class="fas fa-chart-line me-1"></i> Calculate BMI & Energy Needs
-              </button>
-            </form>
-          </div>
-
-          <div class="col-lg-6 scroll-pop">
-            <div class="calc-tool-card">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-white-50 small text-uppercase fw-bold">Estimated Profile</span>
-                <span id="bmiCategoryDisplay" class="badge bg-success px-3 py-1">Normal Range</span>
-              </div>
-
-              <div class="row g-3 mb-4 text-center">
-                <div class="col-6">
-                  <div class="p-3 bg-darkest rounded border border-secondary">
-                    <span class="text-white-50 small d-block">BMI Score</span>
-                    <div class="display-5 text-white fw-bold my-1" id="bmiScoreDisplay">24.5</div>
-                    <span class="text-white-50 small">Standard: 18.5 - 24.9</span>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="p-3 bg-darkest rounded border border-secondary">
-                    <span class="text-white-50 small d-block">Estimated TDEE</span>
-                    <div class="display-5 text-danger fw-bold my-1" id="calorieEstimateDisplay">2,410 kcal</div>
-                    <span class="text-white-50 small">Daily energy burn</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="p-3 rounded bg-darkest border border-secondary text-white small mb-3">
-                <strong class="text-warning d-block mb-1"><i class="fas fa-bullseye me-1"></i> Recommended Coaching Strategy:</strong>
-                <p id="bmiCoachRoadmap" class="text-white-50 mb-0">
-                  For recomposition, aim for an intake of <strong>~2,050 kcal/day</strong> with <strong>140g - 160g protein</strong> combined with 4 days of progressive resistance training.
-                </p>
-              </div>
-
-              <div class="text-white-50 small">
-                <em>*Disclaimer: Estimated values for informational purposes. Not intended for medical diagnosis.</em>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tool 3: Indian Macro & Desi Meal Planner -->
-        <div class="row align-items-center gy-4 mb-5" id="meal-planner">
-          <div class="col-lg-5 scroll-pop">
-            <span class="badge bg-warning text-dark mb-2">DESI DIET ENGINE</span>
-            <h3 class="h3 text-white">Indian Meal & Macro Planner</h3>
-            <p class="text-white-50 small">
-              Generates a balanced day of eating using everyday Indian kitchen staples (paneer, soya, dal, dahi, roti) with exact protein estimations.
-            </p>
-
-            <form id="indianMealPlannerForm" class="calc-tool-card" novalidate>
-              <div class="mb-3">
-                <label for="mealDietType" class="form-label text-white small fw-bold">Dietary Lifestyle</label>
-                <select id="mealDietType" class="form-select bg-dark text-white border-secondary">
-                  <option value="veg" selected>Pure Vegetarian (Paneer, Soya, Dahi, Dal)</option>
-                  <option value="eggetarian">Eggetarian (Eggs + Veg & Dairy)</option>
-                  <option value="nonveg">Non-Vegetarian (Chicken, Fish, Eggs & Veg)</option>
-                </select>
-              </div>
-
-              <div class="mb-3">
-                <label for="mealCalorieTarget" class="form-label text-white small fw-bold">Target Daily Calories</label>
-                <select id="mealCalorieTarget" class="form-select bg-dark text-white border-secondary">
-                  <option value="1600">1,600 kcal (Fat Loss Focus)</option>
-                  <option value="2000" selected>2,000 kcal (Body Recomposition)</option>
-                  <option value="2500">2,500 kcal (Lean Muscle Surplus)</option>
-                </select>
-              </div>
-
-              <button type="submit" class="btn btn-primary-custom w-100">
-                <i class="fas fa-seedling me-1"></i> Generate Meal Blueprint
-              </button>
-            </form>
-          </div>
-
-          <div class="col-lg-7 scroll-pop">
-            <div id="mealPlanOutput" class="calc-tool-card min-h-350 d-flex flex-column justify-content-center">
-              <div class="text-center text-white-50">
-                <i class="fas fa-bowl-rice fa-3x text-danger mb-3"></i>
-                <h4 class="text-white">Custom Meal Routine Ready for Generation</h4>
-                <p class="small text-white-50 mb-0">Select your preferences on the left and click 'Generate Meal Blueprint'.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tool 4: Workout Routine & Rest Timer -->
-        <div class="row g-4" id="workout-split">
-          <div class="col-lg-7 scroll-pop">
-            <div class="d-flex flex-wrap gap-2 mb-3" id="workoutDayTabs">
-              <button type="button" class="workout-tab-btn active" data-day="push">Push Day</button>
-              <button type="button" class="workout-tab-btn" data-day="pull">Pull Day</button>
-              <button type="button" class="workout-tab-btn" data-day="legs">Legs & Core</button>
-              <button type="button" class="workout-tab-btn" data-day="mobility">Mobility Flow</button>
-            </div>
-            <div class="calc-tool-card" id="workoutRoutineContainer">
-              <!-- Rendered dynamically -->
-            </div>
-          </div>
-
-          <div class="col-lg-5 scroll-pop">
-            <div class="calc-tool-card text-center">
-              <span class="section-badge mb-2"><i class="fas fa-stopwatch me-1"></i> REST TIMER</span>
-              <h3 class="h4 text-white mb-3">Time Your Working Sets</h3>
-
-              <div class="timer-circle-wrap">
-                <svg class="timer-svg" viewBox="0 0 160 160">
-                  <circle class="timer-circle-bg" cx="80" cy="80" r="70"></circle>
-                  <circle class="timer-circle-progress" id="timerCircleProgress" cx="80" cy="80" r="70"></circle>
-                </svg>
-                <div class="timer-center-text" id="timerDisplay">60s</div>
-              </div>
-
-              <div class="d-flex justify-content-center gap-2 mb-3">
-                <button type="button" class="timer-preset-btn" data-seconds="30">30s</button>
-                <button type="button" class="timer-preset-btn active" data-seconds="60">60s</button>
-                <button type="button" class="timer-preset-btn" data-seconds="90">90s</button>
-                <button type="button" class="timer-preset-btn" data-seconds="120">120s</button>
-              </div>
-
-              <div class="d-flex justify-content-center gap-2">
-                <button type="button" id="btnStartTimer" class="btn btn-primary-custom px-4">
-                  <i class="fas fa-play me-1"></i> Start Rest
-                </button>
-                <button type="button" id="btnResetTimer" class="btn btn-secondary-custom px-3" aria-label="Reset Timer">
-                  <i class="fas fa-redo"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         6. PRICING & MEMBERSHIPS (#pricing)
-         ========================================================================== -->
-    <section id="pricing" class="py-5">
-      <div class="container py-4">
-        <div class="text-center max-w-700 mx-auto mb-5 scroll-pop">
-          <span class="section-badge">MEMBERSHIPS & COACHING</span>
-          <h2 class="section-title">TRANSPARENT RATES</h2>
-          <p class="text-white-50">Clear, transparent coaching fees with an unconditional 14-day money-back guarantee. No hidden contracts.</p>
-
-          <div class="d-inline-flex align-items-center gap-3 p-2 bg-card rounded-pill border border-secondary mt-3">
-            <span class="text-white fw-bold small">Monthly</span>
-            <div class="form-check form-switch mb-0">
-              <input class="form-check-input" type="checkbox" id="pricingBillingToggle" role="switch" aria-label="Toggle annual discount">
-            </div>
-            <span class="text-warning fw-bold small">Annual (Save 15%)</span>
-          </div>
-        </div>
-
-        <div class="row g-4 align-items-stretch">
-          <!-- Tier 1: Standard Iron -->
-          <div class="col-lg-4 col-md-6 scroll-stagger">
-            <div class="pricing-card tilt-card-luxury">
-              <div>
-                <h3 class="h4 text-white mb-1">STANDARD IRON</h3>
-                <p class="text-white-50 small">Structured workout split and basic guidance.</p>
-                <div class="pricing-price">
-                  <span id="priceBasic">₹2,900</span>
-                  <span class="billing-period-text">/ mo (billed monthly)</span>
-                </div>
-                <ul class="pricing-features">
-                  <li><i class="fas fa-check-circle"></i> Custom 4-day workout split</li>
-                  <li><i class="fas fa-check-circle"></i> Baseline calorie & macro targets</li>
-                  <li><i class="fas fa-check-circle"></i> Exercise video library access</li>
-                  <li><i class="fas fa-times-circle"></i> Weekly 1-on-1 form reviews</li>
-                  <li><i class="fas fa-times-circle"></i> Daily WhatsApp direct line</li>
-                </ul>
-              </div>
-              <button type="button" class="btn btn-outline-primary-custom w-100 trigger-checkout-btn" data-plan="Standard Iron Tier" data-usd="35" data-inr="2900">
-                <i class="fas fa-qrcode me-1"></i> Enroll via UPI
-              </button>
-            </div>
-          </div>
-
-          <!-- Tier 2: Pro Tier (Featured) -->
-          <div class="col-lg-4 col-md-6 scroll-stagger">
-            <div class="pricing-card featured tilt-card-luxury">
-              <span class="featured-badge">MOST POPULAR</span>
-              <div>
-                <h3 class="h4 text-white mb-1">ALL-ACCESS PRO</h3>
-                <p class="text-white-50 small">Full coaching, weekly form checks & macro audits.</p>
-                <div class="pricing-price text-danger">
-                  <span id="pricePro">₹5,700</span>
-                  <span class="billing-period-text">/ mo (billed monthly)</span>
-                </div>
-                <ul class="pricing-features">
-                  <li><i class="fas fa-check-circle"></i> Bespoke periodized workout routine</li>
-                  <li><i class="fas fa-check-circle"></i> Custom Indian macro & meal guide</li>
-                  <li><i class="fas fa-check-circle"></i> Bi-weekly video form corrections</li>
-                  <li><i class="fas fa-check-circle"></i> Weekly waist & weight progression audits</li>
-                  <li><i class="fas fa-times-circle"></i> 24/7 VIP priority response</li>
-                </ul>
-              </div>
-              <button type="button" class="btn btn-primary-custom w-100 trigger-checkout-btn" data-plan="All-Access Pro Tier" data-usd="69" data-inr="5700">
-                <i class="fas fa-bolt me-1"></i> Enroll via UPI
-              </button>
-            </div>
-          </div>
-
-          <!-- Tier 3: Elite Coaching -->
-          <div class="col-lg-4 col-md-6 scroll-stagger">
-            <div class="pricing-card tilt-card-luxury">
-              <div>
-                <h3 class="h4 text-white mb-1">SHIVANSH ELITE 1-ON-1</h3>
-                <p class="text-white-50 small">Intensive personal coaching with Coach Shivansh.</p>
-                <div class="pricing-price">
-                  <span id="priceElite">₹8,700</span>
-                  <span class="billing-period-text">/ mo (billed monthly)</span>
-                </div>
-                <ul class="pricing-features">
-                  <li><i class="fas fa-check-circle"></i> 4x Monthly 60-min 1-on-1 video consultations</li>
-                  <li><i class="fas fa-check-circle"></i> Daily direct WhatsApp line (+91 9555514847)</li>
-                  <li><i class="fas fa-check-circle"></i> Complete bespoke Indian nutrition planning</li>
-                  <li><i class="fas fa-check-circle"></i> Unlimited exercise technique form checks</li>
-                  <li><i class="fas fa-check-circle"></i> Continuous protocol adjustments</li>
-                </ul>
-              </div>
-              <button type="button" class="btn btn-outline-primary-custom w-100 trigger-checkout-btn" data-plan="Shivansh Elite 1-on-1" data-usd="105" data-inr="8700">
-                <i class="fas fa-award me-1"></i> Enroll Elite VIP
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-4 p-3 bg-card rounded border border-secondary text-center small text-white">
-          <i class="fas fa-shield-alt text-danger me-2"></i>
-          <strong>Statutory Guarantee:</strong> Every membership includes an unconditional 14-day money-back guarantee. Official UPI ID: <strong class="text-warning">9555514847@ptyes</strong>. Read our full <a href="refund-policy.html" class="text-danger text-decoration-underline">Refund Policy</a>.
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         7. WHY CHOOSE US / PHILOSOPHY (#philosophy)
-         ========================================================================== -->
-    <section id="philosophy" class="py-5 bg-dark">
-      <div class="container py-4">
-        <div class="text-center max-w-700 mx-auto mb-5 scroll-pop">
-          <span class="section-badge"><i class="fas fa-lightbulb me-1"></i> COACHING PHILOSOPHY</span>
-          <h2 class="section-title">WHY CHOOSE SHIVANSH FITNESS</h2>
-          <p class="text-white-50">Honest coaching principles focused on sustainable lifelong strength.</p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3 scroll-stagger">
-            <div class="p-4 bg-card rounded border border-secondary h-100">
-              <h3 class="h5 text-white mb-2"><i class="fas fa-check text-danger me-2"></i>No Crash Diets</h3>
-              <p class="text-white-50 small mb-0">We never mandate extreme starvation or cutting out roti and traditional meals. Nutrition must fit your everyday home routine.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 scroll-stagger">
-            <div class="p-4 bg-card rounded border border-secondary h-100">
-              <h3 class="h5 text-white mb-2"><i class="fas fa-check text-danger me-2"></i>Lifting Biomechanics</h3>
-              <p class="text-white-50 small mb-0">Proper joint angles and lifting mechanics prevent injury and ensure progressive strength gains over months and years.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 scroll-stagger">
-            <div class="p-4 bg-card rounded border border-secondary h-100">
-              <h3 class="h5 text-white mb-2"><i class="fas fa-check text-danger me-2"></i>Direct Communication</h3>
-              <p class="text-white-50 small mb-0">You communicate directly with Coach Shivansh via WhatsApp (+91 9555514847), not through outsourced support bots.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 scroll-stagger">
-            <div class="p-4 bg-card rounded border border-secondary h-100">
-              <h3 class="h5 text-white mb-2"><i class="fas fa-check text-danger me-2"></i>Accountability</h3>
-              <p class="text-white-50 small mb-0">Regular progress reviews keep you consistent and motivated, adjusting protocols when life or work schedules change.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         8. CLIENT REVIEWS & FEEDBACK (#results)
-         ========================================================================== -->
-    <section id="results" class="py-5">
-      <div class="container py-4">
-        <div class="text-center max-w-700 mx-auto mb-4 scroll-pop">
-          <span class="section-badge"><i class="fas fa-comments me-1"></i> CLIENT FEEDBACK</span>
-          <h2 class="section-title">TESTIMONIALS & REVIEWS</h2>
-          <p class="text-white-50">Real feedback from clients who have trained under Coach Shivansh. Filter by language below:</p>
-
-          <!-- Review Filter Buttons -->
-          <div class="d-flex flex-wrap justify-content-center gap-2 mt-4" id="reviewFilterControls">
-            <button type="button" class="review-filter-btn active" data-filter="all">All Reviews (6)</button>
-            <button type="button" class="review-filter-btn" data-filter="hinglish">🇮🇳 Hinglish Reviews (3)</button>
-            <button type="button" class="review-filter-btn" data-filter="english">🇬🇧 English Reviews (3)</button>
-          </div>
-        </div>
-
-        <div class="row g-4 mt-2" id="reviewsRow">
-          <!-- Review 1: Hinglish -->
-          <div class="col-lg-4 col-md-6 review-card-col scroll-stagger" data-lang="hinglish">
-            <div class="testimonial-card">
-              <div>
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <div class="d-flex align-items-center gap-2">
-                    <img src="img/client-rohit.jpg" class="client-img" alt="Rohit Verma client photo">
-                    <div>
-                      <h4 class="h6 text-white mb-0">Rohit Verma</h4>
-                      <span class="text-white-50 small">Gurgaon • Software Engineer</span>
-                    </div>
-                  </div>
-                  <span class="lang-badge-hinglish">🇮🇳 Hinglish</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div class="text-warning">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                </div>
-                <p class="text-white small">
-                  "Bhai Shivansh coach ne lifestyle simplify kardi. Pehle 84 kg tha aur gym me confuse rehta tha. Ab 71 kg lean physique maintain kar raha hoon aur best part ye hai ki ghar ka khana (dal, roti, dahi) band nahi karwaya!"
-                </p>
-              </div>
-              <div class="text-white-50 small pt-2 border-top border-secondary">
-                Focus: 16-Week Recomposition
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 2: English -->
-          <div class="col-lg-4 col-md-6 review-card-col scroll-stagger" data-lang="english">
-            <div class="testimonial-card">
-              <div>
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <div class="d-flex align-items-center gap-2">
-                    <img src="img/client-priya.jpg" class="client-img" alt="Dr. Priya Sharma client photo">
-                    <div>
-                      <h4 class="h6 text-white mb-0">Dr. Priya Sharma</h4>
-                      <span class="text-white-50 small">Bengaluru • Tech Architect</span>
-                    </div>
-                  </div>
-                  <span class="lang-badge-english">🇬🇧 English</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div class="text-warning">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                </div>
-                <p class="text-white small">
-                  "Working 10 hours at a desk left me with chronic back tightness. Shivansh's mobility cues and posture drills built my hip mobility and core bracing. I am lifting comfortably and feel energetic throughout the workday."
-                </p>
-              </div>
-              <div class="text-white-50 small pt-2 border-top border-secondary">
-                Focus: Posture, Mobility & Strength
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 3: Hinglish -->
-          <div class="col-lg-4 col-md-6 review-card-col scroll-stagger" data-lang="hinglish">
-            <div class="testimonial-card">
-              <div>
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <div class="d-flex align-items-center gap-2">
-                    <div class="client-img bg-dark d-flex align-items-center justify-content-center text-danger fs-4 fw-bold">AM</div>
-                    <div>
-                      <h4 class="h6 text-white mb-0">Arjun Mehta</h4>
-                      <span class="text-white-50 small">Mumbai • Finance</span>
-                    </div>
-                  </div>
-                  <span class="lang-badge-hinglish">🇮🇳 Hinglish</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div class="text-warning">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                </div>
-                <p class="text-white small">
-                  "Shivansh sir ki form guidance aur WhatsApp support bohot quick hai. Pehle heavy squat lagane me dar lagta tha, ab sahi bracing aur footwork ke sath proper lifting confidence aa gaya hai."
-                </p>
-              </div>
-              <div class="text-white-50 small pt-2 border-top border-secondary">
-                Focus: Strength & Barbell Mechanics
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 4: English -->
-          <div class="col-lg-4 col-md-6 review-card-col scroll-stagger" data-lang="english">
-            <div class="testimonial-card">
-              <div>
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <div class="d-flex align-items-center gap-2">
-                    <div class="client-img bg-dark d-flex align-items-center justify-content-center text-warning fs-4 fw-bold">AD</div>
-                    <div>
-                      <h4 class="h6 text-white mb-0">Ananya Deshmukh</h4>
-                      <span class="text-white-50 small">Pune • Marketing Lead</span>
-                    </div>
-                  </div>
-                  <span class="lang-badge-english">🇬🇧 English</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div class="text-warning">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                </div>
-                <p class="text-white small">
-                  "Shivansh crafted an Indian macro plan with paneer, dal, and high fiber that gave me consistent energy throughout the day. Lost 9 kg in 14 weeks sustainably without feeling deprived."
-                </p>
-              </div>
-              <div class="text-white-50 small pt-2 border-top border-secondary">
-                Focus: Sustainable Fat Loss
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 5: Hinglish -->
-          <div class="col-lg-4 col-md-6 review-card-col scroll-stagger" data-lang="hinglish">
-            <div class="testimonial-card">
-              <div>
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <div class="d-flex align-items-center gap-2">
-                    <div class="client-img bg-dark d-flex align-items-center justify-content-center text-info fs-4 fw-bold">VS</div>
-                    <div>
-                      <h4 class="h6 text-white mb-0">Vikram Singh</h4>
-                      <span class="text-white-50 small">Delhi NCR • Operations</span>
-                    </div>
-                  </div>
-                  <span class="lang-badge-hinglish">🇮🇳 Hinglish</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div class="text-warning">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                </div>
-                <p class="text-white small">
-                  "Desk job ke sath workout time nikalna mushkil tha. Shivansh ne 45-minute ka realistic 4-day split banaya. Normal ghar ke khane aur regular discipline se physique me visible change aaya."
-                </p>
-              </div>
-              <div class="text-white-50 small pt-2 border-top border-secondary">
-                Focus: Executive Fitness Split
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 6: English -->
-          <div class="col-lg-4 col-md-6 review-card-col scroll-stagger" data-lang="english">
-            <div class="testimonial-card">
-              <div>
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <div class="d-flex align-items-center gap-2">
-                    <div class="client-img bg-dark d-flex align-items-center justify-content-center text-success fs-4 fw-bold">KM</div>
-                    <div>
-                      <h4 class="h6 text-white mb-0">Karan Malhotra</h4>
-                      <span class="text-white-50 small">Chandigarh • Business Owner</span>
-                    </div>
-                  </div>
-                  <span class="lang-badge-english">🇬🇧 English</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div class="text-warning">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                </div>
-                <p class="text-white small">
-                  "Learned the importance of progressive overload on Bench and Squats. Great coach who focuses on practical execution rather than unnecessary supplement hype."
-                </p>
-              </div>
-              <div class="text-white-50 small pt-2 border-top border-secondary">
-                Focus: Lean Muscle Hypertrophy
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         9. FREQUENTLY ASKED QUESTIONS (#faq)
-         ========================================================================== -->
-    <section id="faq" class="py-5 bg-dark">
-      <div class="container py-4">
-        <div class="text-center max-w-700 mx-auto mb-5 scroll-pop">
-          <span class="section-badge"><i class="fas fa-question-circle me-1"></i> QUESTIONS & ANSWERS</span>
-          <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
-          <p class="text-white-50">Clear answers about coaching logistics, Indian diets, and enrollment.</p>
-        </div>
-
-        <div class="accordion accordion-flush max-w-820 mx-auto" id="faqAccordion">
-          <div class="accordion-item bg-card border border-secondary rounded mb-3">
-            <h3 class="accordion-header" id="faqHeading1">
-              <button class="accordion-button collapsed bg-card text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
-                How does 1-on-1 personal coaching work?
-              </button>
-            </h3>
-            <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-white-50 small">
-                After an initial consultation, you receive a customized weekly training split and nutrition outline. You record lifting videos during workouts and share them on WhatsApp for form reviews, feedback, and load progressions.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item bg-card border border-secondary rounded mb-3">
-            <h3 class="accordion-header" id="faqHeading2">
-              <button class="accordion-button collapsed bg-card text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-                Do I need to stop eating roti, rice, or ghar ka khana?
-              </button>
-            </h3>
-            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-white-50 small">
-                No. We build your macro blueprint around your everyday home meals (roti, dal, paneer, dahi, rice, vegetables, eggs). We focus on portion control, adequate protein, and consistent caloric targets.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item bg-card border border-secondary rounded mb-3">
-            <h3 class="accordion-header" id="faqHeading3">
-              <button class="accordion-button collapsed bg-card text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
-                How do I pay for coaching?
-              </button>
-            </h3>
-            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-white-50 small">
-                Payments are processed directly via official UPI (<strong class="text-warning">9555514847@ptyes</strong>) with instant WhatsApp confirmation. We also support direct bank transfers for long-term programs.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item bg-card border border-secondary rounded mb-3">
-            <h3 class="accordion-header" id="faqHeading4">
-              <button class="accordion-button collapsed bg-card text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
-                What is your refund policy?
-              </button>
-            </h3>
-            <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-white-50 small">
-                We provide a full 14-day statutory money-back guarantee. If you feel the coaching is not right for you within the first 14 days, request a refund via email or WhatsApp for a 100% return.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         10. CONTACT & INQUIRY FORM (#contact)
-         ========================================================================== -->
-    <section id="contact" class="py-5">
-      <div class="container py-4">
-        <div class="row gy-5">
-          <div class="col-lg-5 scroll-pop">
-            <span class="section-badge">GET IN TOUCH</span>
-            <h2 class="section-title">CONNECT WITH COACH SHIVANSH</h2>
-            <p class="text-white-50">Have a question regarding personal training, custom meal plans, or workout splits? Reach out directly via WhatsApp, phone, or email.</p>
-
-            <div class="d-flex flex-column gap-3 mt-4">
-              <div class="d-flex align-items-start gap-3">
-                <div class="p-3 bg-darkest rounded border border-secondary text-danger">
-                  <i class="fas fa-phone-alt fa-lg"></i>
-                </div>
-                <div>
-                  <h4 class="h6 text-white mb-1">Direct Phone</h4>
-                  <a href="tel:+919555514847" class="text-danger text-decoration-none fw-bold">+91 9555514847</a>
-                </div>
-              </div>
-
-              <div class="d-flex align-items-start gap-3">
-                <div class="p-3 bg-darkest rounded border border-secondary text-success">
-                  <i class="fab fa-whatsapp fa-lg"></i>
-                </div>
-                <div>
-                  <h4 class="h6 text-white mb-1">WhatsApp Line</h4>
-                  <a href="https://wa.me/919555514847?text=Hi%20Shivansh!%20I%20would%20like%20to%20inquire%20about%20your%20training%20plans." target="_blank" rel="noopener noreferrer" class="text-success text-decoration-none fw-bold">+91 9555514847</a>
-                </div>
-              </div>
-
-              <div class="d-flex align-items-start gap-3">
-                <div class="p-3 bg-darkest rounded border border-secondary text-warning">
-                  <i class="fas fa-qrcode fa-lg"></i>
-                </div>
-                <div>
-                  <h4 class="h6 text-white mb-1">Official UPI ID</h4>
-                  <span class="text-warning fw-bold">9555514847@ptyes</span>
-                </div>
-              </div>
-
-              <div class="d-flex align-items-start gap-3">
-                <div class="p-3 bg-darkest rounded border border-secondary text-danger">
-                  <i class="fas fa-envelope fa-lg"></i>
-                </div>
-                <div>
-                  <h4 class="h6 text-white mb-1">Official Email</h4>
-                  <a href="mailto:shivansh983965@gmail.com" class="text-danger text-decoration-none">shivansh983965@gmail.com</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-7 scroll-pop">
-            <div class="p-4 p-md-5 bg-card rounded border border-secondary shadow-lg">
-              <h3 class="h4 text-white mb-3">Send Direct Inquiry</h3>
-              <p class="small text-white-50 mb-4">Fill out the form below or chat directly on WhatsApp.</p>
-
-              <form id="contactForm" novalidate>
-                <div class="row g-3">
-                  <div class="col-sm-6">
-                    <label for="contactFullName" class="form-label text-white small fw-bold">Full Name <span class="text-danger">*</span></label>
-                    <div class="input-group-clearable">
-                      <input type="text" id="contactFullName" class="form-control" placeholder="e.g. Rohit Verma" required>
-                      <button type="button" class="input-clear-btn" aria-label="Clear full name"><i class="fas fa-times"></i></button>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-6">
-                    <label for="contactEmail" class="form-label text-white small fw-bold">Email Address <span class="text-danger">*</span></label>
-                    <div class="input-group-clearable">
-                      <input type="email" id="contactEmail" class="form-control" placeholder="rohit@gmail.com" required>
-                      <button type="button" class="input-clear-btn" aria-label="Clear email"><i class="fas fa-times"></i></button>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-6">
-                    <label for="contactPhone" class="form-label text-white small fw-bold">Mobile Number (WhatsApp) <span class="text-danger">*</span></label>
-                    <div class="input-group-clearable">
-                      <input type="tel" id="contactPhone" class="form-control" placeholder="9555514847" required>
-                      <button type="button" class="input-clear-btn" aria-label="Clear phone"><i class="fas fa-times"></i></button>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-6">
-                    <label for="contactTopic" class="form-label text-white small fw-bold">Inquiry Topic</label>
-                    <select id="contactTopic" class="form-select bg-dark text-white border-secondary">
-                      <option value="pt">1-on-1 Personal Training</option>
-                      <option value="diet">Custom Indian Diet Plan</option>
-                      <option value="recomp">Body Recomposition Protocol</option>
-                      <option value="general">General Coaching Inquiry</option>
-                    </select>
-                  </div>
-
-                  <div class="col-12">
-                    <label for="contactMessage" class="form-label text-white small fw-bold">Message Details <span class="text-danger">*</span></label>
-                    <div class="input-group-clearable">
-                      <textarea id="contactMessage" rows="4" class="form-control" placeholder="Describe your current fitness level and goals..." required></textarea>
-                      <button type="button" class="input-clear-btn" aria-label="Clear message"><i class="fas fa-times"></i></button>
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="custom-form-check">
-                      <input type="checkbox" id="contactConsent" name="contactConsent" required>
-                      <label for="contactConsent">
-                        I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and authorize coach communication.
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="col-12 mt-4 d-flex gap-3">
-                    <button type="submit" class="btn btn-primary-custom flex-grow-1" id="btnSubmitContact">
-                      <i class="fas fa-paper-plane me-1"></i> Send Inquiry
-                    </button>
-                    <button type="reset" class="btn btn-secondary-custom" aria-label="Reset form">Reset</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ==========================================================================
-       FOOTER
-       ========================================================================== -->
-  <footer class="footer-section">
-    <div class="container">
-      <div class="row g-4 pb-4 mb-4 border-bottom border-secondary align-items-center">
-        <div class="col-lg-6">
-          <h3 class="h4 text-white mb-1"><i class="fas fa-dumbbell text-danger me-2"></i>SHIVANSH FITNESS</h3>
-          <p class="text-white-50 small mb-0">Personal training, body recomposition, and sports nutrition by Coach Shivansh.</p>
-        </div>
-        <div class="col-lg-6 text-lg-end">
-          <a href="https://wa.me/919555514847" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success text-white border-success">
-            <i class="fab fa-whatsapp text-success me-1"></i> Chat on WhatsApp: +91 9555514847
-          </a>
-        </div>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-lg-4 col-md-6">
-          <h5 class="footer-heading">Contact Details</h5>
-          <div class="text-white small">
-            <div class="mb-2"><i class="fas fa-phone-alt text-danger me-2"></i><strong>Phone:</strong> +91 9555514847</div>
-            <div class="mb-2"><i class="fas fa-qrcode text-danger me-2"></i><strong>UPI ID:</strong> 9555514847@ptyes</div>
-            <div class="mb-2"><i class="fas fa-envelope text-danger me-2"></i><strong>Email:</strong> shivansh983965@gmail.com</div>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-6 col-6">
-          <h5 class="footer-heading">Navigation</h5>
-          <ul class="footer-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#offerings">What We Offer</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#transformation">Case Studies</a></li>
-            <li><a href="#tools">Fitness Tools</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-6">
-          <h5 class="footer-heading">Legal & Privacy</h5>
-          <ul class="footer-links">
-            <li><a href="privacy-policy.html"><i class="fas fa-angle-right"></i> Privacy Policy</a></li>
-            <li><a href="terms-conditions.html"><i class="fas fa-angle-right"></i> Terms & Conditions</a></li>
-            <li><a href="refund-policy.html"><i class="fas fa-angle-right"></i> Refund Policy</a></li>
-            <li><a href="cookie-policy.html"><i class="fas fa-angle-right"></i> Cookie Policy</a></li>
-            <li><a href="#" class="open-cookie-preferences"><i class="fas fa-cookie-bite"></i> Cookie Preferences</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <h5 class="footer-heading">Consultation</h5>
-          <p class="small text-white-50 mb-3">Ready to start? Schedule a free fitness consultation today.</p>
-          <button type="button" class="btn btn-primary-custom w-100" data-bs-toggle="modal" data-bs-target="#consultationModal">
-            Book Free Consultation
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="copyright-bar mt-5">
-      <div class="container text-center text-white-50">
-        <span>&copy; 2026 Shivansh Fitness. All rights reserved. | Official Contact: +91 9555514847 | shivansh983965@gmail.com</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ==========================================================================
-       PROGRAM SYLLABUS MODAL
-       ========================================================================== -->
-  <div class="modal fade" id="programDetailsModal" tabindex="-1" aria-labelledby="programModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content payment-modal-card">
-        <div class="modal-header border-secondary p-3">
-          <div>
-            <span class="badge bg-danger mb-1" id="modalProgBadge">1-ON-1 COACHING</span>
-            <h5 class="modal-title text-white" id="modalProgTitle">Program Syllabus</h5>
-          </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close dialog"></button>
-        </div>
-
-        <div class="modal-body p-4">
-          <div class="row g-3 mb-4 text-center">
-            <div class="col-4">
-              <div class="p-2 bg-darkest rounded border border-secondary">
-                <span class="small text-white-50 d-block">Duration</span>
-                <strong class="text-white" id="modalProgDuration">16 Weeks</strong>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="p-2 bg-darkest rounded border border-secondary">
-                <span class="small text-white-50 d-block">Frequency</span>
-                <strong class="text-danger" id="modalProgFrequency">4-5 Days / Wk</strong>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="p-2 bg-darkest rounded border border-secondary">
-                <span class="small text-white-50 d-block">Lead Coach</span>
-                <strong class="text-warning" id="modalProgCoach">Shivansh</strong>
-              </div>
-            </div>
-          </div>
-
-          <h6 class="text-white fw-bold mb-2">Program Overview</h6>
-          <p class="small text-white-50 mb-4" id="modalProgOverview">...</p>
-
-          <h6 class="text-white fw-bold mb-2">Periodized Curriculum</h6>
-          <div id="modalProgPhases" class="mb-4">...</div>
-
-          <h6 class="text-white fw-bold mb-2">Sample Daily Exercises</h6>
-          <ul id="modalProgWorkout" class="list-unstyled mb-4">...</ul>
-
-          <h6 class="text-white fw-bold mb-2">Nutrition & Macro Guidelines</h6>
-          <div class="p-3 bg-darkest rounded border border-secondary small text-white-50 mb-4" id="modalProgDiet">...</div>
-
-          <div class="d-flex gap-2">
-            <button type="button" class="btn btn-secondary-custom w-50" data-bs-dismiss="modal">Close Syllabus</button>
-            <button type="button" id="modalProgEnrollBtn" class="btn btn-primary-custom w-50 trigger-checkout-btn" data-plan="1-on-1 Bespoke Body Recomposition" data-usd="105" data-inr="8700" data-bs-dismiss="modal">
-              Enroll / Inquire
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       PAYMENT & UPI CONSULTATION MODAL (SECURE ARCHITECTURE)
-       ========================================================================== -->
-  <div class="modal fade" id="paymentCheckoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content payment-modal-card">
-        <div class="modal-header border-secondary p-3">
-          <div>
-            <h5 class="modal-title text-white mb-0" id="checkoutModalLabel"><i class="fas fa-qrcode text-danger me-2"></i>Official UPI & Program Enrollment</h5>
-            <span class="small text-white-50">Official UPI ID: 9555514847@ptyes</span>
-          </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close dialog"></button>
-        </div>
-
-        <div class="modal-body p-4">
-          <div class="row gy-4">
-            <div class="col-md-5 border-end border-secondary">
-              <div class="p-3 bg-darkest rounded border border-secondary mb-3">
-                <span class="text-white-50 small text-uppercase fw-bold">Selected Program</span>
-                <h4 id="checkoutPlanName" class="text-white mt-1 mb-2">All-Access Pro Tier</h4>
-                <div class="pricing-price text-danger mb-2" id="checkoutPlanAmount">₹5,700</div>
-                <ul class="list-unstyled small text-white-50 mb-0">
-                  <li><i class="fas fa-check text-success me-1"></i> 14-Day Money-Back Guarantee</li>
-                  <li><i class="fas fa-check text-success me-1"></i> Direct 1-on-1 Coach Access</li>
-                  <li><i class="fas fa-check text-success me-1"></i> Custom Indian Meal Plan</li>
-                </ul>
-              </div>
-
-              <div class="p-3 bg-darkest rounded border border-secondary text-white-50 small">
-                <strong class="text-white d-block mb-1"><i class="fas fa-shield-alt text-danger me-1"></i> Secure Direct Payment:</strong>
-                We process payments directly via official UPI (<strong class="text-warning">9555514847@ptyes</strong>) to keep your financial transactions safe and direct.
-              </div>
-            </div>
-
-            <div class="col-md-7 text-center">
-              <p class="small text-white-50 mb-2">Scan official UPI QR code with GPay, PhonePe, Paytm, or CRED:</p>
-              
-              <div class="qr-code-box-uploaded mb-3">
-                <img src="img/shivansh-upi-qr.png" alt="Official Shivansh Fitness UPI QR Code for 9555514847@ptyes">
-              </div>
-
-              <div class="p-2 bg-darkest rounded border border-secondary mb-3 small d-flex justify-content-between align-items-center">
-                <div class="text-start">
-                  <strong>UPI ID:</strong> <span class="text-warning fw-bold">9555514847@ptyes</span><br>
-                  <strong>Payee:</strong> Shivansh Fitness • <strong>Amount:</strong> <span id="upiQRAmount" class="text-danger fw-bold">₹5,700</span>
-                </div>
-                <button type="button" id="btnCopyUpiId" class="btn btn-sm btn-outline-warning">
-                  <i class="fas fa-copy me-1"></i> Copy UPI
-                </button>
-              </div>
-
-              <div class="d-flex flex-column gap-2">
-                <a id="directUpiPayLink" href="upi://pay?pa=9555514847@ptyes&pn=Shivansh%20Fitness&cu=INR" class="btn btn-sm btn-success w-100">
-                  <i class="fas fa-mobile-alt me-1"></i> Pay via UPI App (Mobile)
-                </a>
-                <a id="btnWhatsAppEnrollment" href="https://wa.me/919555514847?text=Hi%20Shivansh!%20I%20am%20enrolling%20in%20the%20coaching%20program." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-success text-white border-success w-100">
-                  <i class="fab fa-whatsapp text-success me-1"></i> Confirm Enrollment on WhatsApp (+91 9555514847)
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       FREE CONSULTATION MODAL
-       ========================================================================== -->
-  <div class="modal fade" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content payment-modal-card">
-        <div class="modal-header border-secondary p-3">
-          <div>
-            <h5 class="modal-title text-white mb-0" id="consultationModalLabel"><i class="fas fa-calendar-check text-danger me-2"></i>Book a Free Fitness Consultation</h5>
-            <span class="small text-white-50">1-on-1 Strategy Session with Coach Shivansh</span>
-          </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close dialog"></button>
-        </div>
-        <div class="modal-body p-4">
-          <form id="freeConsultationForm" novalidate>
-            <div class="mb-3">
-              <label for="consultName" class="form-label text-white small fw-bold">Full Legal Name <span class="text-danger">*</span></label>
-              <div class="input-group-clearable">
-                <input type="text" id="consultName" class="form-control" placeholder="e.g. Rohit Verma" required>
-                <button type="button" class="input-clear-btn" aria-label="Clear name"><i class="fas fa-times"></i></button>
-              </div>
-              <div id="consultNameError" class="field-error-msg">Please enter your real full name.</div>
-            </div>
-
-            <div class="mb-3">
-              <label for="consultEmail" class="form-label text-white small fw-bold">Email Address <span class="text-danger">*</span></label>
-              <div class="input-group-clearable">
-                <input type="email" id="consultEmail" class="form-control" placeholder="rohit@gmail.com" required>
-                <button type="button" class="input-clear-btn" aria-label="Clear email"><i class="fas fa-times"></i></button>
-              </div>
-              <div id="consultEmailError" class="field-error-msg">Please enter a valid email address.</div>
-            </div>
-
-            <div class="mb-3">
-              <label for="consultPhone" class="form-label text-white small fw-bold">Mobile Number (WhatsApp) <span class="text-danger">*</span></label>
-              <div class="input-group-clearable">
-                <input type="tel" id="consultPhone" class="form-control" placeholder="e.g. 9555514847" required>
-                <button type="button" class="input-clear-btn" aria-label="Clear phone"><i class="fas fa-times"></i></button>
-              </div>
-              <div id="consultPhoneError" class="field-error-msg">Enter a valid 10-digit mobile number.</div>
-            </div>
-
-            <div class="mb-3">
-              <label for="consultGoal" class="form-label text-white small fw-bold">Primary Goal</label>
-              <select id="consultGoal" class="form-select bg-dark text-white border-secondary">
-                <option value="recomp">Body Recomposition (Fat Loss & Muscle Building)</option>
-                <option value="fatloss">Belly Fat Reduction & Conditioning</option>
-                <option value="strength">Strength & Powerlifting Progress</option>
-                <option value="mobility">Desk Worker Posture & Mobility</option>
-              </select>
-            </div>
-
-            <div class="custom-form-check">
-              <input type="checkbox" id="consultConsent" name="consultConsent" required>
-              <label for="consultConsent">
-                I confirm I am physically ready for exercise and agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.
-              </label>
-            </div>
-
-            <div class="mt-4 d-flex gap-2">
-              <button type="submit" class="btn btn-primary-custom flex-grow-1" id="btnSubmitConsultation">
-                Submit Consultation Request
-              </button>
-              <button type="button" class="btn btn-secondary-custom" data-bs-dismiss="modal">Cancel</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       AI FITNESS CHAT ASSISTANT (AUTOMATED FAQ HELPER)
-       ========================================================================== -->
-  <button type="button" id="aiAssistantToggleBtn" class="ai-assistant-toggle-btn" aria-label="Open Fitness FAQ Assistant">
-    <div class="ai-bot-avatar">
-      <i class="fas fa-robot"></i>
-      <span class="ai-online-indicator"></span>
-    </div>
-    <div class="d-none d-sm-block text-start">
-      <div class="fw-bold small lh-1">Fitness FAQ Bot</div>
-      <span class="text-white-50" style="font-size: 0.72rem;">Ask in English / Hinglish</span>
-    </div>
-  </button>
-
-  <div id="aiChatDrawer" class="ai-chat-drawer" role="dialog" aria-label="Fitness FAQ Assistant">
-    <div class="ai-chat-header">
-      <div class="d-flex align-items-center gap-2">
-        <div class="ai-bot-avatar" style="width: 32px; height: 32px; font-size: 1rem;">
-          <i class="fas fa-robot"></i>
-        </div>
-        <div>
-          <h6 class="text-white mb-0" style="font-size: 0.92rem;">Fitness FAQ Assistant</h6>
-          <span class="text-success" style="font-size: 0.72rem;"><i class="fas fa-circle me-1" style="font-size: 0.55rem;"></i>Automated FAQ Support</span>
-        </div>
-      </div>
-      <div class="d-flex align-items-center gap-2">
-        <a href="https://wa.me/919555514847" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-success py-0 px-2 text-white border-success" style="font-size: 0.75rem;" title="Chat with Coach Shivansh">
-          <i class="fab fa-whatsapp text-success me-1"></i> Coach
-        </a>
-        <button type="button" id="closeAiChatBtn" class="btn btn-sm text-white-50 p-0" aria-label="Close Chat">
-          <i class="fas fa-times fa-lg"></i>
-        </button>
-      </div>
-    </div>
-
-    <div class="p-2 bg-darkest border-bottom border-secondary text-white-50" style="font-size: 0.72rem;">
-      <i class="fas fa-info-circle text-warning me-1"></i> <em>Automated FAQ tool for general information. Not medical advice.</em>
-    </div>
-
-    <div id="aiChatBody" class="ai-chat-body">
-      <div class="chat-bubble chat-bubble-bot">
-        Namaste! 🙏 I am the Shivansh Fitness automated assistant. How can I help you today? You can ask about our training programs, Indian diet outlines, pricing, or consultation booking in English or Hinglish!
-      </div>
-    </div>
-
-    <div class="chat-quick-chips">
-      <button type="button" class="quick-chip" data-prompt="Desi high protein diet plan batao">🍱 Desi Diet Outlines</button>
-      <button type="button" class="quick-chip" data-prompt="Fat loss training kaise hoti hai?">🔥 Fat Loss Routine</button>
-      <button type="button" class="quick-chip" data-prompt="Coaching fees and UPI ID 9555514847@ptyes">💳 Fees & UPI</button>
-      <button type="button" class="quick-chip" data-prompt="Free consultation session kaise book karein?">🎟️ Free Consultation</button>
-    </div>
-
-    <div class="ai-chat-footer">
-      <input type="text" id="aiChatInput" class="ai-chat-input" placeholder="Type your fitness question..." aria-label="Chat input">
-      <button type="button" id="aiChatSendBtn" class="ai-chat-send-btn" aria-label="Send message">
-        <i class="fas fa-paper-plane fa-sm"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- Cookie Consent Banner -->
-  <div id="cookieConsentBanner" class="cookie-consent-banner" role="region" aria-label="Cookie and Privacy Consent">
-    <div class="container">
-      <div class="row align-items-center gy-3">
-        <div class="col-lg-8">
-          <h4 class="h6 text-white mb-1"><i class="fas fa-cookie-bite text-warning me-2"></i>PRIVACY CHOICES & COOKIE SETTINGS</h4>
-          <p class="small text-white-50 mb-0">
-            We use functional cookies to store your currency preferences (₹/$) and session options. Read our full <a href="cookie-policy.html" class="text-danger text-decoration-underline">Cookie Policy</a>.
-          </p>
-        </div>
-        <div class="col-lg-4 text-lg-end">
-          <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
-            <button type="button" id="rejectOptionalCookies" class="btn btn-sm btn-secondary-custom">Essential Only</button>
-            <button type="button" id="acceptAllCookies" class="btn btn-sm btn-primary-custom">Accept All</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       PWA APP INSTALLATION MODAL (ANDROID & iOS READY)
-       ========================================================================== -->
-  <div class="modal fade" id="pwaInstallModal" tabindex="-1" aria-labelledby="pwaInstallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content bg-card border-danger-subtle text-white shadow-luxury">
-        <div class="modal-header border-bottom border-secondary pb-3">
-          <div class="d-flex align-items-center gap-3">
-            <img src="img/icon-192.png" alt="Shivansh Fitness App Icon" class="rounded-3 border border-danger p-1" style="width: 52px; height: 52px; object-fit: cover; box-shadow: 0 0 15px rgba(230,30,42,0.4);">
+        </section>
+
+        <!-- ==========================================================================
+             SCREEN 1: HOME & DASHBOARD (MATCHING SCREEN 2 OF MOCKUP)
+             ========================================================================== -->
+        <section id="screenHome" class="app-screen" aria-label="Home Dashboard">
+          <!-- Header Row -->
+          <div class="app-header-row">
             <div>
-              <h5 class="modal-title font-heading text-white fw-bold mb-0" id="pwaInstallModalLabel" style="font-size: 1.6rem; letter-spacing: 0.5px;">SHIVANSH FITNESS APP</h5>
-              <span class="badge bg-danger text-uppercase" style="font-size: 0.65rem;">100% Free Official App</span>
+              <div class="app-user-greeting">Welcome back,</div>
+              <h2 class="app-user-name">Shivansh! 👋</h2>
             </div>
-          </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body py-4">
-          <p class="text-white-50 small mb-4">
-            Install Shivansh Fitness on your mobile home screen for instant 1-tap access, offline workout plans, Indian diet guides, and direct coaching support.
-          </p>
-
-          <!-- Feature Highlights -->
-          <div class="row g-2 mb-4 text-center">
-            <div class="col-4">
-              <div class="p-2 rounded bg-darkest border border-secondary">
-                <i class="fas fa-bolt text-warning mb-1 fa-lg"></i>
-                <div class="text-white fw-bold" style="font-size: 0.75rem;">Instant Load</div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="p-2 rounded bg-darkest border border-secondary">
-                <i class="fas fa-wifi-slash text-info mb-1 fa-lg"></i>
-                <div class="text-white fw-bold" style="font-size: 0.75rem;">Works Offline</div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="p-2 rounded bg-darkest border border-secondary">
-                <i class="fas fa-shield-alt text-success mb-1 fa-lg"></i>
-                <div class="text-white fw-bold" style="font-size: 0.75rem;">No Downloads</div>
-              </div>
+            <div class="app-header-actions">
+              <button type="button" class="dock-nav-button" id="btnNotificationIcon" style="width: 40px; height: 40px; font-size: 1.1rem; background: #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.05);" title="Sound & Notifications">
+                <i class="fas fa-bell text-warning"></i>
+              </button>
+              <img src="img/trainer-shivansh.jpg" alt="User Profile" class="app-avatar-img" id="btnHeaderAvatar">
             </div>
           </div>
 
-          <!-- Main Install Action Button -->
-          <button type="button" id="btnPwaModalAction" class="btn btn-primary-custom w-100 py-3 fw-bold mb-4 d-flex align-items-center justify-content-center gap-2" style="font-size: 1.05rem;">
-            <i class="fas fa-download"></i> <span id="btnPwaModalText">Install App to Home Screen</span>
-          </button>
+          <!-- Search Bar -->
+          <div class="app-search-box">
+            <i class="fas fa-search text-warning"></i>
+            <input type="text" id="appSearchInput" placeholder="Search for course or exercise..." aria-label="Search course">
+          </div>
 
-          <!-- OS Guide Accordion -->
-          <div class="accordion" id="pwaGuideAccordion">
-            <div class="accordion-item bg-darkest border-secondary">
-              <h2 class="accordion-header" id="headingAndroid">
-                <button class="accordion-button collapsed bg-darkest text-white small py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAndroid" aria-expanded="false" aria-controls="collapseAndroid">
-                  <i class="fab fa-android text-success me-2"></i> Android (Chrome / Brave / Edge) Guide
-                </button>
-              </h2>
-              <div id="collapseAndroid" class="accordion-collapse collapse" aria-labelledby="headingAndroid" data-bs-parent="#pwaGuideAccordion">
-                <div class="accordion-body small text-white-50">
-                  <ol class="ps-3 mb-0">
-                    <li>Click the <strong>"Install App to Home Screen"</strong> button above.</li>
-                    <li>Or tap the <strong>3 dots menu (⋮)</strong> at top-right of your browser.</li>
-                    <li>Tap <strong>"Install app"</strong> or <strong>"Add to Home screen"</strong>.</li>
-                  </ol>
+          <!-- Promo Banner (Find Your Workout Class - 60% OFF) -->
+          <div class="app-promo-banner">
+            <div>
+              <span class="promo-badge-tag">LIMITED OFFER</span>
+              <div class="promo-title">Find Your<br>Workout Class</div>
+              <div class="promo-discount-text">60% OFF</div>
+              <button type="button" class="promo-btn-join" id="btnJoinGymPromo">
+                Join GYM <i class="fas fa-bolt ms-1"></i>
+              </button>
+            </div>
+            <img src="img/app-promo-dumbbells.jpg" alt="3D Dumbbells" class="promo-3d-img">
+          </div>
+
+          <!-- Your Progress Section -->
+          <div class="app-section-title-row">
+            <h3 class="app-section-title">Your Progress</h3>
+            <a href="#" class="app-section-link" id="linkViewAllProgress">See details</a>
+          </div>
+
+          <div class="app-progress-grid">
+            <!-- Ring 1: Walk Steps -->
+            <div class="progress-widget-card">
+              <div class="widget-card-header">
+                <span class="widget-title">Walk</span>
+                <i class="fas fa-shoe-prints text-warning"></i>
+              </div>
+              <div class="progress-ring-container">
+                <svg class="progress-ring-svg">
+                  <circle class="progress-ring-circle-bg" cx="45" cy="45" r="35"></circle>
+                  <circle class="progress-ring-circle-val" id="homeStepsCircle" cx="45" cy="45" r="35"></circle>
+                </svg>
+                <div class="progress-ring-text">
+                  <div class="progress-ring-val" id="homeStepsText">8,104</div>
+                  <div class="progress-ring-label">Steps</div>
                 </div>
               </div>
             </div>
 
-            <div class="accordion-item bg-darkest border-secondary mt-2">
-              <h2 class="accordion-header" id="headingiOS">
-                <button class="accordion-button collapsed bg-darkest text-white small py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseiOS" aria-expanded="false" aria-controls="collapseiOS">
-                  <i class="fab fa-apple text-white me-2"></i> iPhone / iPad (Safari) Guide
-                </button>
-              </h2>
-              <div id="collapseiOS" class="accordion-collapse collapse" aria-labelledby="headingiOS" data-bs-parent="#pwaGuideAccordion">
-                <div class="accordion-body small text-white-50">
-                  <ol class="ps-3 mb-0">
-                    <li>Open this site in <strong>Safari</strong> browser.</li>
-                    <li>Tap the <strong>Share button (<i class="fas fa-share-square text-info"></i>)</strong> at the bottom center.</li>
-                    <li>Scroll down and tap <strong>"Add to Home Screen" (<i class="fas fa-plus-square text-white"></i>)</strong>.</li>
-                    <li>Tap <strong>Add</strong> at top right — Shivansh Fitness is now your home screen app!</li>
-                  </ol>
-                </div>
+            <!-- Ring 2: Sleep / Hydration -->
+            <div class="progress-widget-card">
+              <div class="widget-card-header">
+                <span class="widget-title">Sleep</span>
+                <i class="fas fa-moon text-info"></i>
+              </div>
+              <div class="bar-chart-mini">
+                <div class="bar-mini-col" style="height: 45%;"></div>
+                <div class="bar-mini-col" style="height: 65%;"></div>
+                <div class="bar-mini-col active" style="height: 85%;"></div>
+                <div class="bar-mini-col active" style="height: 90%;"></div>
+                <div class="bar-mini-col active" style="height: 75%;"></div>
+              </div>
+              <div class="mt-2 text-center">
+                <span class="fw-bold" style="font-size: 1rem; color: var(--app-dark);">6.5</span>
+                <span class="text-muted" style="font-size: 0.72rem;">Hours</span>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+
+          <!-- Workout Categories Horizontal Scroll -->
+          <div class="app-section-title-row">
+            <h3 class="app-section-title">Workout Routines</h3>
+          </div>
+
+          <div class="app-category-scroll">
+            <button type="button" class="category-pill active" data-cat="all">🔥 All Routines</button>
+            <button type="button" class="category-pill" data-cat="strength">🏋️ Strength</button>
+            <button type="button" class="category-pill" data-cat="fatloss">🏃 Fat Loss</button>
+            <button type="button" class="category-pill" data-cat="diet">🍱 Desi Diet</button>
+          </div>
+
+          <!-- Workout Cards List -->
+          <div id="homeWorkoutCardsList">
+            <div class="app-workout-card" data-workout="push">
+              <div class="workout-thumb-box">
+                <i class="fas fa-dumbbell"></i>
+              </div>
+              <div class="workout-info-meta">
+                <div class="workout-card-title">Push Day (Chest, Shoulders, Triceps)</div>
+                <div class="workout-card-sub">45 Mins • 5 Exercises • Intermediate</div>
+              </div>
+              <button type="button" class="workout-play-btn" aria-label="Start workout">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+
+            <div class="app-workout-card" data-workout="pull">
+              <div class="workout-thumb-box" style="background: #e0f2fe; color: #0284c7;">
+                <i class="fas fa-running"></i>
+              </div>
+              <div class="workout-info-meta">
+                <div class="workout-card-title">Pull Day (Back, Lats, Biceps)</div>
+                <div class="workout-card-sub">50 Mins • 6 Exercises • High Intensity</div>
+              </div>
+              <button type="button" class="workout-play-btn" aria-label="Start workout">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+
+            <div class="app-workout-card" data-workout="legs">
+              <div class="workout-thumb-box" style="background: #fee2e2; color: #e61e2a;">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <div class="workout-info-meta">
+                <div class="workout-card-title">Legs & Core Power Blast</div>
+                <div class="workout-card-sub">40 Mins • Squats & Deadlifts • Advanced</div>
+              </div>
+              <button type="button" class="workout-play-btn" aria-label="Start workout">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SCREEN 2: ACTIVITIES & ANALYTICS (MATCHING SCREEN 1 OF MOCKUP)
+             ========================================================================== -->
+        <section id="screenActivity" class="app-screen" aria-label="Activities and Analytics">
+          <h2 class="activity-header-title">Your activities</h2>
+          <div class="activity-header-sub">This week performance</div>
+
+          <!-- Date Picker Strip -->
+          <div class="date-picker-strip">
+            <div class="date-pill-btn" data-day="sat">
+              <span class="date-pill-day">Sat</span>
+              <span class="date-pill-num">26</span>
+            </div>
+            <div class="date-pill-btn" data-day="sun">
+              <span class="date-pill-day">Sun</span>
+              <span class="date-pill-num">27</span>
+            </div>
+            <div class="date-pill-btn active" data-day="mon">
+              <span class="date-pill-day">Mon</span>
+              <span class="date-pill-num">28</span>
+            </div>
+            <div class="date-pill-btn" data-day="tue">
+              <span class="date-pill-day">Tue</span>
+              <span class="date-pill-num">29</span>
+            </div>
+            <div class="date-pill-btn" data-day="wed">
+              <span class="date-pill-day">Wed</span>
+              <span class="date-pill-num">30</span>
+            </div>
+          </div>
+
+          <!-- Calorie Wave Chart Card -->
+          <div class="calorie-wave-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="calorie-val-main" id="activityCalorieNum">1,680</div>
+                <div class="calorie-unit-sub">KCAL BURNED TODAY</div>
+              </div>
+              <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold" style="font-size: 0.75rem;">+14% vs avg</span>
+            </div>
+
+            <!-- Smooth Amber Calorie Wave SVG -->
+            <svg class="calorie-wave-svg" viewBox="0 0 400 120" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffb703" stop-opacity="0.55"/>
+                  <stop offset="100%" stop-color="#fb8500" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <path d="M 0,90 Q 60,110 100,70 T 200,35 T 300,55 T 400,20 L 400,120 L 0,120 Z" fill="url(#waveGradient)"></path>
+              <path d="M 0,90 Q 60,110 100,70 T 200,35 T 300,55 T 400,20" fill="none" stroke="#fb8500" stroke-width="4" stroke-linecap="round"></path>
+              <circle cx="200" cy="35" r="6" fill="#ffffff" stroke="#fb8500" stroke-width="3"></circle>
+            </svg>
+          </div>
+
+          <!-- Daily Hydration Quick Widget -->
+          <div class="activity-item-card mb-3" style="background: #f0fdf4; border: 1px solid #bbf7d0;">
+            <div class="activity-item-left">
+              <div class="activity-badge-icon" style="background: #22c55e; color: #ffffff;">
+                <i class="fas fa-tint"></i>
+              </div>
+              <div>
+                <div class="activity-name-text">Hydration Tracker</div>
+                <div class="activity-time-text" id="activityWaterText">2,250 / 3,500 ml (64%)</div>
+              </div>
+            </div>
+            <div class="d-flex gap-1">
+              <button type="button" class="btn btn-sm btn-success rounded-pill px-2 py-1" id="btnActivityAddWater" style="font-size: 0.75rem;">
+                +250ml <i class="fas fa-plus fa-xs"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Activity List (Matching Screen 1) -->
+          <div class="app-section-title-row">
+            <h3 class="app-section-title">Workout History</h3>
+          </div>
+
+          <div class="activity-item-card">
+            <div class="activity-item-left">
+              <div class="activity-badge-icon" style="background: #fff4e0; color: #fb8500;">
+                <i class="fas fa-running"></i>
+              </div>
+              <div>
+                <div class="activity-name-text">Running</div>
+                <div class="activity-time-text">6:00 PM - 7:20 PM</div>
+              </div>
+            </div>
+            <div class="activity-stats-right">
+              <div class="activity-stat-primary">1.32 <span style="font-size: 0.75rem;">hours</span></div>
+              <div class="activity-stat-secondary">9.50 kilometers</div>
+            </div>
+          </div>
+
+          <div class="activity-item-card">
+            <div class="activity-item-left">
+              <div class="activity-badge-icon" style="background: #e0f2fe; color: #0284c7;">
+                <i class="fas fa-dumbbell"></i>
+              </div>
+              <div>
+                <div class="activity-name-text">Chest & Arms Lifting</div>
+                <div class="activity-time-text">7:30 AM - 8:30 AM</div>
+              </div>
+            </div>
+            <div class="activity-stats-right">
+              <div class="activity-stat-primary">1.00 <span style="font-size: 0.75rem;">hours</span></div>
+              <div class="activity-stat-secondary">480 kcal burned</div>
+            </div>
+          </div>
+
+          <div class="activity-item-card">
+            <div class="activity-item-left">
+              <div class="activity-badge-icon" style="background: #fdf2f8; color: #db2777;">
+                <i class="fas fa-swimmer"></i>
+              </div>
+              <div>
+                <div class="activity-name-text">Swimming Cardio</div>
+                <div class="activity-time-text">5:00 AM - 5:50 AM</div>
+              </div>
+            </div>
+            <div class="activity-stats-right">
+              <div class="activity-stat-primary">0.82 <span style="font-size: 0.75rem;">hours</span></div>
+              <div class="activity-stat-secondary">360 kcal burned</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SCREEN 3: WORKOUT STUDIO & LIVE REST TIMER
+             ========================================================================== -->
+        <section id="screenWorkouts" class="app-screen" aria-label="Workout Studio">
+          <div class="app-header-row mb-3">
+            <div>
+              <h2 class="app-user-name">Workout Studio</h2>
+              <div class="app-user-greeting">Live Rest Timer & Form Check</div>
+            </div>
+          </div>
+
+          <!-- Digital Gym Rest Interval Timer Box -->
+          <div class="workout-timer-box">
+            <div style="font-size: 0.8rem; color: #b0b7c3; text-transform: uppercase; letter-spacing: 1px;">
+              <i class="fas fa-stopwatch me-1"></i> Gym Rest Timer
+            </div>
+            <div class="workout-timer-digits" id="screenTimerDisplay">00:45</div>
+            
+            <div class="timer-preset-row">
+              <button type="button" class="timer-preset-btn" data-sec="30">30s</button>
+              <button type="button" class="timer-preset-btn active" data-sec="45">45s</button>
+              <button type="button" class="timer-preset-btn" data-sec="60">60s</button>
+              <button type="button" class="timer-preset-btn" data-sec="90">90s</button>
+            </div>
+
+            <div class="d-flex justify-content-center gap-2">
+              <button type="button" class="btn btn-warning px-4 py-2 rounded-pill fw-bold" id="btnScreenTimerStart">
+                <i class="fas fa-play me-1"></i> Start Rest
+              </button>
+              <button type="button" class="btn btn-outline-light px-3 py-2 rounded-pill" id="btnScreenTimerReset">
+                <i class="fas fa-redo-alt"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Workout Plan Selector -->
+          <div class="app-section-title-row">
+            <h3 class="app-section-title">Today's Exercise Plan</h3>
+          </div>
+
+          <div class="diet-plan-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-bold" style="color: var(--app-dark);">1. Barbell Flat Bench Press</span>
+              <span class="badge bg-danger rounded-pill">4 Sets</span>
+            </div>
+            <p class="text-muted small mb-0">8-10 Reps • Progressive overload with 2-minute heavy rest.</p>
+          </div>
+
+          <div class="diet-plan-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-bold" style="color: var(--app-dark);">2. Incline Dumbbell Press</span>
+              <span class="badge bg-warning text-dark rounded-pill">3 Sets</span>
+            </div>
+            <p class="text-muted small mb-0">10-12 Reps • Strict 30° incline bench for upper clavicular pec activation.</p>
+          </div>
+
+          <div class="diet-plan-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-bold" style="color: var(--app-dark);">3. Cable Lateral Raises</span>
+              <span class="badge bg-info text-dark rounded-pill">4 Sets</span>
+            </div>
+            <p class="text-muted small mb-0">15 Reps • Constant side delt tension with 45s rest intervals.</p>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SCREEN 4: DESI NUTRITION & DIET PLANS
+             ========================================================================== -->
+        <section id="screenDiet" class="app-screen" aria-label="Nutrition & Diet">
+          <div class="app-header-row mb-3">
+            <div>
+              <h2 class="app-user-name">Desi Nutrition</h2>
+              <div class="app-user-greeting">High Protein Indian Meal Plans</div>
+            </div>
+          </div>
+
+          <div class="diet-plan-card">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <h4 class="fw-bold mb-0" style="color: var(--app-dark); font-size: 1.05rem;">🍳 High Protein Indian Veg/Egg</h4>
+              <span class="badge bg-success rounded-pill">135g Protein</span>
+            </div>
+            <p class="text-muted small mb-2">Ideal for fat loss & lean muscle recomposition using everyday ghar ka khana.</p>
+            <div class="diet-macro-pills">
+              <span class="macro-pill bg-danger-subtle text-danger">Protein: 135g</span>
+              <span class="macro-pill bg-warning-subtle text-warning">Carbs: 180g</span>
+              <span class="macro-pill bg-info-subtle text-info">Fats: 45g</span>
+            </div>
+          </div>
+
+          <div class="diet-plan-card">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <h4 class="fw-bold mb-0" style="color: var(--app-dark); font-size: 1.05rem;">🍱 Student Budget Indian Plan</h4>
+              <span class="badge bg-warning text-dark rounded-pill">₹120 / Day</span>
+            </div>
+            <p class="text-muted small mb-2">Soya chunks, boiled eggs, roasted chana, dahi, and oats for maximum budget nutrition.</p>
+            <div class="diet-macro-pills">
+              <span class="macro-pill bg-danger-subtle text-danger">Protein: 120g</span>
+              <span class="macro-pill bg-warning-subtle text-warning">Calories: 2,100</span>
+            </div>
+          </div>
+
+          <div class="diet-plan-card">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <h4 class="fw-bold mb-0" style="color: var(--app-dark); font-size: 1.05rem;">🍗 Lean Non-Veg Recomposition</h4>
+              <span class="badge bg-primary text-white rounded-pill">160g Protein</span>
+            </div>
+            <p class="text-muted small mb-2">Grilled chicken breast, egg whites, rice, dal, and fresh green salads.</p>
+            <div class="diet-macro-pills">
+              <span class="macro-pill bg-danger-subtle text-danger">Protein: 160g</span>
+              <span class="macro-pill bg-info-subtle text-info">Calories: 2,350</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SCREEN 5: COACH SHIVANSH & ADMISSIONS
+             ========================================================================== -->
+        <section id="screenCoach" class="app-screen" aria-label="Coach Profile and Contact">
+          <div class="coach-profile-header">
+            <img src="img/trainer-shivansh.jpg" alt="Coach Shivansh" class="coach-avatar-lg">
+            <h2 class="app-user-name mb-0">Coach Shivansh</h2>
+            <div class="text-muted small mb-2">Head Trainer & Certified Sports Nutritionist</div>
+            <span class="badge bg-success px-3 py-1 rounded-pill"><i class="fas fa-check-circle me-1"></i> Verified Trainer</span>
+          </div>
+
+          <!-- Direct WhatsApp Channel Button -->
+          <a href="https://wa.me/919555514847?text=Hi%20Coach%20Shivansh!%20I%20am%20using%20the%20Shivansh%20Fitness%20App%20and%20want%20to%20enroll%20for%20personal%20training." target="_blank" rel="noopener noreferrer" class="btn btn-success w-100 py-3 rounded-pill fw-bold mb-3 d-flex align-items-center justify-content-center gap-2 shadow-sm" style="font-size: 1rem;">
+            <i class="fab fa-whatsapp fa-lg"></i> Chat Directly on WhatsApp
+          </a>
+
+          <!-- Official Verified UPI ID Card -->
+          <div class="upi-payment-card">
+            <div class="text-muted small mb-1">OFFICIAL VERIFIED UPI ID</div>
+            <div class="fw-bold fs-5 text-dark mb-2" id="coachUpiIdText">9555514847@ptyes</div>
+            <button type="button" class="btn btn-sm btn-outline-warning rounded-pill px-3" id="btnCopyUpiId">
+              <i class="fas fa-copy me-1"></i> Copy UPI ID
+            </button>
+          </div>
+
+          <div class="diet-plan-card">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <i class="fas fa-phone-alt text-danger fa-lg"></i>
+              <div>
+                <div class="fw-bold" style="color: var(--app-dark);">Direct Phone Support</div>
+                <a href="tel:+919555514847" class="text-muted small text-decoration-none">+91 9555514847</a>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <i class="fas fa-envelope text-warning fa-lg"></i>
+              <div>
+                <div class="fw-bold" style="color: var(--app-dark);">Official Email</div>
+                <a href="mailto:shivansh983965@gmail.com" class="text-muted small text-decoration-none">shivansh983965@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- ==========================================================================
+           FIXED NATIVE BOTTOM APP NAVIGATION DOCK (5 TABS MATCHING MOCKUP)
+           ========================================================================== -->
+      <nav class="app-bottom-nav-dock" id="appBottomNavDock" aria-label="Bottom App Navigation">
+        <!-- 1. Home Screen -->
+        <button type="button" class="dock-nav-button active" data-screen="screenHome" aria-label="Home Dashboard">
+          <i class="fas fa-home"></i>
+        </button>
+
+        <!-- 2. Activity / Analytics Screen -->
+        <button type="button" class="dock-nav-button" data-screen="screenActivity" aria-label="Activity Analytics">
+          <i class="fas fa-chart-line"></i>
+        </button>
+
+        <!-- 3. Workouts & Live Timer Screen -->
+        <button type="button" class="dock-nav-button" data-screen="screenWorkouts" aria-label="Workout Studio">
+          <i class="fas fa-stopwatch"></i>
+        </button>
+
+        <!-- 4. Diet & Nutrition Screen -->
+        <button type="button" class="dock-nav-button" data-screen="screenDiet" aria-label="Nutrition & Diet">
+          <i class="fas fa-utensils"></i>
+        </button>
+
+        <!-- 5. Coach & Profile Screen -->
+        <button type="button" class="dock-nav-button" data-screen="screenCoach" aria-label="Coach Profile">
+          <i class="fas fa-user"></i>
+        </button>
+      </nav>
+
     </div>
   </div>
 
-  <!-- Floating Mobile App Banner (Bottom) -->
-  <div id="pwaFloatingBanner" class="pwa-floating-banner" role="banner" aria-label="Install Shivansh Fitness App">
-    <div class="d-flex align-items-center justify-content-between gap-2">
-      <div class="d-flex align-items-center gap-2">
-        <img src="img/icon-192.png" alt="App icon" class="rounded-2" style="width: 38px; height: 38px; object-fit: cover;">
-        <div>
-          <div class="text-white fw-bold lh-1" style="font-size: 0.88rem;">Shivansh Fitness App</div>
-          <span class="text-white-50" style="font-size: 0.72rem;">Install for faster offline access</span>
-        </div>
-      </div>
-      <div class="d-flex align-items-center gap-1">
-        <button type="button" id="btnPwaBannerInstall" class="btn btn-sm btn-primary-custom py-1 px-2" style="font-size: 0.78rem;">Install</button>
-        <button type="button" id="btnPwaBannerDismiss" class="btn btn-sm text-white-50 p-1" aria-label="Dismiss banner"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       NATIVE MOBILE APP BOTTOM NAVIGATION DOCK (5-TAB PRO APP DOCK)
-       ========================================================================== -->
-  <nav class="mobile-app-bottom-dock d-lg-none" aria-label="Mobile App Navigation Dock">
-    <a href="#hero" class="app-dock-tab active" data-app-nav="home" aria-label="Home Dashboard">
-      <div class="dock-icon-wrapper">
-        <i class="fas fa-home"></i>
-      </div>
-      <span>Home</span>
-    </a>
-    <a href="#daily-dashboard" class="app-dock-tab" data-app-nav="tracker" aria-label="Daily Trackers">
-      <div class="dock-icon-wrapper">
-        <i class="fas fa-heartbeat"></i>
-      </div>
-      <span>Tracker</span>
-    </a>
-    <a href="#workout-routines" class="app-dock-tab" data-app-nav="workouts" aria-label="Workout Splits and Rest Timer">
-      <div class="dock-icon-wrapper">
-        <i class="fas fa-dumbbell"></i>
-      </div>
-      <span>Workouts</span>
-    </a>
-    <a href="#nutrition-plans" class="app-dock-tab" data-app-nav="diet" aria-label="Desi Diet Plans">
-      <div class="dock-icon-wrapper">
-        <i class="fas fa-utensils"></i>
-      </div>
-      <span>Diet</span>
-    </a>
-    <a href="#tools" class="app-dock-tab" data-app-nav="tools" aria-label="Fitness Calculators">
-      <div class="dock-icon-wrapper">
-        <i class="fas fa-calculator"></i>
-      </div>
-      <span>Tools</span>
-    </a>
-    <a href="https://wa.me/919555514847?text=Hi%20Coach%20Shivansh!%20I%20am%20using%20the%20Shivansh%20Fitness%20App%20and%20want%20to%20connect." target="_blank" rel="noopener noreferrer" class="app-dock-tab app-dock-tab-coach" data-app-nav="coach" aria-label="WhatsApp Coach Shivansh">
-      <div class="dock-icon-wrapper bg-success text-white">
-        <i class="fab fa-whatsapp"></i>
-      </div>
-      <span class="text-success">Coach</span>
-    </a>
-  </nav>
-
-  <!-- Back to Top Button -->
-  <button type="button" id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll to top">
-    <i class="fas fa-arrow-up" aria-hidden="true"></i>
-  </button>
-
-  <!-- Bootstrap 5 JS Bundle & JavaScript Engine -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- App Javascript Engine -->
   <script src="js/main.js"></script>
 </body>
 </html>
