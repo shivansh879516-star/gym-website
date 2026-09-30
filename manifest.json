@@ -1,0 +1,56 @@
+{
+  "name": "Shivansh Fitness | Premium Gym & Training Club",
+  "short_name": "Shivansh Gym",
+  "description": "Official Shivansh Fitness Mobile App. Workouts, Indian Diet Plans, Fitness Calculators & Personal Training.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050608",
+  "theme_color": "#e61e2a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Fitness Calculators",
+      "short_name": "Calculators",
+      "description": "Calculate BMI, TDEE, Calorie Deficit & 1RM",
+      "url": "./index.html#calculators",
+      "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Workout Splits & Timer",
+      "short_name": "Workouts",
+      "description": "View Workout Routines & Rest Timer",
+      "url": "./index.html#workout-routines",
+      "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Desi Diet Plans",
+      "short_name": "Diets",
+      "description": "Custom Indian Veg/Non-Veg Meal Plans",
+      "url": "./index.html#nutrition-plans",
+      "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Join / Contact",
+      "short_name": "Contact",
+      "description": "Direct WhatsApp & Call to Trainer Shivansh",
+      "url": "./index.html#contact",
+      "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "categories": ["fitness", "health", "sports", "lifestyle"]
+}

@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initWorkoutSplitAndTimer();
   initReviewFilters();
   initWebAudioClickSound();
+  
+  // Progressive Web App (PWA) Engine
+  initPWAInstallation();
 });
 
 /* ==========================================================================
@@ -1383,3 +1386,93 @@ function escapeHtml(str) {
     tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
   );
 }
+
+/* ==========================================================================
+   PROGRESSIVE WEB APP (PWA) & SERVICE WORKER LIFECYCLE
+   ========================================================================== */
+let deferredPrompt = null;
+
+function initPWAInstallation() {
+  // 1. Register Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then((reg) => {
+          console.log('[PWA] Service Worker registered successfully, scope:', reg.scope);
+        })
+        .catch((err) => {
+          console.warn('[PWA] Service Worker registration failed:', err);
+        });
+    });
+  }
+
+  const topBtn = document.getElementById('pwaInstallTopBtn');
+  const navBtn = document.getElementById('pwaInstallNavBtn');
+  const modalActionBtn = document.getElementById('btnPwaModalAction');
+  const modalActionText = document.getElementById('btnPwaModalText');
+  const floatingBanner = document.getElementById('pwaFloatingBanner');
+  const bannerInstallBtn = document.getElementById('btnPwaBannerInstall');
+  const bannerDismissBtn = document.getElementById('btnPwaBannerDismiss');
+
+  // 2. Intercept BeforeInstallPrompt Event (Android, Chrome, Edge)
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    console.log('[PWA] beforeinstallprompt captured');
+
+    // Show floating banner if user hasn't dismissed it in current session
+    if (!sessionStorage.getItem('pwa_banner_dismissed') && floatingBanner) {
+      setTimeout(() => {
+        floatingBanner.style.display = 'block';
+      }, 3000);
+    }
+  });
+
+  // Handler function for install trigger
+  const triggerInstallFlow = () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('[PWA] User accepted the install prompt');
+          showToastNotification('🎉 Thank you for installing Shivansh Fitness App!');
+          if (floatingBanner) floatingBanner.style.display = 'none';
+        } else {
+          console.log('[PWA] User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+      });
+    } else {
+      // Fallback: Open the modal instructions (for iOS Safari or manual installation)
+      const pwaModalEl = document.getElementById('pwaInstallModal');
+      if (pwaModalEl && window.bootstrap && window.bootstrap.Modal) {
+        const modal = bootstrap.Modal.getInstance(pwaModalEl) || new bootstrap.Modal(pwaModalEl);
+        modal.show();
+      }
+    }
+  };
+
+  // Wire Top & Navbar Buttons
+  if (topBtn) topBtn.addEventListener('click', triggerInstallFlow);
+  if (navBtn) navBtn.addEventListener('click', triggerInstallFlow);
+  if (modalActionBtn) modalActionBtn.addEventListener('click', triggerInstallFlow);
+  if (bannerInstallBtn) bannerInstallBtn.addEventListener('click', triggerInstallFlow);
+
+  // Wire Banner Dismiss
+  if (bannerDismissBtn && floatingBanner) {
+    bannerDismissBtn.addEventListener('click', () => {
+      floatingBanner.style.display = 'none';
+      sessionStorage.setItem('pwa_banner_dismissed', 'true');
+    });
+  }
+
+  // 3. Track App Installed Event
+  window.addEventListener('appinstalled', () => {
+    console.log('[PWA] Shivansh Fitness App was installed');
+    deferredPrompt = null;
+    if (floatingBanner) floatingBanner.style.display = 'none';
+    if (modalActionText) modalActionText.textContent = 'App Already Installed ✓';
+    showToastNotification('🚀 Shivansh Fitness App installed to your device!');
+  });
+}
+

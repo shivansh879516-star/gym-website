@@ -32,6 +32,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Progressive Web App (PWA) Manifest & App Icons -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#e61e2a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Shivansh Gym">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
+
   <!-- Custom Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
 </head>
@@ -60,6 +71,10 @@
         </div>
         <div class="col-lg-4 col-md-5 text-center text-md-end">
           <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-2">
+            <!-- Install App Button (Top Bar) -->
+            <button type="button" id="pwaInstallTopBtn" class="btn btn-sm btn-outline-danger text-white py-1 px-2 border-danger d-inline-flex align-items-center gap-1 pwa-install-trigger" aria-label="Install Shivansh Fitness App on your mobile device">
+              <i class="fas fa-mobile-alt text-danger"></i> <span>Install App</span>
+            </button>
             <!-- Audio Sound Toggle -->
             <button type="button" id="soundToggleBtn" class="sound-toggle-btn" aria-label="Toggle UI Sound Effects">
               <i class="fas fa-volume-up"></i> Sound: ON
@@ -88,6 +103,9 @@
 
       <!-- Quick Action CTA -->
       <div class="d-flex align-items-center gap-2 order-lg-3">
+        <button type="button" id="pwaInstallNavBtn" class="btn btn-sm btn-outline-danger text-white border-danger d-inline-flex align-items-center gap-1 pwa-install-trigger" aria-label="Install App">
+          <i class="fas fa-download text-danger"></i> <span class="d-none d-md-inline">App</span>
+        </button>
         <button type="button" class="btn btn-primary-custom d-none d-sm-inline-flex" data-bs-toggle="modal" data-bs-target="#consultationModal">
           <span>Book Free Consultation</span>
         </button>
@@ -1591,6 +1609,113 @@
             <button type="button" id="acceptAllCookies" class="btn btn-sm btn-primary-custom">Accept All</button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PWA APP INSTALLATION MODAL (ANDROID & iOS READY)
+       ========================================================================== -->
+  <div class="modal fade" id="pwaInstallModal" tabindex="-1" aria-labelledby="pwaInstallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-card border-danger-subtle text-white shadow-luxury">
+        <div class="modal-header border-bottom border-secondary pb-3">
+          <div class="d-flex align-items-center gap-3">
+            <img src="img/icon-192.png" alt="Shivansh Fitness App Icon" class="rounded-3 border border-danger p-1" style="width: 52px; height: 52px; object-fit: cover; box-shadow: 0 0 15px rgba(230,30,42,0.4);">
+            <div>
+              <h5 class="modal-title font-heading text-white fw-bold mb-0" id="pwaInstallModalLabel" style="font-size: 1.6rem; letter-spacing: 0.5px;">SHIVANSH FITNESS APP</h5>
+              <span class="badge bg-danger text-uppercase" style="font-size: 0.65rem;">100% Free Official App</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body py-4">
+          <p class="text-white-50 small mb-4">
+            Install Shivansh Fitness on your mobile home screen for instant 1-tap access, offline workout plans, Indian diet guides, and direct coaching support.
+          </p>
+
+          <!-- Feature Highlights -->
+          <div class="row g-2 mb-4 text-center">
+            <div class="col-4">
+              <div class="p-2 rounded bg-darkest border border-secondary">
+                <i class="fas fa-bolt text-warning mb-1 fa-lg"></i>
+                <div class="text-white fw-bold" style="font-size: 0.75rem;">Instant Load</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-2 rounded bg-darkest border border-secondary">
+                <i class="fas fa-wifi-slash text-info mb-1 fa-lg"></i>
+                <div class="text-white fw-bold" style="font-size: 0.75rem;">Works Offline</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-2 rounded bg-darkest border border-secondary">
+                <i class="fas fa-shield-alt text-success mb-1 fa-lg"></i>
+                <div class="text-white fw-bold" style="font-size: 0.75rem;">No Downloads</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Install Action Button -->
+          <button type="button" id="btnPwaModalAction" class="btn btn-primary-custom w-100 py-3 fw-bold mb-4 d-flex align-items-center justify-content-center gap-2" style="font-size: 1.05rem;">
+            <i class="fas fa-download"></i> <span id="btnPwaModalText">Install App to Home Screen</span>
+          </button>
+
+          <!-- OS Guide Accordion -->
+          <div class="accordion" id="pwaGuideAccordion">
+            <div class="accordion-item bg-darkest border-secondary">
+              <h2 class="accordion-header" id="headingAndroid">
+                <button class="accordion-button collapsed bg-darkest text-white small py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAndroid" aria-expanded="false" aria-controls="collapseAndroid">
+                  <i class="fab fa-android text-success me-2"></i> Android (Chrome / Brave / Edge) Guide
+                </button>
+              </h2>
+              <div id="collapseAndroid" class="accordion-collapse collapse" aria-labelledby="headingAndroid" data-bs-parent="#pwaGuideAccordion">
+                <div class="accordion-body small text-white-50">
+                  <ol class="ps-3 mb-0">
+                    <li>Click the <strong>"Install App to Home Screen"</strong> button above.</li>
+                    <li>Or tap the <strong>3 dots menu (⋮)</strong> at top-right of your browser.</li>
+                    <li>Tap <strong>"Install app"</strong> or <strong>"Add to Home screen"</strong>.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item bg-darkest border-secondary mt-2">
+              <h2 class="accordion-header" id="headingiOS">
+                <button class="accordion-button collapsed bg-darkest text-white small py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseiOS" aria-expanded="false" aria-controls="collapseiOS">
+                  <i class="fab fa-apple text-white me-2"></i> iPhone / iPad (Safari) Guide
+                </button>
+              </h2>
+              <div id="collapseiOS" class="accordion-collapse collapse" aria-labelledby="headingiOS" data-bs-parent="#pwaGuideAccordion">
+                <div class="accordion-body small text-white-50">
+                  <ol class="ps-3 mb-0">
+                    <li>Open this site in <strong>Safari</strong> browser.</li>
+                    <li>Tap the <strong>Share button (<i class="fas fa-share-square text-info"></i>)</strong> at the bottom center.</li>
+                    <li>Scroll down and tap <strong>"Add to Home Screen" (<i class="fas fa-plus-square text-white"></i>)</strong>.</li>
+                    <li>Tap <strong>Add</strong> at top right — Shivansh Fitness is now your home screen app!</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Mobile App Banner (Bottom) -->
+  <div id="pwaFloatingBanner" class="pwa-floating-banner" role="banner" aria-label="Install Shivansh Fitness App">
+    <div class="d-flex align-items-center justify-content-between gap-2">
+      <div class="d-flex align-items-center gap-2">
+        <img src="img/icon-192.png" alt="App icon" class="rounded-2" style="width: 38px; height: 38px; object-fit: cover;">
+        <div>
+          <div class="text-white fw-bold lh-1" style="font-size: 0.88rem;">Shivansh Fitness App</div>
+          <span class="text-white-50" style="font-size: 0.72rem;">Install for faster offline access</span>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-1">
+        <button type="button" id="btnPwaBannerInstall" class="btn btn-sm btn-primary-custom py-1 px-2" style="font-size: 0.78rem;">Install</button>
+        <button type="button" id="btnPwaBannerDismiss" class="btn btn-sm text-white-50 p-1" aria-label="Dismiss banner"><i class="fas fa-times"></i></button>
       </div>
     </div>
   </div>
