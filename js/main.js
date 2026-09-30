@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initWorkoutRestTimer();
   initCategoryFilters();
   initCoachAndUPIActions();
+  initInstallAppModal();
   initServiceWorker();
 });
 
@@ -378,7 +379,65 @@ function showAppToast(message) {
 }
 
 /* ==========================================================================
-   11. SERVICE WORKER FOR OFFLINE
+   11. INSTALL APP / APK MODAL & PWA PROMPT
+   ========================================================================== */
+let appDeferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  appDeferredPrompt = e;
+  console.log('[PWA] beforeinstallprompt captured');
+});
+
+function initInstallAppModal() {
+  const modal = document.getElementById('modalAppInstall');
+  const headerBtn = document.getElementById('btnHeaderInstall');
+  const closeBtn = document.getElementById('btnCloseInstallModal');
+  const directInstallBtn = document.getElementById('btnPwaDirectInstall');
+
+  const openModal = () => {
+    if (modal) modal.style.display = 'flex';
+  };
+
+  const closeModal = () => {
+    if (modal) modal.style.display = 'none';
+  };
+
+  if (headerBtn) headerBtn.addEventListener('click', openModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  if (directInstallBtn) {
+    directInstallBtn.addEventListener('click', () => {
+      if (appDeferredPrompt) {
+        appDeferredPrompt.prompt();
+        appDeferredPrompt.userChoice.then((choice) => {
+          if (choice.outcome === 'accepted') {
+            showAppToast('🎉 Thank you! Shivansh Fitness installed!');
+            closeModal();
+          }
+          appDeferredPrompt = null;
+        });
+      } else {
+        showAppToast('📱 Use browser menu (⋮ / ⬆️) -> Add to Home Screen!');
+      }
+    });
+  }
+
+  window.addEventListener('appinstalled', () => {
+    showAppToast('🚀 Shivansh Fitness App installed successfully!');
+    if (headerBtn) headerBtn.style.display = 'none';
+    closeModal();
+  });
+}
+
+/* ==========================================================================
+   12. SERVICE WORKER FOR OFFLINE
    ========================================================================== */
 function initServiceWorker() {
   if ('serviceWorker' in navigator) {
@@ -387,3 +446,4 @@ function initServiceWorker() {
     });
   }
 }
+

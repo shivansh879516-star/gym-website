@@ -78,7 +78,10 @@
               <h2 class="app-user-name">Shivansh! 👋</h2>
             </div>
             <div class="app-header-actions">
-              <button type="button" class="dock-nav-button" id="btnNotificationIcon" style="width: 40px; height: 40px; font-size: 1.1rem; background: #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.05);" title="Sound & Notifications">
+              <button type="button" class="btn-app-install-badge" id="btnHeaderInstall" style="padding: 6px 12px; background: #fff4e0; color: #fb8500; border: 1px solid #fed7aa; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                <i class="fas fa-download"></i> Install
+              </button>
+              <button type="button" class="dock-nav-button" id="btnNotificationIcon" style="width: 36px; height: 36px; font-size: 1rem; background: #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.05);" title="Sound & Notifications">
                 <i class="fas fa-bell text-warning"></i>
               </button>
               <img src="img/trainer-shivansh.jpg" alt="User Profile" class="app-avatar-img" id="btnHeaderAvatar">
@@ -520,6 +523,43 @@
         </button>
       </nav>
 
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       APP INSTALLATION / APK DOWNLOAD MODAL
+       ========================================================================== -->
+  <div class="app-modal-overlay" id="modalAppInstall" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); z-index: 9999; align-items: center; justify-content: center; padding: 20px;">
+    <div style="background: #ffffff; width: 100%; max-width: 380px; border-radius: 28px; padding: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); position: relative; text-align: center;">
+      <button type="button" id="btnCloseInstallModal" style="position: absolute; top: 16px; right: 16px; border: none; background: #f1f5f9; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; color: #64748b;">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div style="width: 60px; height: 60px; background: #fff4e0; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; color: #fb8500; font-size: 1.6rem;">
+        <i class="fas fa-mobile-alt"></i>
+      </div>
+
+      <h3 style="font-size: 1.3rem; font-weight: 800; color: #14213d; margin-bottom: 6px;">Install Fitness App</h3>
+      <p style="font-size: 0.85rem; color: #8e95a5; line-height: 1.4; margin-bottom: 20px;">
+        Get instant 1-tap access on your phone home screen with zero app store downloads.
+      </p>
+
+      <!-- Primary Action: Native PWA Install -->
+      <button type="button" class="btn-app-primary mb-3" id="btnPwaDirectInstall" style="padding: 14px; font-size: 0.95rem; margin-bottom: 12px;">
+        <i class="fas fa-download"></i> <span>1-Click Install to Phone</span>
+      </button>
+
+      <!-- Secondary: APK Free Build Link -->
+      <a href="https://www.pwabuilder.com/report?site=https://shivansh879516-star.github.io/gym-website/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 6px; padding: 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 9999px; text-decoration: none; color: #1e293b; font-size: 0.85rem; font-weight: 700; margin-bottom: 16px;">
+        <i class="fab fa-android text-success"></i> Download Free Android APK
+      </a>
+
+      <!-- Quick Platform Guide -->
+      <div style="background: #f8fafc; border-radius: 16px; padding: 12px; font-size: 0.75rem; color: #64748b; text-align: left;">
+        <div style="font-weight: 700; color: #1e293b; margin-bottom: 4px;">📲 How to install manually:</div>
+        <div><strong>• Android (Chrome):</strong> Tap 3 dots (⋮) &rarr; "Install app" or "Add to Home screen".</div>
+        <div style="margin-top: 4px;"><strong>• iPhone (Safari):</strong> Tap Share (⬆️) &rarr; "Add to Home Screen".</div>
+      </div>
     </div>
   </div>
 
