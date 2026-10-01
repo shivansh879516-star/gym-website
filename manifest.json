@@ -1,19 +1,13 @@
 {
-  "id": "/gym-website/",
+  "id": "https://shivansh879516-star.github.io/gym-website/",
   "name": "Shivansh Fitness",
   "short_name": "ShivanshFit",
   "description": "Official Shivansh Fitness Mobile App. Best workouts, Indian desi nutrition meal plans, rest timer, activity tracking, and 1-on-1 personal coaching.",
   "lang": "en",
   "dir": "ltr",
-  "start_url": "./index.html",
-  "scope": "./",
+  "start_url": "/gym-website/index.html",
+  "scope": "/gym-website/",
   "display": "standalone",
-  "display_override": [
-    "window-controls-overlay",
-    "standalone",
-    "minimal-ui",
-    "browser"
-  ],
   "orientation": "portrait-primary",
   "background_color": "#f8f9fc",
   "theme_color": "#fca311",
@@ -22,47 +16,6 @@
     "health",
     "sports",
     "lifestyle"
-  ],
-  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
-  "prefer_related_applications": false,
-  "related_applications": [],
-  "launch_handler": {
-    "client_mode": "navigate-existing"
-  },
-  "edge_side_panel": {
-    "preferred_width": 400
-  },
-  "file_handlers": [
-    {
-      "action": "./index.html",
-      "name": "Workout Plan File",
-      "icons": [
-        {
-          "src": "img/icon-any-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ],
-      "accept": {
-        "text/plain": [".txt"],
-        "application/json": [".json"]
-      }
-    }
-  ],
-  "share_target": {
-    "action": "./index.html",
-    "method": "GET",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url"
-    }
-  },
-  "protocol_handlers": [
-    {
-      "protocol": "web+fitness",
-      "url": "./index.html?workout=%s"
-    }
   ],
   "icons": [
     {
@@ -96,35 +49,21 @@
       "sizes": "768x1376",
       "type": "image/jpeg",
       "form_factor": "narrow",
-      "label": "Shivansh Fitness Mobile Home Dashboard & Activity Tracker"
+      "label": "Mobile Dashboard"
     },
     {
       "src": "img/screenshot-desktop.jpg",
       "sizes": "1376x768",
       "type": "image/jpeg",
       "form_factor": "wide",
-      "label": "Shivansh Fitness Desktop Dashboard with Workouts & Meal Plans"
+      "label": "Desktop Dashboard"
     }
   ],
   "shortcuts": [
     {
-      "name": "Home Dashboard",
-      "short_name": "Home",
-      "description": "View workout feed and daily progress",
-      "url": "./index.html",
-      "icons": [
-        {
-          "src": "img/icon-any-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Workout Studio",
+      "name": "Workouts",
       "short_name": "Workouts",
-      "description": "Start exercises and gym rest interval timer",
-      "url": "./index.html",
+      "url": "/gym-website/index.html",
       "icons": [
         {
           "src": "img/icon-any-192.png",
@@ -134,23 +73,9 @@
       ]
     },
     {
-      "name": "Desi Nutrition",
-      "short_name": "Diet Plans",
-      "description": "Explore high protein Indian meal plans",
-      "url": "./index.html",
-      "icons": [
-        {
-          "src": "img/icon-any-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Chat with Coach",
-      "short_name": "Coach",
-      "description": "Direct WhatsApp coaching with Coach Shivansh",
-      "url": "./index.html",
+      "name": "Diet Plans",
+      "short_name": "Diet",
+      "url": "/gym-website/index.html",
       "icons": [
         {
           "src": "img/icon-any-192.png",
