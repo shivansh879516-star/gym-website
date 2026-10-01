@@ -1,4 +1,4 @@
-const CACHE_NAME = 'shivansh-fitness-v5';
+const CACHE_NAME = 'vyra-fitness-v1';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -11,31 +11,32 @@ const ASSETS_TO_CACHE = [
   './img/icon-maskable-512.png',
   './img/screenshot-mobile.jpg',
   './img/screenshot-desktop.jpg',
-  './img/app-3d-dumbbell.jpg',
-  './img/app-promo-dumbbells.jpg',
-  './img/trainer-shivansh.jpg'
+  './img/vyra-icon.jpg',
+  './img/trainer-shivansh.jpg',
+  './img/transformation-before.jpg',
+  './img/transformation-after.jpg'
 ];
 
-// 1. Install Event - Pre-cache core static assets
+// 1. Install Event
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Service Worker] Caching offline shell assets');
+      console.log('[VYRA Service Worker] Caching app shell');
       return cache.addAll(ASSETS_TO_CACHE).catch((err) => {
-        console.warn('[Service Worker] Pre-cache non-fatal error:', err);
+        console.warn('[VYRA SW] Pre-cache warning:', err);
       });
     }).then(() => self.skipWaiting())
   );
 });
 
-// 2. Activate Event - Clean up obsolete caches
+// 2. Activate Event
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(
         keyList.map((key) => {
           if (key !== CACHE_NAME) {
-            console.log('[Service Worker] Removing old cache version:', key);
+            console.log('[VYRA SW] Purging old cache:', key);
             return caches.delete(key);
           }
         })
@@ -44,7 +45,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// 3. Fetch Event - Stale While Revalidate strategy
+// 3. Fetch Event
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
@@ -59,7 +60,7 @@ self.addEventListener('fetch', (event) => {
               });
             }
           })
-          .catch(() => {/* Offline mode */});
+          .catch(() => {});
         return cachedResponse;
       }
 
@@ -81,46 +82,27 @@ self.addEventListener('fetch', (event) => {
   );
 });
 
-// 4. Background Sync Handler (PWABuilder Action Item)
+// 4. Background Sync Handler
 self.addEventListener('sync', (event) => {
-  console.log('[Service Worker] Background Sync event triggered:', event.tag);
-  if (event.tag === 'sync-workout-data') {
-    event.waitUntil(
-      Promise.resolve().then(() => {
-        console.log('[Service Worker] Workout progress synced successfully in background.');
-      })
-    );
-  }
+  console.log('[VYRA SW] Background Sync:', event.tag);
 });
 
-// 5. Periodic Background Sync Handler (PWABuilder Action Item)
+// 5. Periodic Sync Handler
 self.addEventListener('periodicsync', (event) => {
-  console.log('[Service Worker] Periodic Background Sync triggered:', event.tag);
-  if (event.tag === 'daily-fitness-sync') {
-    event.waitUntil(
-      Promise.resolve().then(() => {
-        console.log('[Service Worker] Daily fitness & hydration targets updated.');
-      })
-    );
-  }
+  console.log('[VYRA SW] Periodic Sync:', event.tag);
 });
 
-// 6. Push Notifications Handler (PWABuilder Action Item)
+// 6. Push Notifications Handler
 self.addEventListener('push', (event) => {
-  console.log('[Service Worker] Push Notification received');
-  const data = event.data ? event.data.text() : 'Time for your daily workout with Coach Shivansh!';
+  const data = event.data ? event.data.text() : 'Time for your daily workout on VYRA!';
   const options = {
     body: data,
     icon: 'img/icon-any-192.png',
     badge: 'img/icon-any-192.png',
     vibrate: [200, 100, 200],
-    data: {
-      url: './index.html'
-    }
+    data: { url: './index.html' }
   };
-  event.waitUntil(
-    self.registration.showNotification('Shivansh Fitness', options)
-  );
+  event.waitUntil(self.registration.showNotification('VYRA Fitness', options));
 });
 
 self.addEventListener('notificationclick', (event) => {
@@ -128,13 +110,9 @@ self.addEventListener('notificationclick', (event) => {
   event.waitUntil(
     clients.matchAll({ type: 'window' }).then((clientList) => {
       for (const client of clientList) {
-        if (client.url === '/' && 'focus' in client) {
-          return client.focus();
-        }
+        if (client.url === '/' && 'focus' in client) return client.focus();
       }
-      if (clients.openWindow) {
-        return clients.openWindow('./index.html');
-      }
+      if (clients.openWindow) return clients.openWindow('./index.html');
     })
   );
 });

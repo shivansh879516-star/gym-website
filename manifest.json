@@ -1,16 +1,16 @@
 {
   "id": "https://shivansh879516-star.github.io/gym-website/",
-  "name": "Shivansh Fitness",
-  "short_name": "ShivanshFit",
-  "description": "Official Shivansh Fitness Mobile App. Best workouts, Indian desi nutrition meal plans, rest timer, activity tracking, and 1-on-1 personal coaching.",
+  "name": "VYRA | Intelligent Fitness",
+  "short_name": "VYRA",
+  "description": "VYRA - Modern intelligent fitness & nutrition app. Precision workout tracking, Indian macro planning, body progress analytics, and AI coaching.",
   "lang": "en",
   "dir": "ltr",
   "start_url": "/gym-website/index.html",
   "scope": "/gym-website/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#f8f9fc",
-  "theme_color": "#fca311",
+  "background_color": "#ffffff",
+  "theme_color": "#f59e0b",
   "categories": [
     "fitness",
     "health",
@@ -49,19 +49,31 @@
       "sizes": "768x1376",
       "type": "image/jpeg",
       "form_factor": "narrow",
-      "label": "Mobile Dashboard"
+      "label": "VYRA Mobile Home Dashboard & Activity Tracker"
     },
     {
       "src": "img/screenshot-desktop.jpg",
       "sizes": "1376x768",
       "type": "image/jpeg",
       "form_factor": "wide",
-      "label": "Desktop Dashboard"
+      "label": "VYRA Desktop Dashboard with Workouts & Meal Plans"
     }
   ],
   "shortcuts": [
     {
-      "name": "Workouts",
+      "name": "Home Dashboard",
+      "short_name": "Home",
+      "url": "/gym-website/index.html",
+      "icons": [
+        {
+          "src": "img/icon-any-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Workout Studio",
       "short_name": "Workouts",
       "url": "/gym-website/index.html",
       "icons": [
@@ -73,7 +85,7 @@
       ]
     },
     {
-      "name": "Diet Plans",
+      "name": "Nutrition & Diet",
       "short_name": "Diet",
       "url": "/gym-website/index.html",
       "icons": [

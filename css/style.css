@@ -1,41 +1,81 @@
 /* ==========================================================================
-   SHIVANSH FITNESS | OFFICIAL NATIVE FITNESS APP UI
-   Modeled precisely after modern Fitness Mobile App Design (Light & Amber Gold Palette)
+   VYRA | LUXURY 2026 COMMERCIAL FITNESS APP DESIGN SYSTEM
+   Theme: Pure White Primary Background + Golden Yellow Brand Accent
+   Clean, Minimal, Modern, Tech-Fitness UI (Apple Fitness / Whoop Hybrid)
    ========================================================================== */
 
 :root {
-  /* Brand Warm Golden & Sunset Orange Palette */
-  --app-amber: #fca311;
-  --app-amber-light: #fff4e0;
-  --app-amber-gradient: linear-gradient(135deg, #ffb703 0%, #fb8500 100%);
-  --app-amber-glow: rgba(251, 133, 0, 0.35);
+  /* Brand Core Colors */
+  --bg-page: #ffffff;
+  --bg-surface: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #fcfdfe;
+  --bg-card-hover: #f1f5f9;
   
-  --app-primary: #e61e2a;
-  --app-primary-gradient: linear-gradient(135deg, #ff2a38 0%, #be121d 100%);
-  
-  --app-dark: #14213d;
-  --app-black: #0d131f;
-  --app-text-main: #1e2432;
-  --app-text-muted: #8e95a5;
-  --app-text-light: #b0b7c3;
-  
-  --app-bg: #f8f9fc;
-  --app-card-bg: #ffffff;
-  --app-card-border: rgba(0, 0, 0, 0.04);
-  
-  --app-radius-sm: 14px;
-  --app-radius-md: 20px;
-  --app-radius-lg: 28px;
-  --app-radius-pill: 9999px;
-  
-  --app-shadow-card: 0 10px 25px rgba(20, 33, 61, 0.06);
-  --app-shadow-glow: 0 12px 28px var(--app-amber-glow);
-  --app-shadow-dock: 0 -8px 25px rgba(20, 33, 61, 0.07);
+  /* Golden Yellow Primary Brand Accents */
+  --gold-50: #fffbeb;
+  --gold-100: #fef3c7;
+  --gold-200: #fde68a;
+  --gold-300: #fcd34d;
+  --gold-400: #fbbf24;
+  --gold-500: #f59e0b; /* Primary Accent */
+  --gold-600: #d97706; /* Darker Gold for Text/Focus */
+  --gold-700: #b45309;
+  --gold-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --gold-glow: rgba(245, 158, 11, 0.28);
 
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Status Accents */
+  --color-success: #10b981;
+  --color-success-light: #ecfdf5;
+  --color-info: #0284c7;
+  --color-info-light: #f0f9ff;
+  --color-danger: #ef4444;
+  --color-danger-light: #fef2f2;
+  
+  /* High-Contrast Accessible Text */
+  --text-main: #0f172a;       /* Slate 900 */
+  --text-secondary: #334155;  /* Slate 700 */
+  --text-muted: #64748b;      /* Slate 500 */
+  --text-light: #94a3b8;      /* Slate 400 */
+  
+  /* Borders & Shadows */
+  --border-subtle: #f1f5f9;
+  --border-card: #e2e8f0;
+  --border-active: #f59e0b;
+  
+  --radius-xs: 8px;
+  --radius-sm: 14px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-pill: 9999px;
+  
+  --shadow-xs: 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+  --shadow-card: 0 10px 28px rgba(15, 23, 42, 0.06);
+  --shadow-gold: 0 10px 24px var(--gold-glow);
+  --shadow-dock: 0 -8px 30px rgba(15, 23, 42, 0.06);
+  --shadow-drawer: 0 -12px 40px rgba(15, 23, 42, 0.15);
+  
+  --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, Arial, sans-serif;
 }
 
-/* Reset & Device Shell */
+/* Dark Mode Variables (Optional User Setting) */
+[data-theme="dark"] {
+  --bg-page: #0b0f19;
+  --bg-surface: #111827;
+  --bg-card: #1f2937;
+  --bg-card-subtle: #192231;
+  --bg-card-hover: #374151;
+  --text-main: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --border-subtle: #1e293b;
+  --border-card: #334155;
+  --shadow-card: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* Reset & Base */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -46,54 +86,58 @@
 html, body {
   width: 100%;
   height: 100%;
-  background: #eef1f6;
+  background: #f1f5f9;
   font-family: var(--font-family);
-  color: var(--app-text-main);
+  color: var(--text-main);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Desktop App Container Centering Frame */
-.app-device-wrapper {
+/* App Desktop Simulation Wrapper */
+.vyra-app-wrapper {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 0;
-  background: radial-gradient(circle at top right, #e2e8f0 0%, #cbd5e1 100%);
+  padding: 20px;
+  background: radial-gradient(circle at 10% 20%, #f8fafc 0%, #e2e8f0 100%);
 }
 
-.app-mobile-frame {
+.vyra-mobile-shell {
   width: 100%;
   max-width: 440px;
   height: 900px;
   max-height: 96vh;
-  background: var(--app-bg);
-  border-radius: 44px;
-  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25), 0 0 0 10px #ffffff;
+  background: var(--bg-page);
+  border-radius: 42px;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.18), 0 0 0 10px #ffffff;
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  border: 1px solid var(--border-card);
 }
 
-/* Fullscreen on Actual Mobile Devices */
+/* Responsive on Mobile Phones */
 @media (max-width: 576px) {
-  .app-device-wrapper {
+  .vyra-app-wrapper {
     padding: 0;
-    background: var(--app-bg);
+    background: var(--bg-page);
   }
-  .app-mobile-frame {
+  .vyra-mobile-shell {
     max-width: 100%;
     height: 100vh;
+    height: 100dvh;
     max-height: 100vh;
+    max-height: 100dvh;
     border-radius: 0;
     box-shadow: none;
+    border: none;
   }
 }
 
-/* Top iOS Status Bar Simulation */
-.app-status-bar {
+/* Status Bar */
+.vyra-status-bar {
   height: 38px;
   padding: 0 24px;
   display: flex;
@@ -101,410 +145,333 @@ html, body {
   justify-content: space-between;
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--app-text-main);
-  z-index: 50;
-  background: transparent;
+  color: var(--text-main);
   flex-shrink: 0;
+  background: transparent;
+  z-index: 40;
 }
 
 .status-bar-icons {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
+  color: var(--text-secondary);
 }
 
-/* App Screens Container */
-.app-screens-viewport {
+/* Screens Viewport */
+.vyra-viewport {
   flex: 1;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-bottom: 90px;
+  padding-bottom: 96px;
   scroll-behavior: smooth;
+  background: var(--bg-page);
 }
 
-/* Custom Minimal Scrollbar */
-.app-screens-viewport::-webkit-scrollbar {
+.vyra-viewport::-webkit-scrollbar {
   width: 4px;
 }
-.app-screens-viewport::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+.vyra-viewport::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
   border-radius: 4px;
 }
 
-/* Individual App Screen Views */
-.app-screen {
+/* App Screens */
+.vyra-screen {
   display: none;
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(6px);
+  transition: opacity 0.25s var(--transition-smooth), transform 0.25s var(--transition-smooth);
   padding: 16px 20px 30px;
 }
 
-.app-screen.active {
+.vyra-screen.active {
   display: block;
   opacity: 1;
   transform: translateY(0);
 }
 
 /* ==========================================================================
-   SCREEN 0: WELCOME & ONBOARDING (MATCHING SCREEN 3 OF MOCKUP)
+   HEADER & TOP APP BAR
    ========================================================================== */
-#screenOnboarding {
-  display: none;
-  min-height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  padding: 24px 20px 36px;
-}
-
-#screenOnboarding.active {
-  display: flex !important;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.onboarding-hero-wrapper {
-  position: relative;
-  width: 240px;
-  height: 240px;
-  max-width: 65vw;
-  max-height: 65vw;
-  margin: 15px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.onboarding-circle-glow {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, #ffb703 0%, #fb8500 100%);
-  border-radius: 50%;
-  box-shadow: 0 15px 35px var(--app-amber-glow);
-  z-index: 1;
-}
-
-.onboarding-3d-img {
-  position: relative;
-  width: 95%;
-  height: 95%;
-  object-fit: cover;
-  border-radius: 50%;
-  z-index: 2;
-  transform: translateY(-6px);
-  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.16));
-}
-
-.onboarding-content {
-  margin-top: 20px;
-}
-
-.onboarding-title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--app-dark);
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-
-.onboarding-title span {
-  color: #fb8500;
-}
-
-.onboarding-subtitle {
-  font-size: 0.95rem;
-  color: var(--app-text-muted);
-  line-height: 1.5;
-  max-width: 300px;
-  margin: 0 auto 30px;
-}
-
-.btn-app-primary {
-  width: 100%;
-  padding: 16px;
-  background: var(--app-amber-gradient);
-  color: #ffffff;
-  border: none;
-  border-radius: var(--app-radius-pill);
-  font-size: 1.1rem;
-  font-weight: 700;
-  box-shadow: var(--app-shadow-glow);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.btn-app-primary:active,
-.btn-app-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 32px var(--app-amber-glow);
-}
-
-/* ==========================================================================
-   SCREEN 1: HOME & DASHBOARD (MATCHING SCREEN 2 OF MOCKUP)
-   ========================================================================== */
-.app-header-row {
+.vyra-app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.app-user-greeting {
-  font-size: 0.85rem;
-  color: var(--app-text-muted);
-  font-weight: 500;
-}
-
-.app-user-name {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--app-dark);
-}
-
-.app-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.app-avatar-img {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-
-/* Search Bar */
-.app-search-box {
-  background: var(--app-card-bg);
-  border-radius: var(--app-radius-pill);
-  padding: 12px 18px;
+.header-user-intro {
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: var(--app-shadow-card);
-  margin-bottom: 22px;
-  border: 1px solid var(--app-card-border);
 }
 
-.app-search-box input {
-  border: none;
-  background: transparent;
-  outline: none;
-  font-size: 0.92rem;
-  color: var(--app-text-main);
-  width: 100%;
+.header-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold-500);
+  box-shadow: 0 4px 12px var(--gold-glow);
+  cursor: pointer;
 }
 
-.app-search-box input::placeholder {
-  color: var(--app-text-light);
+.header-greeting-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
-/* Promo Banner (60% OFF / Join Gym) */
-.app-promo-banner {
-  background: var(--app-amber-gradient);
-  border-radius: var(--app-radius-lg);
-  padding: 22px;
-  color: #ffffff;
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--app-shadow-glow);
-  margin-bottom: 25px;
+.header-greeting-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+}
+
+.header-actions {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
 }
 
-.promo-badge-tag {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  padding: 4px 10px;
-  border-radius: var(--app-radius-pill);
-  font-size: 0.72rem;
-  font-weight: 700;
-  display: inline-block;
-  margin-bottom: 8px;
+.icon-button-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.promo-title {
-  font-size: 1.45rem;
-  font-weight: 900;
-  line-height: 1.15;
-  margin-bottom: 4px;
+.icon-button-circle:hover {
+  background: var(--gold-100);
+  color: var(--gold-700);
+  border-color: var(--gold-300);
 }
 
-.promo-discount-text {
-  font-size: 1.8rem;
-  font-weight: 900;
-  line-height: 1;
-  color: #ffffff;
-  margin-bottom: 12px;
+/* ==========================================================================
+   CARD STYLES & UI ATOMS
+   ========================================================================== */
+.vyra-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.promo-btn-join {
-  background: #e61e2a;
+.vyra-card-gold {
+  background: var(--gold-gradient);
   color: #ffffff;
   border: none;
-  padding: 8px 18px;
-  border-radius: var(--app-radius-pill);
-  font-size: 0.85rem;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 6px 16px rgba(230, 30, 42, 0.35);
-  transition: transform 0.2s ease;
+  box-shadow: var(--shadow-gold);
 }
 
-.promo-btn-join:hover {
-  transform: scale(1.04);
-}
-
-.promo-3d-img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.2));
-  transform: rotate(-10deg);
-}
-
-/* Section Titles */
-.app-section-title-row {
+.card-title-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 14px;
 }
 
-.app-section-title {
-  font-size: 1.15rem;
+.card-title-text {
+  font-size: 1.05rem;
   font-weight: 800;
-  color: var(--app-dark);
+  color: var(--text-main);
+  letter-spacing: -0.2px;
 }
 
-.app-section-link {
-  font-size: 0.82rem;
-  color: #fb8500;
-  text-decoration: none;
+.card-badge {
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-gold {
+  background: var(--gold-100);
+  color: var(--gold-700);
+}
+
+.badge-success {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.badge-info {
+  background: var(--color-info-light);
+  color: var(--color-info);
+}
+
+/* Buttons */
+.btn-vyra-primary {
+  width: 100%;
+  padding: 15px 20px;
+  background: var(--gold-gradient);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-vyra-primary:hover,
+.btn-vyra-primary:active {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px var(--gold-glow);
+}
+
+.btn-vyra-secondary {
+  padding: 12px 18px;
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* Progress Grid */
-.app-progress-grid {
+.btn-vyra-secondary:hover {
+  background: #f1f5f9;
+  border-color: var(--gold-400);
+}
+
+/* Quick Action Chips */
+.quick-action-strip {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.quick-action-chip {
+  flex: 1;
+  min-width: 110px;
+  padding: 12px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-action-chip i {
+  font-size: 1.15rem;
+  color: var(--gold-600);
+}
+
+.quick-action-chip:hover {
+  background: var(--gold-50);
+  border-color: var(--gold-400);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   DASHBOARD PROGRESS METRICS (CALORIES, PROTEIN, WATER, STEPS)
+   ========================================================================== */
+.dashboard-metrics-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-bottom: 25px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
-.progress-widget-card {
-  background: var(--app-card-bg);
-  border-radius: var(--app-radius-md);
+.metric-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
   padding: 16px;
-  box-shadow: var(--app-shadow-card);
-  border: 1px solid var(--app-card-border);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.widget-card-header {
+.metric-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-.widget-title {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--app-dark);
-}
-
-/* Circular Progress Ring */
-.progress-ring-container {
-  width: 90px;
-  height: 90px;
-  margin: 6px auto;
-  position: relative;
+.metric-icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 0.95rem;
 }
 
-.progress-ring-svg {
-  transform: rotate(-90deg);
-  width: 90px;
-  height: 90px;
+.metric-title-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
 }
 
-.progress-ring-circle-bg {
-  stroke: #f1f5f9;
-  stroke-width: 8;
-  fill: transparent;
+.metric-number-main {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--text-main);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
 }
 
-.progress-ring-circle-val {
-  stroke: #fb8500;
-  stroke-width: 8;
-  stroke-linecap: round;
-  fill: transparent;
-  stroke-dasharray: 220;
-  stroke-dashoffset: 60;
-  transition: stroke-dashoffset 0.5s ease;
+.metric-target-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 2px;
 }
 
-.progress-ring-text {
-  position: absolute;
-  text-align: center;
+.metric-progress-bar {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: var(--radius-pill);
+  margin-top: 10px;
+  overflow: hidden;
 }
 
-.progress-ring-val {
-  font-size: 0.98rem;
-  font-weight: 800;
-  color: var(--app-dark);
-  line-height: 1;
+.metric-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  transition: width 0.4s ease;
 }
 
-.progress-ring-label {
-  font-size: 0.65rem;
-  color: var(--app-text-muted);
-}
-
-/* Bar Widget (Sleep / Calories) */
-.bar-chart-mini {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  height: 65px;
-  padding: 6px 4px 0;
-  gap: 6px;
-}
-
-.bar-mini-col {
-  flex: 1;
-  background: #f1f5f9;
-  border-radius: 4px;
-  transition: height 0.3s ease;
-}
-
-.bar-mini-col.active {
-  background: var(--app-amber);
-}
-
-/* Category Filter Pills */
-.app-category-scroll {
+/* ==========================================================================
+   WORKOUT SCREEN & ACTIVE LIVE WORKOUT SESSION
+   ========================================================================== */
+.workout-category-strip {
   display: flex;
   gap: 8px;
   overflow-x: auto;
@@ -512,374 +479,495 @@ html, body {
   margin-bottom: 18px;
   scrollbar-width: none;
 }
+.workout-category-strip::-webkit-scrollbar { display: none; }
 
-.app-category-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-.category-pill {
-  padding: 8px 18px;
-  border-radius: var(--app-radius-pill);
-  background: var(--app-card-bg);
-  color: var(--app-text-muted);
+.category-filter-btn {
+  padding: 8px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
   font-size: 0.82rem;
   font-weight: 600;
-  border: 1px solid var(--app-card-border);
+  color: var(--text-secondary);
   white-space: nowrap;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.category-pill.active {
-  background: var(--app-dark);
+.category-filter-btn.active {
+  background: var(--text-main);
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(20, 33, 61, 0.2);
+  border-color: var(--text-main);
 }
 
-/* Workout Cards */
-.app-workout-card {
-  background: var(--app-card-bg);
-  border-radius: var(--app-radius-lg);
-  padding: 16px;
-  box-shadow: var(--app-shadow-card);
-  border: 1px solid var(--app-card-border);
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.app-workout-card:hover {
-  transform: translateY(-2px);
-}
-
-.workout-thumb-box {
-  width: 60px;
-  height: 60px;
-  border-radius: var(--app-radius-md);
-  background: var(--app-amber-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  color: #fb8500;
-  flex-shrink: 0;
-}
-
-.workout-info-meta {
-  flex: 1;
-}
-
-.workout-card-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--app-dark);
-  margin-bottom: 4px;
-}
-
-.workout-card-sub {
-  font-size: 0.78rem;
-  color: var(--app-text-muted);
-}
-
-.workout-play-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #f1f5f9;
-  color: var(--app-dark);
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.82rem;
-}
-
-/* ==========================================================================
-   SCREEN 2: ACTIVITIES & CHARTS (MATCHING SCREEN 1 OF MOCKUP)
-   ========================================================================== */
-.activity-header-title {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--app-dark);
-}
-
-.activity-header-sub {
-  font-size: 0.85rem;
-  color: var(--app-text-muted);
-  margin-bottom: 16px;
-}
-
-/* Horizontal Date Picker Strip */
-.date-picker-strip {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 22px;
-}
-
-.date-pill-btn {
-  flex: 1;
-  background: var(--app-card-bg);
-  border: 1px solid var(--app-card-border);
-  border-radius: var(--app-radius-md);
-  padding: 10px 4px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-}
-
-.date-pill-day {
-  font-size: 0.72rem;
-  color: var(--app-text-muted);
-  display: block;
-  margin-bottom: 4px;
-}
-
-.date-pill-num {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--app-dark);
-  display: block;
-}
-
-.date-pill-btn.active {
-  background: var(--app-amber-gradient);
-  color: #ffffff;
-  box-shadow: var(--app-shadow-glow);
-  transform: translateY(-2px);
-}
-
-.date-pill-btn.active .date-pill-day,
-.date-pill-btn.active .date-pill-num {
-  color: #ffffff;
-}
-
-/* Calorie Wave Chart Card */
-.calorie-wave-card {
-  background: var(--app-card-bg);
-  border-radius: var(--app-radius-lg);
-  padding: 20px;
-  box-shadow: var(--app-shadow-card);
-  border: 1px solid var(--app-card-border);
-  margin-bottom: 22px;
-}
-
-.calorie-val-main {
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: var(--app-dark);
-  line-height: 1;
-}
-
-.calorie-unit-sub {
-  font-size: 0.78rem;
-  color: var(--app-text-muted);
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.calorie-wave-svg {
-  width: 100%;
-  height: 120px;
-  margin-top: 10px;
-}
-
-/* Activity Log Items */
-.activity-item-card {
-  background: var(--app-card-bg);
-  border-radius: var(--app-radius-md);
-  padding: 16px;
-  box-shadow: var(--app-shadow-card);
-  border: 1px solid var(--app-card-border);
+.exercise-item-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
   margin-bottom: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.activity-item-left {
+.exercise-item-card:hover {
+  border-color: var(--gold-400);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.exercise-left-info {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.activity-badge-icon {
+.exercise-icon-badge {
   width: 44px;
   height: 44px;
-  border-radius: var(--app-radius-sm);
+  border-radius: 12px;
+  background: var(--gold-100);
+  color: var(--gold-700);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
 }
 
-.activity-name-text {
+.exercise-name-title {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--app-dark);
+  color: var(--text-main);
 }
 
-.activity-time-text {
+.exercise-meta-text {
   font-size: 0.75rem;
-  color: var(--app-text-muted);
+  color: var(--text-muted);
 }
 
-.activity-stats-right {
-  text-align: right;
-}
-
-.activity-stat-primary {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--app-dark);
-}
-
-.activity-stat-secondary {
-  font-size: 0.75rem;
-  color: var(--app-text-muted);
-}
-
-/* ==========================================================================
-   SCREEN 3: WORKOUTS & LIVE REST TIMER
-   ========================================================================== */
-.workout-timer-box {
-  background: var(--app-dark);
-  color: #ffffff;
-  border-radius: var(--app-radius-lg);
-  padding: 24px;
-  text-align: center;
-  margin-bottom: 24px;
-  box-shadow: 0 15px 35px rgba(20, 33, 61, 0.25);
-}
-
-.workout-timer-digits {
-  font-size: 3.5rem;
-  font-weight: 900;
-  font-family: monospace;
-  color: #ffb703;
-  letter-spacing: 2px;
-  margin: 10px 0;
-}
-
-.timer-preset-row {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 18px;
-}
-
-.timer-preset-btn {
-  padding: 6px 14px;
-  border-radius: var(--app-radius-pill);
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.timer-preset-btn.active {
-  background: #fb8500;
-  border-color: #fb8500;
-}
-
-/* ==========================================================================
-   SCREEN 4: DIET & NUTRITION
-   ========================================================================== */
-.diet-plan-card {
-  background: var(--app-card-bg);
-  border-radius: var(--app-radius-lg);
-  padding: 18px;
-  margin-bottom: 16px;
-  box-shadow: var(--app-shadow-card);
-  border: 1px solid var(--app-card-border);
-}
-
-.diet-macro-pills {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.macro-pill {
-  padding: 4px 10px;
-  border-radius: var(--app-radius-pill);
-  font-size: 0.72rem;
-  font-weight: 700;
-}
-
-/* ==========================================================================
-   SCREEN 5: COACH & UPI MEMBERSHIPS
-   ========================================================================== */
-.coach-profile-header {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.coach-avatar-lg {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--app-amber);
-  box-shadow: 0 10px 25px var(--app-amber-glow);
-  margin-bottom: 12px;
-}
-
-.upi-payment-card {
+/* Live Active Workout Drawer / Modal */
+.active-workout-drawer {
+  position: fixed;
+  inset: 0;
   background: #ffffff;
-  border: 2px dashed #fb8500;
-  border-radius: var(--app-radius-lg);
-  padding: 20px;
+  z-index: 500;
+  display: none;
+  flex-direction: column;
+  padding: 24px 20px;
+  overflow-y: auto;
+  animation: slideUpModal 0.3s var(--transition-smooth);
+}
+
+@keyframes slideUpModal {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.active-workout-drawer.open {
+  display: flex;
+}
+
+.live-timer-banner {
+  background: var(--text-main);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 24px;
   text-align: center;
   margin-bottom: 20px;
 }
 
+.live-timer-digits {
+  font-size: 3.6rem;
+  font-weight: 900;
+  font-family: monospace;
+  color: var(--gold-400);
+  letter-spacing: 2px;
+  margin: 8px 0;
+}
+
 /* ==========================================================================
-   FIXED NATIVE BOTTOM APP NAVIGATION DOCK
+   NUTRITION & CALCULATORS
    ========================================================================== */
-.app-bottom-nav-dock {
+.meal-category-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.meal-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border-card);
+  font-size: 0.85rem;
+}
+.meal-item-row:last-child { border-bottom: none; }
+
+.calculator-selector-pills {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.calc-pill-btn {
+  padding: 7px 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.calc-pill-btn.active {
+  background: var(--gold-500);
+  color: #ffffff;
+  border-color: var(--gold-500);
+}
+
+.calc-input-group {
+  margin-bottom: 12px;
+}
+
+.calc-input-group label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.calc-input-group input,
+.calc-input-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.calc-input-group input:focus,
+.calc-input-group select:focus {
+  border-color: var(--gold-500);
+  background: #ffffff;
+}
+
+/* ==========================================================================
+   PROGRESS & SVG CHARTS
+   ========================================================================== */
+.chart-container-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-card);
+}
+
+.svg-chart-responsive {
+  width: 100%;
+  height: 140px;
+  margin-top: 10px;
+}
+
+/* Before / After Slider Component */
+.transformation-compare-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.compare-img-before,
+.compare-img-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.compare-img-after {
+  width: 50%;
+  border-right: 3px solid var(--gold-500);
+}
+
+.compare-slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 10;
+}
+
+/* Badges Grid */
+.badges-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.badge-item-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 14px 8px;
+  text-align: center;
+}
+
+.badge-icon-disc {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold-100);
+  color: var(--gold-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin: 0 auto 8px;
+}
+
+.badge-name-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   AI FITNESS COACH CHAT DRAWER
+   ========================================================================== */
+.ai-coach-drawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 92vh;
+  max-width: 440px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  box-shadow: var(--shadow-drawer);
+  z-index: 900;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border-card);
+  animation: slideUpDrawer 0.35s var(--transition-smooth);
+}
+
+@keyframes slideUpDrawer {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.ai-coach-drawer.open {
+  display: flex;
+}
+
+.ai-coach-header {
+  padding: 16px 20px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-card);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ai-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 12px 16px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.chat-bubble-bot {
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-card);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-bubble-user {
+  background: var(--gold-500);
+  color: #ffffff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.ai-prompt-chips {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 8px 16px;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-card);
+}
+
+.ai-chip-btn {
+  padding: 6px 12px;
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.ai-input-bar {
+  padding: 12px 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border-top: 1px solid var(--border-card);
+}
+
+.ai-input-bar input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  outline: none;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   FIXED BOTTOM NAVIGATION DOCK (5 MAIN TABS + FLOATING AI COACH)
+   ========================================================================== */
+.vyra-bottom-dock {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 74px;
-  background: rgba(255, 255, 255, 0.95);
+  height: 76px;
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: var(--app-shadow-dock);
+  border-top: 1px solid var(--border-card);
+  box-shadow: var(--shadow-dock);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 0 10px calc(env(safe-area-inset-bottom, 0px) + 2px);
+  padding: 0 8px calc(env(safe-area-inset-bottom, 0px) + 2px);
   z-index: 100;
 }
 
-.dock-nav-button {
+.dock-tab-btn {
   background: transparent;
   border: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  color: var(--app-text-muted);
+  gap: 3px;
+  width: 54px;
+  height: 54px;
+  color: var(--text-muted);
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  font-size: 1.25rem;
+  transition: all 0.2s var(--transition-smooth);
 }
 
-.dock-nav-button.active {
-  background: #fb8500;
-  color: #ffffff;
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px var(--app-amber-glow);
+.dock-tab-btn i {
+  font-size: 1.25rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.dock-tab-btn span {
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.dock-tab-btn.active {
+  color: var(--gold-600);
+}
+
+.dock-tab-btn.active i {
+  color: var(--gold-600);
+  transform: translateY(-2px);
+}
+
+/* Floating AI Coach Trigger */
+.floating-ai-coach-pill {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  background: var(--text-main);
+  color: var(--gold-400);
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.floating-ai-coach-pill:hover {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* Modal Backdrops & Overlays */
+.vyra-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.vyra-modal-overlay.open {
+  display: flex;
+}
+
+.vyra-modal-box {
+  background: #ffffff;
+  width: 100%;
+  max-width: 390px;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  max-height: 90vh;
+  overflow-y: auto;
 }

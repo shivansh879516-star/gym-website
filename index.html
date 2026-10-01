@@ -2,32 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Shivansh Fitness | Official Mobile App</title>
+  <title>VYRA | Premium Fitness & Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="description" content="Official Shivansh Fitness Mobile App. Best workouts for you, activity tracking, Indian nutrition plans, and 1-on-1 personal coaching.">
-  <meta name="theme-color" content="#fca311">
+  <meta name="description" content="VYRA - Modern intelligent fitness & nutrition app. Precision workout tracking, Indian macro planning, body progress analytics, and AI coaching.">
+  <meta name="theme-color" content="#f59e0b">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Shivansh Gym">
+  <meta name="apple-mobile-web-app-title" content="VYRA">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/icon-any-192.png">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- App Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Centered Smartphone Device Shell (Responsive Fullscreen on Mobile) -->
-  <div class="app-device-wrapper">
-    <div class="app-mobile-frame" id="appMobileFrame">
-      
-      <!-- iOS / Android Style Status Bar -->
-      <header class="app-status-bar" aria-label="Status Bar">
-        <span id="appClockTime">9:41</span>
+  <div class="vyra-app-wrapper">
+    <div class="vyra-mobile-shell" id="vyraAppShell">
+
+      <!-- Status Bar Simulation -->
+      <header class="vyra-status-bar" aria-label="Status Bar">
+        <span id="vyraClockTime">9:41</span>
         <div class="status-bar-icons">
           <i class="fas fa-signal"></i>
           <i class="fas fa-wifi"></i>
@@ -35,539 +39,672 @@
         </div>
       </header>
 
-      <!-- App Screens Viewport -->
-      <main class="app-screens-viewport" id="appScreensViewport">
-        
+      <!-- Main Screens Viewport -->
+      <main class="vyra-viewport" id="vyraViewport">
+
         <!-- ==========================================================================
-             SCREEN 0: WELCOME / ONBOARDING (MATCHING SCREEN 3 OF MOCKUP)
+             SCREEN 0: AUTH & 7-STEP ONBOARDING
              ========================================================================== -->
-        <section id="screenOnboarding" class="app-screen active" aria-label="Welcome Screen">
-          <div class="w-100" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-            <button type="button" class="btn-trigger-install-modal" style="padding: 6px 14px; background: #fff4e0; color: #fb8500; border: 1px solid #fed7aa; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 5px;">
-              <i class="fas fa-download"></i> Install App
-            </button>
-            <button type="button" class="btn btn-sm text-muted border-0 bg-transparent" id="btnSkipOnboarding" style="font-size: 0.85rem; cursor: pointer; color: #8e95a5; background: none; border: none;">
-              Skip <i class="fas fa-arrow-right fa-xs"></i>
-            </button>
-          </div>
-
-          <div class="onboarding-hero-wrapper">
-            <div class="onboarding-circle-glow"></div>
-            <img src="img/app-3d-dumbbell.jpg" alt="3D Dumbbell" class="onboarding-3d-img">
-          </div>
-
-          <div class="onboarding-content">
-            <h1 class="onboarding-title">
-              Best Workouts<br><span>for you</span>
+        <section id="screenOnboarding" class="vyra-screen active" aria-label="Welcome & Onboarding">
+          <div class="text-center py-4">
+            <img src="img/vyra-icon.jpg" alt="VYRA Brand Icon" class="rounded-circle shadow-sm mb-3" style="width: 72px; height: 72px; object-fit: cover; border: 2px solid var(--gold-400);">
+            <h1 style="font-size: 2rem; font-weight: 900; letter-spacing: -0.5px; color: var(--text-main);">
+              VYRA<span style="color: var(--gold-500);">.</span>
             </h1>
-            <p class="onboarding-subtitle">
-              You can find everything you need to reach your personal fitness goals... Do now
-            </p>
+            <p class="text-muted" style="font-size: 0.88rem;">Intelligent Fitness & Body Recomposition</p>
+          </div>
 
-            <button type="button" class="btn-app-primary" id="btnGetStarted">
-              <span>Get Started</span> <i class="fas fa-arrow-right"></i>
-            </button>
+          <!-- Onboarding Step Container -->
+          <div class="vyra-card p-4" id="onboardingWizardCard">
+            <!-- Progress indicator -->
+            <div class="d-flex justify-content-between align-items-center mb-3" style="font-size: 0.75rem; font-weight: 700; color: var(--gold-600);">
+              <span id="onboardingStepLabel">STEP 1 OF 7</span>
+              <span id="onboardingPercentLabel">14% Completed</span>
+            </div>
+            <div class="metric-progress-bar mb-4" style="height: 4px;">
+              <div id="onboardingProgressBar" class="metric-progress-fill" style="width: 14%; background: var(--gold-gradient);"></div>
+            </div>
+
+            <div id="onboardingStepContent">
+              <!-- Rendered dynamically by JS -->
+            </div>
+
+            <div class="d-flex gap-2 mt-4">
+              <button type="button" class="btn-vyra-secondary flex-grow-1" id="btnOnboardingPrev" style="display: none;">Back</button>
+              <button type="button" class="btn-vyra-primary flex-grow-1" id="btnOnboardingNext">
+                <span>Continue</span> <i class="fas fa-arrow-right fa-xs"></i>
+              </button>
+            </div>
           </div>
         </section>
 
         <!-- ==========================================================================
-             SCREEN 1: HOME & DASHBOARD (MATCHING SCREEN 2 OF MOCKUP)
+             SCREEN 1: HOME / DASHBOARD
              ========================================================================== -->
-        <section id="screenHome" class="app-screen" aria-label="Home Dashboard">
-          <!-- Header Row -->
-          <div class="app-header-row">
-            <div>
-              <div class="app-user-greeting">Welcome back,</div>
-              <h2 class="app-user-name">Shivansh! 👋</h2>
-            </div>
-            <div class="app-header-actions">
-              <button type="button" class="btn-app-install-badge" id="btnHeaderInstall" style="padding: 6px 12px; background: #fff4e0; color: #fb8500; border: 1px solid #fed7aa; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px;">
-                <i class="fas fa-download"></i> Install
-              </button>
-              <button type="button" class="dock-nav-button" id="btnNotificationIcon" style="width: 36px; height: 36px; font-size: 1rem; background: #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.05);" title="Sound & Notifications">
-                <i class="fas fa-bell text-warning"></i>
-              </button>
-              <img src="img/trainer-shivansh.jpg" alt="User Profile" class="app-avatar-img" id="btnHeaderAvatar">
-            </div>
-          </div>
-
-          <!-- Search Bar -->
-          <div class="app-search-box">
-            <i class="fas fa-search text-warning"></i>
-            <input type="text" id="appSearchInput" placeholder="Search for course or exercise..." aria-label="Search course">
-          </div>
-
-          <!-- Promo Banner (Find Your Workout Class - 60% OFF) -->
-          <div class="app-promo-banner">
-            <div>
-              <span class="promo-badge-tag">LIMITED OFFER</span>
-              <div class="promo-title">Find Your<br>Workout Class</div>
-              <div class="promo-discount-text">60% OFF</div>
-              <button type="button" class="promo-btn-join" id="btnJoinGymPromo">
-                Join GYM <i class="fas fa-bolt ms-1"></i>
-              </button>
-            </div>
-            <img src="img/app-promo-dumbbells.jpg" alt="3D Dumbbells" class="promo-3d-img">
-          </div>
-
-          <!-- Your Progress Section -->
-          <div class="app-section-title-row">
-            <h3 class="app-section-title">Your Progress</h3>
-            <a href="#" class="app-section-link" id="linkViewAllProgress">See details</a>
-          </div>
-
-          <div class="app-progress-grid">
-            <!-- Ring 1: Walk Steps -->
-            <div class="progress-widget-card">
-              <div class="widget-card-header">
-                <span class="widget-title">Walk</span>
-                <i class="fas fa-shoe-prints text-warning"></i>
+        <section id="screenHome" class="vyra-screen" aria-label="Home Dashboard">
+          <!-- Top App Bar -->
+          <div class="vyra-app-header">
+            <div class="header-user-intro">
+              <img src="img/trainer-shivansh.jpg" alt="User Profile" class="header-avatar" id="btnHeaderProfile">
+              <div>
+                <div class="header-greeting-sub" id="homeGreetingSub">Good Morning 👋</div>
+                <div class="header-greeting-name" id="homeUserName">Shivansh</div>
               </div>
-              <div class="progress-ring-container">
-                <svg class="progress-ring-svg">
-                  <circle class="progress-ring-circle-bg" cx="45" cy="45" r="35"></circle>
-                  <circle class="progress-ring-circle-val" id="homeStepsCircle" cx="45" cy="45" r="35"></circle>
-                </svg>
-                <div class="progress-ring-text">
-                  <div class="progress-ring-val" id="homeStepsText">8,104</div>
-                  <div class="progress-ring-label">Steps</div>
+            </div>
+            <div class="header-actions">
+              <button type="button" class="icon-button-circle" id="btnHomeStreakBadge" title="Current Streak">
+                <span style="font-size: 0.78rem; font-weight: 800; color: var(--gold-600);"><i class="fas fa-fire text-danger"></i> <span id="homeStreakCount">7</span></span>
+              </button>
+              <button type="button" class="icon-button-circle" id="btnQuickAICoachHome" title="Ask VYRA AI Coach">
+                <i class="fas fa-wand-magic-sparkles" style="color: var(--gold-500);"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Today's Goal & Recommended Workout Card -->
+          <div class="vyra-card vyra-card-gold p-4 mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span style="font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px; opacity: 0.9;">TODAY'S TARGET</span>
+              <span class="badge" style="background: rgba(255,255,255,0.25); color: #fff; font-size: 0.72rem;">DAY 4 OF 5</span>
+            </div>
+            <h2 id="homeTargetWorkoutTitle" style="font-size: 1.45rem; font-weight: 900; line-height: 1.2; margin-bottom: 6px;">Chest & Triceps Hypertrophy</h2>
+            <p style="font-size: 0.85rem; opacity: 0.9; margin-bottom: 16px;">5 Exercises • 45 Mins • High Intensity Progression</p>
+            <button type="button" class="btn btn-light rounded-pill px-4 py-2 fw-bold text-dark d-inline-flex align-items-center gap-2" id="btnStartRecommendedWorkout" style="font-size: 0.9rem; border: none; box-shadow: 0 4px 14px rgba(0,0,0,0.15);">
+              <i class="fas fa-play fa-xs" style="color: var(--gold-600);"></i> Start Workout
+            </button>
+          </div>
+
+          <!-- Quick Action Chips -->
+          <div class="quick-action-strip">
+            <div class="quick-action-chip" id="chipQuickWorkout">
+              <i class="fas fa-dumbbell"></i>
+              <span>Quick Workout</span>
+            </div>
+            <div class="quick-action-chip" id="chipQuickMeal">
+              <i class="fas fa-utensils"></i>
+              <span>Add Meal</span>
+            </div>
+            <div class="quick-action-chip" id="chipQuickWater">
+              <i class="fas fa-tint"></i>
+              <span>+250ml Water</span>
+            </div>
+            <div class="quick-action-chip" id="chipQuickWeight">
+              <i class="fas fa-weight-scale"></i>
+              <span>Log Weight</span>
+            </div>
+          </div>
+
+          <!-- Today's Progress Metrics Grid (Calories, Protein, Water, Steps) -->
+          <div class="card-title-row">
+            <h3 class="card-title-text">Today's Progress</h3>
+            <span class="text-muted" style="font-size: 0.78rem;" id="homeLiveDate">Today</span>
+          </div>
+
+          <div class="dashboard-metrics-grid">
+            <!-- 1. Calories Card -->
+            <div class="metric-card">
+              <div class="metric-header">
+                <span class="metric-title-text">Calories</span>
+                <div class="metric-icon-box" style="background: #fffbeb; color: var(--gold-600);">
+                  <i class="fas fa-fire"></i>
                 </div>
               </div>
+              <div class="metric-number-main" id="metricCaloriesVal">1,840</div>
+              <div class="metric-target-sub" id="metricCaloriesTarget">/ 2,200 kcal</div>
+              <div class="metric-progress-bar">
+                <div id="barCaloriesFill" class="metric-progress-fill" style="width: 83%; background: var(--gold-gradient);"></div>
+              </div>
             </div>
 
-            <!-- Ring 2: Sleep / Hydration -->
-            <div class="progress-widget-card">
-              <div class="widget-card-header">
-                <span class="widget-title">Sleep</span>
-                <i class="fas fa-moon text-info"></i>
+            <!-- 2. Protein Card -->
+            <div class="metric-card">
+              <div class="metric-header">
+                <span class="metric-title-text">Protein</span>
+                <div class="metric-icon-box" style="background: #eff6ff; color: #3b82f6;">
+                  <i class="fas fa-drumstick-bite"></i>
+                </div>
               </div>
-              <div class="bar-chart-mini">
-                <div class="bar-mini-col" style="height: 45%;"></div>
-                <div class="bar-mini-col" style="height: 65%;"></div>
-                <div class="bar-mini-col active" style="height: 85%;"></div>
-                <div class="bar-mini-col active" style="height: 90%;"></div>
-                <div class="bar-mini-col active" style="height: 75%;"></div>
+              <div class="metric-number-main" id="metricProteinVal">92</div>
+              <div class="metric-target-sub" id="metricProteinTarget">/ 120 g</div>
+              <div class="metric-progress-bar">
+                <div id="barProteinFill" class="metric-progress-fill" style="width: 76%; background: #3b82f6;"></div>
               </div>
-              <div class="mt-2 text-center">
-                <span class="fw-bold" style="font-size: 1rem; color: var(--app-dark);">6.5</span>
-                <span class="text-muted" style="font-size: 0.72rem;">Hours</span>
+            </div>
+
+            <!-- 3. Water Card -->
+            <div class="metric-card">
+              <div class="metric-header">
+                <span class="metric-title-text">Water</span>
+                <div class="metric-icon-box" style="background: #ecfdf5; color: #10b981;">
+                  <i class="fas fa-glass-water"></i>
+                </div>
+              </div>
+              <div class="metric-number-main" id="metricWaterVal">1.8</div>
+              <div class="metric-target-sub" id="metricWaterTarget">/ 3.0 L</div>
+              <div class="metric-progress-bar">
+                <div id="barWaterFill" class="metric-progress-fill" style="width: 60%; background: #10b981;"></div>
+              </div>
+            </div>
+
+            <!-- 4. Steps Card -->
+            <div class="metric-card">
+              <div class="metric-header">
+                <span class="metric-title-text">Steps</span>
+                <div class="metric-icon-box" style="background: #fdf2f8; color: #ec4899;">
+                  <i class="fas fa-shoe-prints"></i>
+                </div>
+              </div>
+              <div class="metric-number-main" id="metricStepsVal">6,420</div>
+              <div class="metric-target-sub" id="metricStepsTarget">/ 10,000 steps</div>
+              <div class="metric-progress-bar">
+                <div id="barStepsFill" class="metric-progress-fill" style="width: 64%; background: #ec4899;"></div>
               </div>
             </div>
           </div>
 
-          <!-- Workout Categories Horizontal Scroll -->
-          <div class="app-section-title-row">
-            <h3 class="app-section-title">Workout Routines</h3>
-          </div>
-
-          <div class="app-category-scroll">
-            <button type="button" class="category-pill active" data-cat="all">🔥 All Routines</button>
-            <button type="button" class="category-pill" data-cat="strength">🏋️ Strength</button>
-            <button type="button" class="category-pill" data-cat="fatloss">🏃 Fat Loss</button>
-            <button type="button" class="category-pill" data-cat="diet">🍱 Desi Diet</button>
-          </div>
-
-          <!-- Workout Cards List -->
-          <div id="homeWorkoutCardsList">
-            <div class="app-workout-card" data-workout="push">
-              <div class="workout-thumb-box">
-                <i class="fas fa-dumbbell"></i>
-              </div>
-              <div class="workout-info-meta">
-                <div class="workout-card-title">Push Day (Chest, Shoulders, Triceps)</div>
-                <div class="workout-card-sub">45 Mins • 5 Exercises • Intermediate</div>
-              </div>
-              <button type="button" class="workout-play-btn" aria-label="Start workout">
-                <i class="fas fa-play"></i>
-              </button>
+          <!-- Weekly Consistency Summary -->
+          <div class="vyra-card p-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="card-title-text" style="font-size: 0.95rem;">Weekly Summary</span>
+              <span class="badge-gold card-badge">5/7 Workouts</span>
             </div>
-
-            <div class="app-workout-card" data-workout="pull">
-              <div class="workout-thumb-box" style="background: #e0f2fe; color: #0284c7;">
-                <i class="fas fa-running"></i>
-              </div>
-              <div class="workout-info-meta">
-                <div class="workout-card-title">Pull Day (Back, Lats, Biceps)</div>
-                <div class="workout-card-sub">50 Mins • 6 Exercises • High Intensity</div>
-              </div>
-              <button type="button" class="workout-play-btn" aria-label="Start workout">
-                <i class="fas fa-play"></i>
-              </button>
-            </div>
-
-            <div class="app-workout-card" data-workout="legs">
-              <div class="workout-thumb-box" style="background: #fee2e2; color: #e61e2a;">
-                <i class="fas fa-bolt"></i>
-              </div>
-              <div class="workout-info-meta">
-                <div class="workout-card-title">Legs & Core Power Blast</div>
-                <div class="workout-card-sub">40 Mins • Squats & Deadlifts • Advanced</div>
-              </div>
-              <button type="button" class="workout-play-btn" aria-label="Start workout">
-                <i class="fas fa-play"></i>
-              </button>
+            <div class="d-flex justify-content-between align-items-end pt-2" style="height: 75px;">
+              <div class="text-center flex-grow-1"><div style="height: 45px; background: var(--gold-500); width: 14px; margin: 0 auto 6px; border-radius: 4px;"></div><span style="font-size: 0.68rem; color: var(--text-muted);">Mon</span></div>
+              <div class="text-center flex-grow-1"><div style="height: 55px; background: var(--gold-500); width: 14px; margin: 0 auto 6px; border-radius: 4px;"></div><span style="font-size: 0.68rem; color: var(--text-muted);">Tue</span></div>
+              <div class="text-center flex-grow-1"><div style="height: 35px; background: var(--gold-500); width: 14px; margin: 0 auto 6px; border-radius: 4px;"></div><span style="font-size: 0.68rem; color: var(--text-muted);">Wed</span></div>
+              <div class="text-center flex-grow-1"><div style="height: 60px; background: var(--gold-500); width: 14px; margin: 0 auto 6px; border-radius: 4px;"></div><span style="font-size: 0.68rem; color: var(--text-muted);">Thu</span></div>
+              <div class="text-center flex-grow-1"><div style="height: 50px; background: var(--gold-500); width: 14px; margin: 0 auto 6px; border-radius: 4px;"></div><span style="font-size: 0.68rem; color: var(--text-muted);">Fri</span></div>
+              <div class="text-center flex-grow-1"><div style="height: 15px; background: #e2e8f0; width: 14px; margin: 0 auto 6px; border-radius: 4px;"></div><span style="font-size: 0.68rem; color: var(--text-muted);">Sat</span></div>
+              <div class="text-center flex-grow-1"><div style="height: 15px; background: #e2e8f0; width: 14px; margin: 0 auto 6px; border-radius: 4px;"></div><span style="font-size: 0.68rem; color: var(--text-muted);">Sun</span></div>
             </div>
           </div>
         </section>
 
         <!-- ==========================================================================
-             SCREEN 2: ACTIVITIES & ANALYTICS (MATCHING SCREEN 1 OF MOCKUP)
+             SCREEN 2: WORKOUT SYSTEM & PROGRAMS
              ========================================================================== -->
-        <section id="screenActivity" class="app-screen" aria-label="Activities and Analytics">
-          <h2 class="activity-header-title">Your activities</h2>
-          <div class="activity-header-sub">This week performance</div>
-
-          <!-- Date Picker Strip -->
-          <div class="date-picker-strip">
-            <div class="date-pill-btn" data-day="sat">
-              <span class="date-pill-day">Sat</span>
-              <span class="date-pill-num">26</span>
-            </div>
-            <div class="date-pill-btn" data-day="sun">
-              <span class="date-pill-day">Sun</span>
-              <span class="date-pill-num">27</span>
-            </div>
-            <div class="date-pill-btn active" data-day="mon">
-              <span class="date-pill-day">Mon</span>
-              <span class="date-pill-num">28</span>
-            </div>
-            <div class="date-pill-btn" data-day="tue">
-              <span class="date-pill-day">Tue</span>
-              <span class="date-pill-num">29</span>
-            </div>
-            <div class="date-pill-btn" data-day="wed">
-              <span class="date-pill-day">Wed</span>
-              <span class="date-pill-num">30</span>
-            </div>
-          </div>
-
-          <!-- Calorie Wave Chart Card -->
-          <div class="calorie-wave-card">
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <div class="calorie-val-main" id="activityCalorieNum">1,680</div>
-                <div class="calorie-unit-sub">KCAL BURNED TODAY</div>
-              </div>
-              <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold" style="font-size: 0.75rem;">+14% vs avg</span>
-            </div>
-
-            <!-- Smooth Amber Calorie Wave SVG -->
-            <svg class="calorie-wave-svg" viewBox="0 0 400 120" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#ffb703" stop-opacity="0.55"/>
-                  <stop offset="100%" stop-color="#fb8500" stop-opacity="0.0"/>
-                </linearGradient>
-              </defs>
-              <path d="M 0,90 Q 60,110 100,70 T 200,35 T 300,55 T 400,20 L 400,120 L 0,120 Z" fill="url(#waveGradient)"></path>
-              <path d="M 0,90 Q 60,110 100,70 T 200,35 T 300,55 T 400,20" fill="none" stroke="#fb8500" stroke-width="4" stroke-linecap="round"></path>
-              <circle cx="200" cy="35" r="6" fill="#ffffff" stroke="#fb8500" stroke-width="3"></circle>
-            </svg>
-          </div>
-
-          <!-- Daily Hydration Quick Widget -->
-          <div class="activity-item-card mb-3" style="background: #f0fdf4; border: 1px solid #bbf7d0;">
-            <div class="activity-item-left">
-              <div class="activity-badge-icon" style="background: #22c55e; color: #ffffff;">
-                <i class="fas fa-tint"></i>
-              </div>
-              <div>
-                <div class="activity-name-text">Hydration Tracker</div>
-                <div class="activity-time-text" id="activityWaterText">2,250 / 3,500 ml (64%)</div>
-              </div>
-            </div>
-            <div class="d-flex gap-1">
-              <button type="button" class="btn btn-sm btn-success rounded-pill px-2 py-1" id="btnActivityAddWater" style="font-size: 0.75rem;">
-                +250ml <i class="fas fa-plus fa-xs"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Activity List (Matching Screen 1) -->
-          <div class="app-section-title-row">
-            <h3 class="app-section-title">Workout History</h3>
-          </div>
-
-          <div class="activity-item-card">
-            <div class="activity-item-left">
-              <div class="activity-badge-icon" style="background: #fff4e0; color: #fb8500;">
-                <i class="fas fa-running"></i>
-              </div>
-              <div>
-                <div class="activity-name-text">Running</div>
-                <div class="activity-time-text">6:00 PM - 7:20 PM</div>
-              </div>
-            </div>
-            <div class="activity-stats-right">
-              <div class="activity-stat-primary">1.32 <span style="font-size: 0.75rem;">hours</span></div>
-              <div class="activity-stat-secondary">9.50 kilometers</div>
-            </div>
-          </div>
-
-          <div class="activity-item-card">
-            <div class="activity-item-left">
-              <div class="activity-badge-icon" style="background: #e0f2fe; color: #0284c7;">
-                <i class="fas fa-dumbbell"></i>
-              </div>
-              <div>
-                <div class="activity-name-text">Chest & Arms Lifting</div>
-                <div class="activity-time-text">7:30 AM - 8:30 AM</div>
-              </div>
-            </div>
-            <div class="activity-stats-right">
-              <div class="activity-stat-primary">1.00 <span style="font-size: 0.75rem;">hours</span></div>
-              <div class="activity-stat-secondary">480 kcal burned</div>
-            </div>
-          </div>
-
-          <div class="activity-item-card">
-            <div class="activity-item-left">
-              <div class="activity-badge-icon" style="background: #fdf2f8; color: #db2777;">
-                <i class="fas fa-swimmer"></i>
-              </div>
-              <div>
-                <div class="activity-name-text">Swimming Cardio</div>
-                <div class="activity-time-text">5:00 AM - 5:50 AM</div>
-              </div>
-            </div>
-            <div class="activity-stats-right">
-              <div class="activity-stat-primary">0.82 <span style="font-size: 0.75rem;">hours</span></div>
-              <div class="activity-stat-secondary">360 kcal burned</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ==========================================================================
-             SCREEN 3: WORKOUT STUDIO & LIVE REST TIMER
-             ========================================================================== -->
-        <section id="screenWorkouts" class="app-screen" aria-label="Workout Studio">
-          <div class="app-header-row mb-3">
+        <section id="screenWorkout" class="vyra-screen" aria-label="Workout System">
+          <div class="vyra-app-header">
             <div>
-              <h2 class="app-user-name">Workout Studio</h2>
-              <div class="app-user-greeting">Live Rest Timer & Form Check</div>
+              <div class="header-greeting-sub">TRAINING HUB</div>
+              <h2 class="header-greeting-name">Workouts & Routines</h2>
             </div>
-          </div>
-
-          <!-- Digital Gym Rest Interval Timer Box -->
-          <div class="workout-timer-box">
-            <div style="font-size: 0.8rem; color: #b0b7c3; text-transform: uppercase; letter-spacing: 1px;">
-              <i class="fas fa-stopwatch me-1"></i> Gym Rest Timer
-            </div>
-            <div class="workout-timer-digits" id="screenTimerDisplay">00:45</div>
-            
-            <div class="timer-preset-row">
-              <button type="button" class="timer-preset-btn" data-sec="30">30s</button>
-              <button type="button" class="timer-preset-btn active" data-sec="45">45s</button>
-              <button type="button" class="timer-preset-btn" data-sec="60">60s</button>
-              <button type="button" class="timer-preset-btn" data-sec="90">90s</button>
-            </div>
-
-            <div class="d-flex justify-content-center gap-2">
-              <button type="button" class="btn btn-warning px-4 py-2 rounded-pill fw-bold" id="btnScreenTimerStart">
-                <i class="fas fa-play me-1"></i> Start Rest
-              </button>
-              <button type="button" class="btn btn-outline-light px-3 py-2 rounded-pill" id="btnScreenTimerReset">
-                <i class="fas fa-redo-alt"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Workout Plan Selector -->
-          <div class="app-section-title-row">
-            <h3 class="app-section-title">Today's Exercise Plan</h3>
-          </div>
-
-          <div class="diet-plan-card">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="fw-bold" style="color: var(--app-dark);">1. Barbell Flat Bench Press</span>
-              <span class="badge bg-danger rounded-pill">4 Sets</span>
-            </div>
-            <p class="text-muted small mb-0">8-10 Reps • Progressive overload with 2-minute heavy rest.</p>
-          </div>
-
-          <div class="diet-plan-card">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="fw-bold" style="color: var(--app-dark);">2. Incline Dumbbell Press</span>
-              <span class="badge bg-warning text-dark rounded-pill">3 Sets</span>
-            </div>
-            <p class="text-muted small mb-0">10-12 Reps • Strict 30° incline bench for upper clavicular pec activation.</p>
-          </div>
-
-          <div class="diet-plan-card">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="fw-bold" style="color: var(--app-dark);">3. Cable Lateral Raises</span>
-              <span class="badge bg-info text-dark rounded-pill">4 Sets</span>
-            </div>
-            <p class="text-muted small mb-0">15 Reps • Constant side delt tension with 45s rest intervals.</p>
-          </div>
-        </section>
-
-        <!-- ==========================================================================
-             SCREEN 4: DESI NUTRITION & DIET PLANS
-             ========================================================================== -->
-        <section id="screenDiet" class="app-screen" aria-label="Nutrition & Diet">
-          <div class="app-header-row mb-3">
-            <div>
-              <h2 class="app-user-name">Desi Nutrition</h2>
-              <div class="app-user-greeting">High Protein Indian Meal Plans</div>
-            </div>
-          </div>
-
-          <div class="diet-plan-card">
-            <div class="d-flex justify-content-between align-items-center mb-1">
-              <h4 class="fw-bold mb-0" style="color: var(--app-dark); font-size: 1.05rem;">🍳 High Protein Indian Veg/Egg</h4>
-              <span class="badge bg-success rounded-pill">135g Protein</span>
-            </div>
-            <p class="text-muted small mb-2">Ideal for fat loss & lean muscle recomposition using everyday ghar ka khana.</p>
-            <div class="diet-macro-pills">
-              <span class="macro-pill bg-danger-subtle text-danger">Protein: 135g</span>
-              <span class="macro-pill bg-warning-subtle text-warning">Carbs: 180g</span>
-              <span class="macro-pill bg-info-subtle text-info">Fats: 45g</span>
-            </div>
-          </div>
-
-          <div class="diet-plan-card">
-            <div class="d-flex justify-content-between align-items-center mb-1">
-              <h4 class="fw-bold mb-0" style="color: var(--app-dark); font-size: 1.05rem;">🍱 Student Budget Indian Plan</h4>
-              <span class="badge bg-warning text-dark rounded-pill">₹120 / Day</span>
-            </div>
-            <p class="text-muted small mb-2">Soya chunks, boiled eggs, roasted chana, dahi, and oats for maximum budget nutrition.</p>
-            <div class="diet-macro-pills">
-              <span class="macro-pill bg-danger-subtle text-danger">Protein: 120g</span>
-              <span class="macro-pill bg-warning-subtle text-warning">Calories: 2,100</span>
-            </div>
-          </div>
-
-          <div class="diet-plan-card">
-            <div class="d-flex justify-content-between align-items-center mb-1">
-              <h4 class="fw-bold mb-0" style="color: var(--app-dark); font-size: 1.05rem;">🍗 Lean Non-Veg Recomposition</h4>
-              <span class="badge bg-primary text-white rounded-pill">160g Protein</span>
-            </div>
-            <p class="text-muted small mb-2">Grilled chicken breast, egg whites, rice, dal, and fresh green salads.</p>
-            <div class="diet-macro-pills">
-              <span class="macro-pill bg-danger-subtle text-danger">Protein: 160g</span>
-              <span class="macro-pill bg-info-subtle text-info">Calories: 2,350</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- ==========================================================================
-             SCREEN 5: COACH SHIVANSH & ADMISSIONS
-             ========================================================================== -->
-        <section id="screenCoach" class="app-screen" aria-label="Coach Profile and Contact">
-          <div class="coach-profile-header">
-            <img src="img/trainer-shivansh.jpg" alt="Coach Shivansh" class="coach-avatar-lg">
-            <h2 class="app-user-name mb-0">Coach Shivansh</h2>
-            <div class="text-muted small mb-2">Head Trainer & Certified Sports Nutritionist</div>
-            <span class="badge bg-success px-3 py-1 rounded-pill"><i class="fas fa-check-circle me-1"></i> Verified Trainer</span>
-          </div>
-
-          <!-- Direct WhatsApp Channel Button -->
-          <a href="https://wa.me/919555514847?text=Hi%20Coach%20Shivansh!%20I%20am%20using%20the%20Shivansh%20Fitness%20App%20and%20want%20to%20enroll%20for%20personal%20training." target="_blank" rel="noopener noreferrer" class="btn btn-success w-100 py-3 rounded-pill fw-bold mb-2 d-flex align-items-center justify-content-center gap-2 shadow-sm" style="font-size: 1rem; text-decoration: none;">
-            <i class="fab fa-whatsapp fa-lg"></i> Chat Directly on WhatsApp
-          </a>
-
-          <!-- Install App to Phone Button -->
-          <button type="button" class="btn-trigger-install-modal w-100 py-3 rounded-pill fw-bold mb-3 d-flex align-items-center justify-content-center gap-2" style="background: #fff4e0; color: #fb8500; border: 1px solid #fed7aa; font-size: 0.95rem; cursor: pointer;">
-            <i class="fas fa-download"></i> 📲 Install App / Download APK
-          </button>
-
-          <!-- Official Verified UPI ID Card -->
-          <div class="upi-payment-card">
-            <div class="text-muted small mb-1">OFFICIAL VERIFIED UPI ID</div>
-            <div class="fw-bold fs-5 text-dark mb-2" id="coachUpiIdText">9555514847@ptyes</div>
-            <button type="button" class="btn btn-sm btn-outline-warning rounded-pill px-3" id="btnCopyUpiId">
-              <i class="fas fa-copy me-1"></i> Copy UPI ID
+            <button type="button" class="btn-vyra-secondary py-2 px-3" id="btnOpenWorkoutBuilder">
+              <i class="fas fa-plus text-warning"></i> Custom
             </button>
           </div>
 
-          <div class="diet-plan-card">
-            <div class="d-flex align-items-center gap-3 mb-2">
-              <i class="fas fa-phone-alt text-danger fa-lg"></i>
-              <div>
-                <div class="fw-bold" style="color: var(--app-dark);">Direct Phone Support</div>
-                <a href="tel:+919555514847" class="text-muted small text-decoration-none">+91 9555514847</a>
+          <!-- Workout Category Filter Strip -->
+          <div class="workout-category-strip" id="workoutCategoryStrip">
+            <button type="button" class="category-filter-btn active" data-filter="all">All</button>
+            <button type="button" class="category-filter-btn" data-filter="chest">Chest</button>
+            <button type="button" class="category-filter-btn" data-filter="back">Back</button>
+            <button type="button" class="category-filter-btn" data-filter="shoulders">Shoulders</button>
+            <button type="button" class="category-filter-btn" data-filter="arms">Arms</button>
+            <button type="button" class="category-filter-btn" data-filter="legs">Legs</button>
+            <button type="button" class="category-filter-btn" data-filter="home">Home</button>
+          </div>
+
+          <!-- Pre-Built Programs Accordion / Cards -->
+          <div class="card-title-row">
+            <h3 class="card-title-text">Featured Programs</h3>
+          </div>
+
+          <div class="vyra-card p-3 mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge-gold card-badge">Muscle Gain</span>
+              <span class="text-muted small">6 Days / Week • Advanced</span>
+            </div>
+            <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;">Push Pull Legs (PPL) Hypertrophy</h4>
+            <p class="text-muted small mb-3">Targeted muscle fatigue with scientific volume distribution & progressive overload.</p>
+            <button type="button" class="btn-vyra-primary py-2" data-action="launch-routine" data-routine="ppl">
+              <i class="fas fa-play fa-xs"></i> Start PPL Routine
+            </button>
+          </div>
+
+          <div class="vyra-card p-3 mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge-success card-badge">Fat Loss</span>
+              <span class="text-muted small">4 Days / Week • All Levels</span>
+            </div>
+            <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;">Upper / Lower Body Recomp</h4>
+            <p class="text-muted small mb-3">Compound lifts combined with high-density metabolic circuits for maximum energy burn.</p>
+            <button type="button" class="btn-vyra-primary py-2" data-action="launch-routine" data-routine="upperlower">
+              <i class="fas fa-play fa-xs"></i> Start Upper/Lower
+            </button>
+          </div>
+
+          <!-- Exercise Library List -->
+          <div class="card-title-row">
+            <h3 class="card-title-text">Exercise Library</h3>
+          </div>
+          <div id="exerciseLibraryList">
+            <!-- Injected dynamically by JS -->
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SCREEN 3: NUTRITION TRACKER & CALCULATORS
+             ========================================================================== -->
+        <section id="screenNutrition" class="vyra-screen" aria-label="Nutrition & Diet">
+          <div class="vyra-app-header">
+            <div>
+              <div class="header-greeting-sub">NUTRITION & MACROS</div>
+              <h2 class="header-greeting-name">Diet Tracker</h2>
+            </div>
+            <button type="button" class="btn-vyra-primary py-2 px-3" style="width: auto;" id="btnHeaderAddMeal">
+              <i class="fas fa-plus"></i> Add Food
+            </button>
+          </div>
+
+          <!-- Macronutrient Breakdown Card -->
+          <div class="vyra-card p-3 mb-3">
+            <div class="card-title-row mb-2">
+              <span class="card-title-text" style="font-size: 0.95rem;">Daily Macronutrients</span>
+              <span class="text-muted small" id="nutritionCaloriesSummary">1,840 / 2,200 kcal</span>
+            </div>
+            <div class="d-flex gap-2 text-center pt-2">
+              <div class="flex-grow-1 p-2 rounded-3 bg-surface border">
+                <div class="fw-bold text-primary" style="font-size: 1rem;" id="macroProteinVal">92g</div>
+                <div class="text-muted small" style="font-size: 0.7rem;">Protein (35%)</div>
+              </div>
+              <div class="flex-grow-1 p-2 rounded-3 bg-surface border">
+                <div class="fw-bold text-warning" style="font-size: 1rem;" id="macroCarbsVal">210g</div>
+                <div class="text-muted small" style="font-size: 0.7rem;">Carbs (45%)</div>
+              </div>
+              <div class="flex-grow-1 p-2 rounded-3 bg-surface border">
+                <div class="fw-bold text-danger" style="font-size: 1rem;" id="macroFatsVal">48g</div>
+                <div class="text-muted small" style="font-size: 0.7rem;">Fats (20%)</div>
               </div>
             </div>
-            <div class="d-flex align-items-center gap-3">
-              <i class="fas fa-envelope text-warning fa-lg"></i>
-              <div>
-                <div class="fw-bold" style="color: var(--app-dark);">Official Email</div>
-                <a href="mailto:shivansh983965@gmail.com" class="text-muted small text-decoration-none">shivansh983965@gmail.com</a>
+          </div>
+
+          <!-- Meal Categories Tracker -->
+          <div class="meal-category-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-bold" style="color: var(--text-main);"><i class="fas fa-coffee text-warning me-1"></i> Breakfast</span>
+              <span class="text-muted small" id="breakfastCaloriesTotal">480 kcal</span>
+            </div>
+            <div id="breakfastItemsList">
+              <div class="meal-item-row">
+                <span>3 Whole Eggs + 2 Brown Bread</span>
+                <span class="fw-bold">360 kcal</span>
+              </div>
+              <div class="meal-item-row">
+                <span>1 Cup Black Coffee / Chai</span>
+                <span class="fw-bold">120 kcal</span>
               </div>
             </div>
+          </div>
+
+          <div class="meal-category-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-bold" style="color: var(--text-main);"><i class="fas fa-bowl-rice text-warning me-1"></i> Lunch</span>
+              <span class="text-muted small" id="lunchCaloriesTotal">680 kcal</span>
+            </div>
+            <div id="lunchItemsList">
+              <div class="meal-item-row">
+                <span>Paneer / Chicken Breast (150g) + Dal</span>
+                <span class="fw-bold">480 kcal</span>
+              </div>
+              <div class="meal-item-row">
+                <span>2 Rotis + Green Salad + Dahi</span>
+                <span class="fw-bold">200 kcal</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="meal-category-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-bold" style="color: var(--text-main);"><i class="fas fa-utensils text-warning me-1"></i> Dinner</span>
+              <span class="text-muted small" id="dinnerCaloriesTotal">520 kcal</span>
+            </div>
+            <div id="dinnerItemsList">
+              <div class="meal-item-row">
+                <span>Soya Chunks / Fish + Brown Rice</span>
+                <span class="fw-bold">520 kcal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6 Fitness & Nutrition Science Calculators -->
+          <div class="card-title-row mt-4">
+            <h3 class="card-title-text">Fitness & Body Calculators</h3>
+          </div>
+
+          <div class="vyra-card p-3">
+            <div class="calculator-selector-pills">
+              <button type="button" class="calc-pill-btn active" data-calc="calorie">Calorie Target</button>
+              <button type="button" class="calc-pill-btn" data-calc="bmr">BMR / TDEE</button>
+              <button type="button" class="calc-pill-btn" data-calc="bmi">BMI</button>
+              <button type="button" class="calc-pill-btn" data-calc="macros">Macro Split</button>
+              <button type="button" class="calc-pill-btn" data-calc="onerep">1-Rep Max</button>
+            </div>
+
+            <div id="calculatorFormContainer">
+              <!-- Dynamically switched by JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SCREEN 4: PROGRESS TRACKING & ANALYTICS
+             ========================================================================== -->
+        <section id="screenProgress" class="vyra-screen" aria-label="Progress & Analytics">
+          <div class="vyra-app-header">
+            <div>
+              <div class="header-greeting-sub">BODY & PERFORMANCE</div>
+              <h2 class="header-greeting-name">Progress Analytics</h2>
+            </div>
+            <button type="button" class="btn-vyra-secondary py-2 px-3" id="btnOpenLogMetric">
+              <i class="fas fa-plus text-warning"></i> Log Metric
+            </button>
+          </div>
+
+          <!-- Weight Progression Graph Card -->
+          <div class="chart-container-box">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <span class="text-muted small">Current Body Weight</span>
+                <div style="font-size: 1.6rem; font-weight: 900; color: var(--text-main);" id="progressWeightDisplay">74.5 kg</div>
+              </div>
+              <span class="badge-success card-badge">-3.2 kg (Fat Loss)</span>
+            </div>
+
+            <!-- SVG Smooth Trend Line -->
+            <svg class="svg-chart-responsive" viewBox="0 0 400 120" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="weightLineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.4"/>
+                  <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <path d="M 0,40 Q 80,45 150,65 T 300,85 T 400,95 L 400,120 L 0,120 Z" fill="url(#weightLineGrad)"></path>
+              <path d="M 0,40 Q 80,45 150,65 T 300,85 T 400,95" fill="none" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"></path>
+              <circle cx="400" cy="95" r="5" fill="#f59e0b" stroke="#ffffff" stroke-width="2"></circle>
+            </svg>
+            <div class="d-flex justify-content-between text-muted small pt-2" style="font-size: 0.72rem;">
+              <span>Week 1 (77.7 kg)</span>
+              <span>Week 4 (76.0 kg)</span>
+              <span>Today (74.5 kg)</span>
+            </div>
+          </div>
+
+          <!-- Before / After Transformation Slider -->
+          <div class="card-title-row">
+            <h3 class="card-title-text">Visual Transformation</h3>
+            <span class="text-muted small">Start &rarr; Current</span>
+          </div>
+
+          <div class="transformation-compare-wrapper">
+            <img src="img/transformation-before.jpg" alt="Before Transformation" class="compare-img-before">
+            <img src="img/transformation-after.jpg" alt="After Transformation" class="compare-img-after" id="compareAfterImg">
+            <input type="range" min="0" max="100" value="50" class="compare-slider-handle" id="transformationSliderRange" aria-label="Compare Before and After">
+          </div>
+
+          <!-- Achievement Milestone Badges -->
+          <div class="card-title-row">
+            <h3 class="card-title-text">Milestone Badges</h3>
+          </div>
+          <div class="badges-showcase-grid">
+            <div class="badge-item-card">
+              <div class="badge-icon-disc"><i class="fas fa-medal"></i></div>
+              <div class="badge-name-text">First Workout</div>
+            </div>
+            <div class="badge-item-card">
+              <div class="badge-icon-disc"><i class="fas fa-fire"></i></div>
+              <div class="badge-name-text">7-Day Streak</div>
+            </div>
+            <div class="badge-item-card">
+              <div class="badge-icon-disc"><i class="fas fa-trophy"></i></div>
+              <div class="badge-name-text">100 Workouts</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SCREEN 5: PROFILE & APP SETTINGS
+             ========================================================================== -->
+        <section id="screenProfile" class="vyra-screen" aria-label="User Profile & Settings">
+          <div class="text-center py-3">
+            <img src="img/trainer-shivansh.jpg" alt="User Profile" class="header-avatar mb-2" style="width: 76px; height: 76px; margin: 0 auto; display: block;">
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 2px;" id="profileDisplayName">Shivansh</h3>
+            <span class="badge-gold card-badge" id="profileGoalBadge">Muscle Gain • Intermediate</span>
+          </div>
+
+          <!-- Quick Stats Summary -->
+          <div class="vyra-card p-3 mb-3">
+            <div class="row g-2 text-center" style="display: flex; justify-content: space-between;">
+              <div style="flex: 1;">
+                <div class="fw-bold" style="font-size: 1.1rem; color: var(--text-main);" id="profileHeightText">178 cm</div>
+                <div class="text-muted small" style="font-size: 0.72rem;">Height</div>
+              </div>
+              <div style="flex: 1; border-left: 1px solid var(--border-card); border-right: 1px solid var(--border-card);">
+                <div class="fw-bold" style="font-size: 1.1rem; color: var(--text-main);" id="profileWeightText">74.5 kg</div>
+                <div class="text-muted small" style="font-size: 0.72rem;">Weight</div>
+              </div>
+              <div style="flex: 1;">
+                <div class="fw-bold" style="font-size: 1.1rem; color: var(--gold-600);" id="profileDaysText">5 Days/Wk</div>
+                <div class="text-muted small" style="font-size: 0.72rem;">Frequency</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notification Toggles & App Settings -->
+          <div class="card-title-row">
+            <h3 class="card-title-text">Notifications & Reminders</h3>
+          </div>
+          <div class="vyra-card p-3 mb-3">
+            <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+              <div>
+                <div class="fw-bold" style="font-size: 0.88rem;">Workout Reminders</div>
+                <span class="text-muted small">Daily alert for scheduled workouts</span>
+              </div>
+              <input type="checkbox" id="toggleWorkoutReminders" checked style="accent-color: var(--gold-500); width: 18px; height: 18px;">
+            </div>
+            <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+              <div>
+                <div class="fw-bold" style="font-size: 0.88rem;">Water Intake Alerts</div>
+                <span class="text-muted small">Hourly hydration reminders</span>
+              </div>
+              <input type="checkbox" id="toggleWaterReminders" checked style="accent-color: var(--gold-500); width: 18px; height: 18px;">
+            </div>
+            <div class="d-flex justify-content-between align-items-center py-2">
+              <div>
+                <div class="fw-bold" style="font-size: 0.88rem;">Streak Alerts</div>
+                <span class="text-muted small">Prevent breaking daily active streak</span>
+              </div>
+              <input type="checkbox" id="toggleStreakReminders" checked style="accent-color: var(--gold-500); width: 18px; height: 18px;">
+            </div>
+          </div>
+
+          <!-- Data Management & Actions -->
+          <div class="card-title-row">
+            <h3 class="card-title-text">Data & Privacy</h3>
+          </div>
+          <div class="vyra-card p-3 mb-4">
+            <button type="button" class="btn btn-outline-secondary w-100 py-2 rounded-pill mb-2 fw-bold" id="btnExportUserData" style="font-size: 0.85rem;">
+              <i class="fas fa-file-export me-1"></i> Export Fitness Data (JSON)
+            </button>
+            <button type="button" class="btn btn-outline-danger w-100 py-2 rounded-pill fw-bold" id="btnResetUserData" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt me-1"></i> Reset All Data
+            </button>
           </div>
         </section>
 
       </main>
 
       <!-- ==========================================================================
-           FIXED NATIVE BOTTOM APP NAVIGATION DOCK (5 TABS MATCHING MOCKUP)
+           LIVE ACTIVE WORKOUT SESSION DRAWER
            ========================================================================== -->
-      <nav class="app-bottom-nav-dock" id="appBottomNavDock" aria-label="Bottom App Navigation">
-        <!-- 1. Home Screen -->
-        <button type="button" class="dock-nav-button active" data-screen="screenHome" aria-label="Home Dashboard">
-          <i class="fas fa-home"></i>
+      <div class="active-workout-drawer" id="activeWorkoutDrawer">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <span class="badge-gold card-badge">LIVE WORKOUT SESSION</span>
+          <button type="button" class="icon-button-circle" id="btnCloseActiveWorkout" aria-label="Minimize workout">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+
+        <h3 style="font-size: 1.4rem; font-weight: 900; color: var(--text-main); margin-bottom: 2px;" id="activeExerciseTitle">Barbell Bench Press</h3>
+        <p class="text-muted small mb-3" id="activeExerciseMeta">Target: Mid Chest • 4 Sets • 8-10 Reps</p>
+
+        <!-- Live Digital Rest Timer -->
+        <div class="live-timer-banner">
+          <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gold-300);">
+            <i class="fas fa-stopwatch me-1"></i> Rest Interval Timer
+          </div>
+          <div class="live-timer-digits" id="liveWorkoutTimerDisplay">01:00</div>
+          <div class="d-flex justify-content-center gap-2">
+            <button type="button" class="btn btn-warning rounded-pill px-4 py-2 fw-bold text-dark" id="btnStartRestInterval">
+              <i class="fas fa-play fa-xs"></i> Start Rest
+            </button>
+            <button type="button" class="btn btn-outline-light rounded-pill px-3 py-2" id="btnResetRestInterval">
+              <i class="fas fa-redo-alt"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Set Logger -->
+        <div class="vyra-card p-3 mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="fw-bold" style="font-size: 0.95rem;">Log Current Set</span>
+            <span class="badge-gold card-badge" id="activeSetBadge">Set 1 of 4</span>
+          </div>
+          <div class="row g-2 mb-3" style="display: flex; gap: 10px;">
+            <div style="flex: 1;">
+              <label style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Weight (kg)</label>
+              <input type="number" id="inputActiveWeight" value="70" style="width: 100%; padding: 10px; border: 1px solid var(--border-card); border-radius: 12px; font-size: 1.1rem; font-weight: 800; text-align: center;">
+            </div>
+            <div style="flex: 1;">
+              <label style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Reps</label>
+              <input type="number" id="inputActiveReps" value="10" style="width: 100%; padding: 10px; border: 1px solid var(--border-card); border-radius: 12px; font-size: 1.1rem; font-weight: 800; text-align: center;">
+            </div>
+          </div>
+          <button type="button" class="btn-vyra-primary" id="btnCompleteActiveSet">
+            <i class="fas fa-check"></i> Complete Set & Start Rest
+          </button>
+        </div>
+
+        <div class="d-flex gap-2 mt-auto">
+          <button type="button" class="btn btn-outline-secondary flex-grow-1 rounded-pill py-3 fw-bold" id="btnSkipActiveExercise">
+            Skip Exercise
+          </button>
+          <button type="button" class="btn btn-success flex-grow-1 rounded-pill py-3 fw-bold" id="btnFinishActiveWorkout">
+            Finish Workout 🎉
+          </button>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           AI FITNESS COACH CONVERSATIONAL DRAWER
+           ========================================================================== -->
+      <div class="ai-coach-drawer" id="aiCoachDrawer">
+        <div class="ai-coach-header">
+          <div class="d-flex align-items-center gap-2">
+            <div class="icon-button-circle" style="background: var(--gold-100); color: var(--gold-700);">
+              <i class="fas fa-wand-magic-sparkles"></i>
+            </div>
+            <div>
+              <div class="fw-bold" style="font-size: 0.95rem; color: var(--text-main);">VYRA AI Fitness Coach</div>
+              <span class="text-success small" style="font-size: 0.7rem;"><i class="fas fa-circle me-1" style="font-size: 0.5rem;"></i>Personalized to your metrics</span>
+            </div>
+          </div>
+          <button type="button" class="icon-button-circle" id="btnCloseAICoach" aria-label="Close AI Coach">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="ai-chat-messages" id="aiChatMessages">
+          <div class="chat-bubble chat-bubble-bot">
+            Hello! I am your <strong>VYRA AI Coach</strong>. I have analyzed your fitness profile, daily calorie goal, and workout routine. Ask me anything about post-workout meals, training volume, or Indian macro planning!
+          </div>
+        </div>
+
+        <!-- Quick Prompt Chips -->
+        <div class="ai-prompt-chips">
+          <button type="button" class="ai-chip-btn" data-query="What should I train today?">🏋️ What should I train today?</button>
+          <button type="button" class="ai-chip-btn" data-query="What should I eat after my workout?">🍳 Post-workout meal</button>
+          <button type="button" class="ai-chip-btn" data-query="How can I increase my protein with Indian food?">🍱 High protein desi diet</button>
+          <button type="button" class="ai-chip-btn" data-query="Why am I not progressing in bench press?">📈 Overcoming plateaus</button>
+        </div>
+
+        <div class="ai-input-bar">
+          <input type="text" id="inputAICoachQuery" placeholder="Ask your AI coach..." aria-label="Ask AI Coach">
+          <button type="button" class="icon-button-circle" id="btnSendAICoachQuery" style="background: var(--gold-500); color: #fff; border: none;">
+            <i class="fas fa-paper-plane fa-xs"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           FIXED BOTTOM NAVIGATION DOCK (5 MAIN TABS)
+           ========================================================================== -->
+      <nav class="vyra-bottom-dock" id="vyraBottomDock" aria-label="Main Application Navigation">
+        <!-- Floating AI Coach Pill -->
+        <div class="floating-ai-coach-pill" id="btnFloatingAICoach">
+          <i class="fas fa-wand-magic-sparkles"></i> AI COACH
+        </div>
+
+        <button type="button" class="dock-tab-btn active" data-screen="screenHome" aria-label="Home Dashboard">
+          <i class="fas fa-house"></i>
+          <span>Home</span>
         </button>
 
-        <!-- 2. Activity / Analytics Screen -->
-        <button type="button" class="dock-nav-button" data-screen="screenActivity" aria-label="Activity Analytics">
-          <i class="fas fa-chart-line"></i>
+        <button type="button" class="dock-tab-btn" data-screen="screenWorkout" aria-label="Workouts">
+          <i class="fas fa-dumbbell"></i>
+          <span>Workout</span>
         </button>
 
-        <!-- 3. Workouts & Live Timer Screen -->
-        <button type="button" class="dock-nav-button" data-screen="screenWorkouts" aria-label="Workout Studio">
-          <i class="fas fa-stopwatch"></i>
+        <button type="button" class="dock-tab-btn" data-screen="screenNutrition" aria-label="Nutrition Tracker">
+          <i class="fas fa-bowl-food"></i>
+          <span>Nutrition</span>
         </button>
 
-        <!-- 4. Diet & Nutrition Screen -->
-        <button type="button" class="dock-nav-button" data-screen="screenDiet" aria-label="Nutrition & Diet">
-          <i class="fas fa-utensils"></i>
+        <button type="button" class="dock-tab-btn" data-screen="screenProgress" aria-label="Progress Analytics">
+          <i class="fas fa-chart-simple"></i>
+          <span>Progress</span>
         </button>
 
-        <!-- 5. Coach & Profile Screen -->
-        <button type="button" class="dock-nav-button" data-screen="screenCoach" aria-label="Coach Profile">
+        <button type="button" class="dock-tab-btn" data-screen="screenProfile" aria-label="Profile">
           <i class="fas fa-user"></i>
+          <span>Profile</span>
         </button>
       </nav>
 
     </div>
   </div>
 
-  <!-- ==========================================================================
-       APP INSTALLATION / APK DOWNLOAD MODAL
-       ========================================================================== -->
-  <div class="app-modal-overlay" id="modalAppInstall" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); z-index: 9999; align-items: center; justify-content: center; padding: 20px;">
-    <div style="background: #ffffff; width: 100%; max-width: 380px; border-radius: 28px; padding: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); position: relative; text-align: center;">
-      <button type="button" id="btnCloseInstallModal" style="position: absolute; top: 16px; right: 16px; border: none; background: #f1f5f9; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; color: #64748b;">
-        <i class="fas fa-times"></i>
-      </button>
-
-      <div style="width: 60px; height: 60px; background: #fff4e0; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; color: #fb8500; font-size: 1.6rem;">
-        <i class="fas fa-mobile-alt"></i>
+  <!-- Add Meal Modal -->
+  <div class="vyra-modal-overlay" id="modalAddMeal">
+    <div class="vyra-modal-box">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="fw-bold mb-0" style="font-size: 1.15rem;">Add Food / Meal</h4>
+        <button type="button" class="icon-button-circle" id="btnCloseMealModal"><i class="fas fa-times"></i></button>
       </div>
-
-      <h3 style="font-size: 1.3rem; font-weight: 800; color: #14213d; margin-bottom: 6px;">Install Fitness App</h3>
-      <p style="font-size: 0.85rem; color: #8e95a5; line-height: 1.4; margin-bottom: 20px;">
-        Get instant 1-tap access on your phone home screen with zero app store downloads.
-      </p>
-
-      <!-- Primary Action: Native PWA Install -->
-      <button type="button" class="btn-app-primary mb-3" id="btnPwaDirectInstall" style="padding: 14px; font-size: 0.95rem; margin-bottom: 12px;">
-        <i class="fas fa-download"></i> <span>1-Click Install to Phone</span>
-      </button>
-
-      <!-- Secondary: APK Free Build Link -->
-      <a href="https://www.pwabuilder.com/report?site=https://shivansh879516-star.github.io/gym-website/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 6px; padding: 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 9999px; text-decoration: none; color: #1e293b; font-size: 0.85rem; font-weight: 700; margin-bottom: 16px;">
-        <i class="fab fa-android text-success"></i> Download Free Android APK
-      </a>
-
-      <!-- Quick Platform Guide -->
-      <div style="background: #f8fafc; border-radius: 16px; padding: 12px; font-size: 0.75rem; color: #64748b; text-align: left;">
-        <div style="font-weight: 700; color: #1e293b; margin-bottom: 4px;">📲 How to install manually:</div>
-        <div><strong>• Android (Chrome):</strong> Tap 3 dots (⋮) &rarr; "Install app" or "Add to Home screen".</div>
-        <div style="margin-top: 4px;"><strong>• iPhone (Safari):</strong> Tap Share (⬆️) &rarr; "Add to Home Screen".</div>
+      <div class="calc-input-group">
+        <label>Meal Type</label>
+        <select id="selectMealCategory">
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+          <option value="snacks">Snacks</option>
+        </select>
       </div>
+      <div class="calc-input-group">
+        <label>Search Indian Food or Enter Custom</label>
+        <input type="text" id="inputFoodSearch" placeholder="e.g., Paneer 100g, Dal 1 Cup, Eggs...">
+      </div>
+      <div class="calc-input-group">
+        <label>Calories (kcal)</label>
+        <input type="number" id="inputFoodCalories" placeholder="e.g., 250">
+      </div>
+      <div class="calc-input-group">
+        <label>Protein (grams)</label>
+        <input type="number" id="inputFoodProtein" placeholder="e.g., 18">
+      </div>
+      <button type="button" class="btn-vyra-primary mt-3" id="btnConfirmAddMeal">
+        <i class="fas fa-plus"></i> Add to Daily Tracker
+      </button>
     </div>
   </div>
 
