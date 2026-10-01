@@ -23,10 +23,83 @@
     "sports",
     "lifestyle"
   ],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "scope_extensions": [
+    {
+      "origin": "https://shivansh879516-star.github.io"
+    }
+  ],
   "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://shivansh879516-star.github.io/gym-website/manifest.json",
+      "id": "https://shivansh879516-star.github.io/gym-website/"
+    }
+  ],
   "launch_handler": {
     "client_mode": "navigate-existing"
   },
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "file_handlers": [
+    {
+      "action": "./index.html",
+      "name": "Workout Plan File",
+      "icons": [
+        {
+          "src": "img/icon-any-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "accept": {
+        "text/plain": [".txt"],
+        "application/json": [".json"]
+      }
+    }
+  ],
+  "share_target": {
+    "action": "./index.html",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+fitness",
+      "url": "./index.html?workout=%s"
+    }
+  ],
+  "widgets": [
+    {
+      "name": "Shivansh Fitness Tracker",
+      "description": "Daily Step and Water Tracker Widget",
+      "tag": "fitness-tracker",
+      "template": "widget-template",
+      "ms_ac_template": "widgets/fitness.json",
+      "data": "widgets/data.json",
+      "type": "application/json",
+      "screenshots": [
+        {
+          "src": "img/screenshot-mobile.jpg",
+          "sizes": "768x1376",
+          "label": "Fitness Widget"
+        }
+      ],
+      "icons": [
+        {
+          "src": "img/icon-any-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
   "icons": [
     {
       "src": "img/icon-any-192.png",
@@ -56,14 +129,14 @@
   "screenshots": [
     {
       "src": "img/screenshot-mobile.jpg",
-      "sizes": "1080x1920",
+      "sizes": "768x1376",
       "type": "image/jpeg",
       "form_factor": "narrow",
       "label": "Shivansh Fitness Mobile Home Dashboard & Activity Tracker"
     },
     {
       "src": "img/screenshot-desktop.jpg",
-      "sizes": "1920x1080",
+      "sizes": "1376x768",
       "type": "image/jpeg",
       "form_factor": "wide",
       "label": "Shivansh Fitness Desktop Dashboard with Workouts & Meal Plans"
