@@ -1,17 +1,16 @@
-const CACHE_NAME = 'shivansh-fitness-v3';
+const CACHE_NAME = 'shivansh-fitness-v4';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
-  './privacy-policy.html',
-  './terms-conditions.html',
-  './refund-policy.html',
-  './cookie-policy.html',
+  './manifest.json',
   './css/style.css',
   './js/main.js',
-  './manifest.json',
-  './img/icon-192.png',
-  './img/icon-512.png',
-  './img/apple-touch-icon.png',
+  './img/icon-any-192.png',
+  './img/icon-any-512.png',
+  './img/icon-maskable-192.png',
+  './img/icon-maskable-512.png',
+  './img/screenshot-mobile.jpg',
+  './img/screenshot-desktop.jpg',
   './img/app-3d-dumbbell.jpg',
   './img/app-promo-dumbbells.jpg',
   './img/trainer-shivansh.jpg'

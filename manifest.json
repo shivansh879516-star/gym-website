@@ -1,56 +1,126 @@
 {
-  "name": "Shivansh Fitness | Premium Gym & Training Club",
-  "short_name": "Shivansh Gym",
-  "description": "Official Shivansh Fitness Mobile App. Workouts, Indian Diet Plans, Fitness Calculators & Personal Training.",
+  "id": "https://shivansh879516-star.github.io/gym-website/",
+  "name": "Shivansh Fitness | Workout & Diet App",
+  "short_name": "ShivanshFit",
+  "description": "Official Shivansh Fitness Mobile App. Best workouts, Indian desi nutrition meal plans, rest timer, activity tracking, and 1-on-1 personal coaching.",
+  "lang": "en",
+  "dir": "ltr",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#050608",
-  "theme_color": "#e61e2a",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui",
+    "browser"
+  ],
   "orientation": "portrait-primary",
+  "background_color": "#f8f9fc",
+  "theme_color": "#fca311",
+  "categories": [
+    "fitness",
+    "health",
+    "sports",
+    "lifestyle"
+  ],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
   "icons": [
     {
-      "src": "img/icon-192.png",
+      "src": "img/icon-any-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "img/icon-512.png",
+      "src": "img/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "img/icon-any-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "img/screenshot-mobile.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Shivansh Fitness Mobile Home Dashboard & Activity Tracker"
+    },
+    {
+      "src": "img/screenshot-desktop.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Shivansh Fitness Desktop Dashboard with Workouts & Meal Plans"
     }
   ],
   "shortcuts": [
     {
-      "name": "Fitness Calculators",
-      "short_name": "Calculators",
-      "description": "Calculate BMI, TDEE, Calorie Deficit & 1RM",
-      "url": "./index.html#calculators",
-      "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
+      "name": "Home Dashboard",
+      "short_name": "Home",
+      "description": "View workout feed and daily progress",
+      "url": "./index.html",
+      "icons": [
+        {
+          "src": "img/icon-any-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     },
     {
-      "name": "Workout Splits & Timer",
+      "name": "Workout Studio",
       "short_name": "Workouts",
-      "description": "View Workout Routines & Rest Timer",
-      "url": "./index.html#workout-routines",
-      "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
+      "description": "Start exercises and gym rest interval timer",
+      "url": "./index.html",
+      "icons": [
+        {
+          "src": "img/icon-any-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     },
     {
-      "name": "Desi Diet Plans",
-      "short_name": "Diets",
-      "description": "Custom Indian Veg/Non-Veg Meal Plans",
-      "url": "./index.html#nutrition-plans",
-      "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
+      "name": "Desi Nutrition",
+      "short_name": "Diet Plans",
+      "description": "Explore high protein Indian meal plans",
+      "url": "./index.html",
+      "icons": [
+        {
+          "src": "img/icon-any-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     },
     {
-      "name": "Join / Contact",
-      "short_name": "Contact",
-      "description": "Direct WhatsApp & Call to Trainer Shivansh",
-      "url": "./index.html#contact",
-      "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
+      "name": "Chat with Coach",
+      "short_name": "Coach",
+      "description": "Direct WhatsApp coaching with Coach Shivansh",
+      "url": "./index.html",
+      "icons": [
+        {
+          "src": "img/icon-any-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     }
-  ],
-  "categories": ["fitness", "health", "sports", "lifestyle"]
+  ]
 }
