@@ -1,6 +1,6 @@
 {
-  "id": "https://shivansh879516-star.github.io/gym-website/",
-  "name": "Shivansh Fitness | Workout & Diet App",
+  "id": "/gym-website/",
+  "name": "Shivansh Fitness",
   "short_name": "ShivanshFit",
   "description": "Official Shivansh Fitness Mobile App. Best workouts, Indian desi nutrition meal plans, rest timer, activity tracking, and 1-on-1 personal coaching.",
   "lang": "en",
@@ -24,19 +24,8 @@
     "lifestyle"
   ],
   "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
-  "scope_extensions": [
-    {
-      "origin": "https://shivansh879516-star.github.io"
-    }
-  ],
   "prefer_related_applications": false,
-  "related_applications": [
-    {
-      "platform": "webapp",
-      "url": "https://shivansh879516-star.github.io/gym-website/manifest.json",
-      "id": "https://shivansh879516-star.github.io/gym-website/"
-    }
-  ],
+  "related_applications": [],
   "launch_handler": {
     "client_mode": "navigate-existing"
   },
@@ -73,31 +62,6 @@
     {
       "protocol": "web+fitness",
       "url": "./index.html?workout=%s"
-    }
-  ],
-  "widgets": [
-    {
-      "name": "Shivansh Fitness Tracker",
-      "description": "Daily Step and Water Tracker Widget",
-      "tag": "fitness-tracker",
-      "template": "widget-template",
-      "ms_ac_template": "widgets/fitness.json",
-      "data": "widgets/data.json",
-      "type": "application/json",
-      "screenshots": [
-        {
-          "src": "img/screenshot-mobile.jpg",
-          "sizes": "768x1376",
-          "label": "Fitness Widget"
-        }
-      ],
-      "icons": [
-        {
-          "src": "img/icon-any-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
     }
   ],
   "icons": [
