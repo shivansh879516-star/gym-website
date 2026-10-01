@@ -61,6 +61,7 @@ function saveAppState() {
 // 2. DOM INITIALIZATION
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
+  initSplashScreen();
   initClock();
   initNavigation();
   initOnboardingWizard();
@@ -73,6 +74,25 @@ document.addEventListener('DOMContentLoaded', () => {
   renderDashboardUI();
   initServiceWorker();
 });
+
+function initSplashScreen() {
+  const splash = document.getElementById('vyraSplashScreen');
+  if (!splash) return;
+  setTimeout(() => {
+    splash.classList.add('fade-out');
+    setTimeout(() => {
+      splash.style.display = 'none';
+    }, 450);
+  }, 1000);
+}
+
+function triggerHaptic(duration = 15) {
+  if (window.navigator && window.navigator.vibrate) {
+    try {
+      window.navigator.vibrate(duration);
+    } catch (e) {}
+  }
+}
 
 /* ==========================================================================
    3. CLOCK & NAVIGATION ROUTER
@@ -116,6 +136,7 @@ function switchScreen(targetScreenId) {
     dock.style.display = targetScreenId === 'screenOnboarding' ? 'none' : 'flex';
   }
 
+  triggerHaptic(18);
   playMicroBeep(480, 0.03);
 }
 
